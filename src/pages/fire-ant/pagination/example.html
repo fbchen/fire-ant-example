@@ -1,0 +1,337 @@
+<section class="markdown">
+  <h1>
+    Pagination
+    <span class="subtitle">分页</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/pagination/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section
+    class="markdown">
+    <p>
+      采用分页的形式分隔长列表，每次只加载一个页面。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <ul>
+      <li>
+        <p>
+          当加载/渲染所有数据将花费很多时间时；
+        </p>
+      </li>
+      <li>
+        <p>
+          可切换页码浏览数据。
+        </p>
+      </li>
+    </ul>
+</section>
+<h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+<section class="code-box" id="components-pagination-demo-basic">
+  <section class="code-box-demo">
+
+    <ant-pagination [current]="1" [total]="50" (pageChange)="onPageChange($event)"></ant-pagination>
+
+
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-pagination-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/pagination/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        基础分页。
+      </p>
+    </div>
+  </section>
+</section>
+
+
+<section class="code-box" id="components-pagination-demo-more">
+  <section class="code-box-demo">
+
+    <ant-pagination [current]="6" [total]="500" (pageChange)="onPageChange($event)"></ant-pagination>
+
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-pagination-demo-more">更多</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/pagination/demo/more.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        更多分页。
+      </p>
+    </div>
+  </section>
+</section>
+
+
+<section class="code-box" id="components-pagination-demo-changer">
+  <section class="code-box-demo">
+
+    <ant-pagination [current]="3" [total]="500" [showSizeChanger]="true"
+         (pageChange)="onPageChange($event)"
+         (pageSizeChange)="onShowSizeChange($event)"></ant-pagination>
+
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-pagination-demo-changer">改变</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/pagination/demo/changer.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        改变每页显示条目数。
+      </p>
+    </div>
+  </section>
+</section>
+
+
+<section class="code-box" id="components-pagination-demo-jump">
+  <section class="code-box-demo">
+
+    <ant-pagination [current]="3" [total]="500" [showQuickJumper]="true"
+         (pageChange)="onPageChange($event)"></ant-pagination>
+
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-pagination-demo-jump">跳转</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/pagination/demo/jump.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        快速跳转到某一页。
+      </p>
+    </div>
+  </section>
+</section>
+
+
+<section class="code-box" id="components-pagination-demo-mini">
+  <section class="code-box-demo">
+
+    <ant-pagination size="small" [total]="50"
+        (pageChange)="onPageChange($event)"></ant-pagination>
+    <br>
+    <ant-pagination size="small" [total]="50"
+        [showSizeChanger]="true" [showQuickJumper]="true"
+        (pageChange)="onPageChange($event)"></ant-pagination>
+    <br>
+    <ant-pagination size="small" [total]="50" [showTotal]="true"
+        (pageChange)="onPageChange($event)"></ant-pagination>
+
+    <style>
+      #components-pagination-demo-mini ant-pagination:not(:last-child) {
+        margin-bottom: 24px;
+      }
+
+    </style>
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-pagination-demo-mini">迷你</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/pagination/demo/mini.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        迷你版本。
+      </p>
+    </div>
+  </section>
+</section>
+
+
+<section class="code-box" id="components-pagination-demo-simple">
+  <section class="code-box-demo">
+
+    <ant-pagination [current]="2" [total]="50" [simple]="true"
+         (pageChange)="onPageChange($event)"></ant-pagination>
+
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-pagination-demo-simple">简洁</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/pagination/demo/simple.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        简单的翻页。
+      </p>
+    </div>
+  </section>
+</section>
+
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          current
+        </td>
+        <td>
+          当前页数
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          1
+        </td>
+      </tr>
+      <tr>
+        <td>
+          total
+        </td>
+        <td>
+          数据总数
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          0
+        </td>
+      </tr>
+      <tr>
+        <td>
+          pageSize
+        </td>
+        <td>
+          每页条数
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          10
+        </td>
+      </tr>
+      <tr>
+        <td>
+          pageChange
+        </td>
+        <td>
+          页码改变事件，参数是改变后的页码及每页条数
+        </td>
+        <td>
+          Function(page, pageSize)
+        </td>
+        <td>
+          noop
+        </td>
+      </tr>
+      <tr>
+        <td>
+          showSizeChanger
+        </td>
+        <td>
+          是否可以改变 pageSize
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          pageSizeOptions
+        </td>
+        <td>
+          指定每页可以显示多少条
+        </td>
+        <td>
+          string[]
+        </td>
+        <td><span>10, 20, 30, 40</span></td>
+      </tr>
+      <tr>
+        <td>
+          pageSizeChange
+        </td>
+        <td>
+          pageSize 变化事件
+        </td>
+        <td>
+          Function(current, size)
+        </td>
+        <td>
+          noop
+        </td>
+      </tr>
+      <tr>
+        <td>
+          showQuickJumper
+        </td>
+        <td>
+          是否可以快速跳转至某页
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          size
+        </td>
+        <td>
+          当为「small」时，是小尺寸分页
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          ""
+        </td>
+      </tr>
+      <tr>
+        <td>
+          simple
+        </td>
+        <td>
+          当添加该属性时，显示为简单分页
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          showTotal
+        </td>
+        <td>
+          用于显示数据总量和当前数据顺序
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          showTotalFunc
+        </td>
+        <td>
+          用于显示数据总量和当前数据顺序
+        </td>
+        <td>
+          Function(total, range)
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

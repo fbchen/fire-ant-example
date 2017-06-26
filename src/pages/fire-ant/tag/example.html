@@ -1,0 +1,265 @@
+<section class="markdown">
+    <h1>
+        Tag
+        <span class="subtitle">标签</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tag/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+    <section
+        class="markdown">
+        <p>进行标记和分类的小标签。</p>
+        <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+        <ul>
+            <li>
+                <p>用于标记事物的属性和维度。</p>
+            </li>
+            <li>
+                <p>进行分类。</p>
+            </li>
+        </ul>
+</section>
+<h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+<ant-row [gutter]="16">
+    <ant-col [span]="12">
+        <section class="code-box" id="components-tag-demo-basic">
+            <section class="code-box-demo">
+                <ant-tag>Tag 1</ant-tag>
+                <ant-tag><a href="https://github.com/ant-design/ant-design/issues/1862">Link</a></ant-tag>
+                <ant-tag [closable]="true" (beforeClose)="beforeClose($event)" (close)="afterClose($event)">Tag 2</ant-tag>
+                <ant-tag [closable]="true" (beforeClose)="preventDefault($event)">Prevent Default</ant-tag>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-tag-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tag/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        基本标签的用法，可以通过添加 <code>closable</code> 变为可关闭标签。可关闭标签具有 <code>beforeClose</code> <code>close</code> 两个事件。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+
+        <section class="code-box" id="components-tag-demo-control">
+            <section class="code-box-demo">
+
+                <ant-tag *ngFor="let tag of tags; let i = index;" [closable]="i !== 0" (close)="handleClose(tag)">
+                    {{sliceTagName(tag)}}
+                </ant-tag>
+                <ant-button *ngIf="!inputVisible" size="small" type="dashed" (click)="showInput()">+ New Tag</ant-button>
+                <input #input *ngIf="inputVisible" type="text" [(ngModel)]="inputValue" class="ant-input ant-input-sm" style="width: 78px;"
+                    (blur)="handleInputConfirm()" (keydown.enter)="handleInputConfirm()">
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-tag-demo-control">动态添加和删除</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tag/demo/control.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        用数组生成一组标签，可以动态添加和删除，通过监听删除动画结束的事件<code>close</code>实现。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+
+        <section class="code-box" id="components-tag-demo-hot-tags">
+            <section class="code-box-demo">
+                <strong>Hots: </strong>
+                <ant-checkable-tag *ngFor="let tag of hotTags"
+                 [checked]="selectedTags.indexOf(tag) > -1" (change)="handleChange($event, tag)">
+                    {{tag}}
+                </ant-checkable-tag>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-tag-demo-hot-tags">热门标签</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tag/demo/hot-tags.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        选择你感兴趣的话题。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+
+    </ant-col>
+    <ant-col [span]="12">
+        <section class="code-box" id="components-tag-demo-colorful">
+            <section class="code-box-demo">
+
+                <h4 style="margin-bottom: 16px;">Presets:</h4>
+                <div>
+                    <ant-tag color="pink">pink</ant-tag>
+                    <ant-tag color="red">red</ant-tag>
+                    <ant-tag color="orange">orange</ant-tag>
+                    <ant-tag color="green">green</ant-tag>
+                    <ant-tag color="cyan">cyan</ant-tag>
+                    <ant-tag color="blue">blue</ant-tag>
+                    <ant-tag color="purple">purple</ant-tag>
+                </div>
+                <h4 style="margin: 16px 0px;">Custom:</h4>
+                <div>
+                    <ant-tag color="#f50">#f50</ant-tag>
+                    <ant-tag color="#2db7f5">#2db7f5</ant-tag>
+                    <ant-tag color="#87d068">#87d068</ant-tag>
+                    <ant-tag color="#108ee9">#108ee9</ant-tag>
+                </div>
+                <style>
+                    .ant-tag {
+                        margin-bottom: 8px;
+                    }
+                </style>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-tag-demo-colorful">多彩标签</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tag/demo/colorful.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        我们添加了多种预设色彩的标签样式，用作不同场景使用。如果预设值不能满足你的需求，可以设置为具体的色值。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+
+        <section class="code-box" id="components-tag-demo-checkable">
+            <section class="code-box-demo">
+                <ant-checkable-tag [checked]="tagState.tag1Checked" (change)="tagState.tag1Checked = !tagState.tag1Checked;">Tag1</ant-checkable-tag>
+                <ant-checkable-tag [checked]="tagState.tag2Checked" (change)="tagState.tag2Checked = !tagState.tag2Checked;">Tag2</ant-checkable-tag>
+                <ant-checkable-tag [checked]="tagState.tag3Checked" (change)="tagState.tag3Checked = !tagState.tag3Checked;">Tag3</ant-checkable-tag>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-tag-demo-checkable">可选择</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tag/demo/checkable.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        可通过 <code>CheckableTag</code> 实现类似 Checkbox 的效果，点击切换选中效果。
+                    </p>
+                    <blockquote>
+                        <p>
+                            该组件为完全受控组件，不支持非受控用法。
+                        </p>
+                    </blockquote>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+    </ant-col>
+</ant-row>
+
+
+<section class="markdown api-container">
+    <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+    <h3 id="Tag"><span>Tag</span><a href="#Tag" class="anchor">#</a></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    参数
+                </th>
+                <th>
+                    说明
+                </th>
+                <th>
+                    类型
+                </th>
+                <th>
+                    默认值
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    color
+                </td>
+                <td>
+                    标签色
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    closable
+                </td>
+                <td>
+                    标签是否可以关闭
+                </td>
+                <td>
+                    boolean
+                </td>
+                <td>
+                    false
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    beforeClose
+                </td>
+                <td>
+                    关闭前事件，参数：(event: Event)。若调用<code>event.preventDefault();</code>可以阻止关闭。
+                </td>
+                <td>
+                    Event
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    close
+                </td>
+                <td>
+                    关闭后事件，参数：(event: Event)。
+                </td>
+                <td>
+                    Event
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="Tag.CheckableTag"><span>Tag.CheckableTag</span><a href="#Tag.CheckableTag" class="anchor">#</a></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    参数
+                </th>
+                <th>
+                    说明
+                </th>
+                <th>
+                    类型
+                </th>
+                <th>
+                    默认值
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    checked
+                </td>
+                <td>
+                    设置标签的选中状态
+                </td>
+                <td>
+                    boolean
+                </td>
+                <td>
+                    false
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    change
+                </td>
+                <td>
+                    点击标签时触发的事件，参数：(checked: boolean)
+                </td>
+                <td>
+                    Event
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

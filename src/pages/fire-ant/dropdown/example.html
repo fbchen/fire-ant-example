@@ -1,0 +1,512 @@
+<section class="markdown">
+    <h1>
+        Dropdown
+        <span class="subtitle">下拉菜单</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/dropdown/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+    <section class="markdown">
+        <p>
+            向下弹出的列表。
+        </p>
+        <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+        <p>
+            当页面上的操作命令过多时，用此组件可以收纳操作元素。点击或移入触点，会出现一个下拉菜单。可在列表中进行选择，并执行相应的命令。
+        </p>
+    </section>
+    <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+
+<ant-row [gutter]="16">
+    <ant-col [span]="12">
+
+        <section class="code-box" id="components-dropdown-demo-basic">
+            <section class="code-box-demo">
+
+                <a class="dropdown-link" href="javascript:;" dropdown>
+                    Hover me <ant-icon type="down"></ant-icon>
+                    <ant-menu>
+                        <ant-menu-item>
+                            <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
+                        </ant-menu-item>
+                        <ant-menu-item>
+                            <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
+                        </ant-menu-item>
+                        <ant-menu-item>
+                            <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3d menu item</a>
+                        </ant-menu-item>
+                    </ant-menu>
+                </a>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-dropdown-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/dropdown/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        最简单的下拉菜单。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+
+        <section class="code-box" id="components-dropdown-demo-item">
+            <section class="code-box-demo">
+
+                <a class="dropdown-link" href="javascript:;" dropdown>
+                    Hover me <ant-icon type="down"></ant-icon>
+                    <ant-menu>
+                        <ant-menu-item key="0">
+                            <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
+                        </ant-menu-item>
+                        <ant-menu-item key="1">
+                            <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
+                        </ant-menu-item>
+                        <ant-divider></ant-divider>
+                        <ant-menu-item key="3" [disabled]="true">3d menu item（disabled）</ant-menu-item>
+                    </ant-menu>
+                </a>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-dropdown-demo-item">其他元素</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/dropdown/demo/item.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        分割线和不可用菜单项。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+
+        <section class="code-box" id="components-dropdown-demo-event">
+            <section class="code-box-demo">
+
+                <a class="dropdown-link" href="javascript:;" dropdown>
+                    Hover me, Click menu item <ant-icon type="down"></ant-icon>
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-menu-item key="3">3d menu item</ant-menu-item>
+                    </ant-menu>
+                </a>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-dropdown-demo-event">触发事件</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/dropdown/demo/event.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        点击菜单项后会触发事件，用户可以通过相应的菜单项 key 进行不同的操作。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+
+        <section class="code-box" id="components-dropdown-demo-sub-menu">
+            <section class="code-box-demo">
+
+                <a class="dropdown-link" href="javascript:;" dropdown>
+                    Cascading menu <ant-icon type="down"></ant-icon>
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-submenu key="sub2">
+                            <span ant-submenu-title>
+                                <ant-icon type="appstore"></ant-icon> sub menu
+                            </span>
+                            <ant-menu-item key="3">3d menu item</ant-menu-item>
+                            <ant-menu-item key="4">4th menu item</ant-menu-item>
+                        </ant-submenu>
+                    </ant-menu>
+                </a>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-dropdown-demo-sub-menu">多级菜单</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/dropdown/demo/sub-menu.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        传入的菜单里有多个层级。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+    </ant-col>
+
+    <ant-col [span]="12">
+        <section class="code-box" id="components-dropdown-demo-placement">
+            <section class="code-box-demo">
+
+                <ant-button dropdown="bottomLeft">
+                    bottomLeft
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-menu-item key="3">3d menu item</ant-menu-item>
+                    </ant-menu>
+                </ant-button>
+                <ant-button dropdown="bottomCenter">
+                    bottomCenter
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-menu-item key="3">3d menu item</ant-menu-item>
+                    </ant-menu>
+                </ant-button>
+                <ant-button dropdown="bottomRight">
+                    bottomRight
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-menu-item key="3">3d menu item</ant-menu-item>
+                    </ant-menu>
+                </ant-button>
+                <ant-button dropdown="topLeft">
+                    topLeft
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-menu-item key="3">3d menu item</ant-menu-item>
+                    </ant-menu>
+                </ant-button>
+                <ant-button dropdown="topCenter">
+                    topCenter
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-menu-item key="3">3d menu item</ant-menu-item>
+                    </ant-menu>
+                </ant-button>
+                <ant-button dropdown="topRight">
+                    topRight
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-menu-item key="3">3d menu item</ant-menu-item>
+                    </ant-menu>
+                </ant-button>
+
+                <style>
+                    #components-dropdown-demo-placement .ant-btn {
+                        margin-right: 8px;
+                        margin-bottom: 8px;
+                    }
+                </style>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-dropdown-demo-placement">弹出位置</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/dropdown/demo/placement.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        支持 6 个弹出位置。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+
+        <section class="code-box" id="components-dropdown-demo-trigger">
+            <section class="code-box-demo">
+
+                <a class="dropdown-link" href="javascript:;" dropdown="click">
+                    Click me <ant-icon type="down"></ant-icon>
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-menu-item key="3">3d menu item</ant-menu-item>
+                    </ant-menu>
+                </a>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-dropdown-demo-trigger">触发方式</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/dropdown/demo/trigger.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        默认是移入触发菜单，可以点击触发。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+
+        <section class="code-box" id="components-dropdown-demo-dropdown-button">
+            <section class="code-box-demo">
+
+                <ant-dropdown-button>
+                    <ant-button (click)="onButtonClick($event)">Dropdown</ant-button>
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-menu-item key="3">3d menu item</ant-menu-item>
+                    </ant-menu>
+                </ant-dropdown-button>
+
+                <ant-dropdown-button style="margin-left: 8px">
+                    <ant-button (click)="onButtonClick($event)" [disabled]="true">Dropdown</ant-button>
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-menu-item key="3">3d menu item</ant-menu-item>
+                    </ant-menu>
+                </ant-dropdown-button>
+
+                <ant-button dropdown style="margin-left: 8px">
+                    Button <ant-icon type="down"></ant-icon>
+                    <ant-menu (menuClick)="onMenuClick($event)">
+                        <ant-menu-item key="1">1st menu item</ant-menu-item>
+                        <ant-menu-item key="2">2nd memu item</ant-menu-item>
+                        <ant-menu-item key="3">3d menu item</ant-menu-item>
+                    </ant-menu>
+                </ant-button>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-dropdown-demo-dropdown-button">带下拉框的按钮</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/dropdown/demo/dropdown-button.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        左边是按钮，右边是额外的相关功能菜单。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+
+        <section class="code-box" id="components-dropdown-demo-overlay-visible">
+            <section class="code-box-demo">
+
+                <div style="display: inline-block;">
+                    <a class="dropdown-link" href="javascript:;" dropdown
+                        [menuClickHanlder]="menuClickHanlder">
+                        Hover me <ant-icon type="down"></ant-icon>
+                        <ant-menu>
+                            <ant-menu-item key="1">Clicking me will not close the menu.</ant-menu-item>
+                            <ant-menu-item key="2">Clicking me will not close the menu also.</ant-menu-item>
+                            <ant-menu-item key="3">Clicking me will close the menu</ant-menu-item>
+                        </ant-menu>
+                    </a>
+                </div>
+
+                <div style="display: inline-block; margin-left: 30px">
+
+                    <a class="dropdown-link" href="javascript:;" dropdown>
+                        Hover me <ant-icon type="down"></ant-icon>
+                        <ant-menu (menuClick)="menuClickHanlder2($event)">
+                            <ant-menu-item key="1">Clicking me will not close the menu.</ant-menu-item>
+                            <ant-menu-item key="2">Clicking me will not close the menu also.</ant-menu-item>
+                            <ant-menu-item key="3">Clicking me will close the menu</ant-menu-item>
+                        </ant-menu>
+                    </a>
+                </div>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-dropdown-demo-overlay-visible">菜单隐藏方式</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/dropdown/demo/overlay-visible.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        默认点击菜单后将关闭菜单，如果设置了钩子函数<code>menuClickHanlder</code>，且该函数返回false，将停止关闭菜单。
+                    </p>
+                </div><i title="Show Code" class="anticon anticon-down-circle-o collapse"></i></section>
+        </section>
+    </ant-col>
+</ant-row>
+
+<section class="markdown api-container">
+    <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+    <p>
+        属性如下
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    参数
+                </th>
+                <th>
+                    说明
+                </th>
+                <th>
+                    类型
+                </th>
+                <th>
+                    默认值
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    triggerAction
+                </td>
+                <td>
+                    触发下拉的行为
+                </td>
+                <td>
+                    Array&lt;'click' | 'hover'&gt;
+                </td>
+                <td>
+                    ['hover']
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    menuVisibleChange
+                </td>
+                <td>
+                    菜单显示状态改变事件，参数为 visible: boolean
+                </td>
+                <td>
+                    Event
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    dropdownPlacement
+                </td>
+                <td>
+                    菜单弹出位置：
+                    <code>bottomLeft</code>
+                    <code>bottomCenter</code>
+                    <code>bottomRight</code>
+                    <code>topLeft</code>
+                    <code>topCenter</code>
+                    <code>topRight</code></td>
+                <td>
+                    String
+                </td>
+                <td><code>bottomLeft</code></td>
+            </tr>
+            <tr>
+                <td>
+                    menuClickHanlder
+                </td>
+                <td>
+                    钩子函数: 默认点击菜单后将关闭菜单，如果此函数返回false，将停止关闭菜单。
+                <td>
+                    Function
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    dropdown
+                </td>
+                <td>
+                    缩写写法，格式为：<code>triggerAction?</code> <code>dropdownPlacement?</code>。例如：
+                    <code>hover bottomLeft</code>
+                    <code>hover click bottomLeft</code>
+                    <code>bottomLeft</code>
+                    <code>hover</code>
+                <td>
+                    String
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        菜单可由 <code>ant-menu</code> 取得，可监听<code>select</code> 事件，菜单还包括菜单项 <code>ant-menu-item</code> ，分割线 <code>ant-divider</code> 。
+    </p>
+    <blockquote>
+        <p>
+            注意： ant-menu-item 必须设置唯一的 key 属性。
+        </p>
+    </blockquote>
+
+    <h3 id="Dropdown.Button"><span>dropdown-button</span><a href="#Dropdown.Button" class="anchor">#</a></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    参数
+                </th>
+                <th>
+                    说明
+                </th>
+                <th>
+                    类型
+                </th>
+                <th>
+                    默认值
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    type
+                </td>
+                <td>
+                    按钮类型，和
+                    <a href="/components/button-cn/">Button</a> 一致
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    'default'
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    trigger
+                </td>
+                <td>
+                    触发下拉的行为
+                </td>
+                <td>
+                    Array&lt;'click' | 'hover'&gt;
+                </td>
+                <td>
+                    ['hover']
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    overlay
+                </td>
+                <td>
+                    菜单
+                </td>
+                <td><a href="/components/menu-cn/">ant-menu</a></td>
+                <td>
+                    -
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    dropdownVisible
+                </td>
+                <td>
+                    菜单是否显示
+                </td>
+                <td>
+                    boolean
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    popupVisibleChange
+                </td>
+                <td>
+                    菜单显示状态改变事件，参数为 visible: boolean
+                </td>
+                <td>
+                    Event
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    placement
+                </td>
+                <td>
+                    菜单弹出位置：
+                    <code>bottomLeft</code>
+                    <code>bottomCenter</code>
+                    <code>bottomRight</code>
+                    <code>topLeft</code>
+                    <code>topCenter</code>
+                    <code>topRight</code></td>
+                <td>
+                    String
+                </td>
+                <td><code>bottomLeft</code></td>
+            </tr>
+        </tbody>
+    </table>
+</section>

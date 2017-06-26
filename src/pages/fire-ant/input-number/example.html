@@ -1,0 +1,326 @@
+<section class="markdown">
+  <h1>
+    InputNumber
+    <span class="subtitle">数字输入框</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/input-number/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section
+    class="markdown">
+    <p>
+      通过鼠标或键盘，输入范围内的数值。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <p>
+      当需要获取标准数值时。
+    </p>
+</section>
+<h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+<ant-row [gutter]="16">
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-input-number-demo-basic">
+      <section class="code-box-demo">
+
+        <ant-number [min]="1" [max]="10" (change)="onChange($event)"
+            [(ngModel)]="example1.value1"></ant-number>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example1 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-input-number-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/input-number/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            数字输入框。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-input-number-demo-disabled">
+      <section class="code-box-demo">
+
+        <ant-number [min]="1" [max]="10" (change)="onChange($event)"
+            [disabled]="example2.disabled"
+            [(ngModel)]="example1.value1"></ant-number>
+
+        <ant-button type="primary" (click)="example2.disabled = !example2.disabled" style="margin-left: 10px">
+            {{example2.disabled ? 'Enable' : 'Disable'}}
+        </ant-button>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example2 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-input-number-demo-disabled">不可用</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/input-number/demo/disabled.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            点击按钮切换可用状态。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-input-number-demo-formatter">
+      <section class="code-box-demo">
+
+        <ant-number (change)="onChange($event)"
+            [formatter]="formatter1" [parser]="parser1"
+            [(ngModel)]="example5.value1"></ant-number>
+        <ant-number (change)="onChange($event)"
+            [formatter]="formatter2" [parser]="parser2"
+            [min]="0" [max]="100"
+            [(ngModel)]="example5.value2"></ant-number>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example5 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-input-number-demo-formatter">格式化展示</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/input-number/demo/formatter.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            通过
+            <code>formatter</code>
+            格式化数字，以展示具有具体含义的数据，往往需要配合
+            <code>parser</code>
+            一起使用。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-input-number-demo-size">
+      <section class="code-box-demo">
+
+        <ant-number [min]="1" [max]="10" (change)="onChange($event)" size="large"
+            [(ngModel)]="example3.value1"></ant-number>
+        <ant-number [min]="1" [max]="10" (change)="onChange($event)"
+            [(ngModel)]="example3.value2"></ant-number>
+        <ant-number [min]="1" [max]="10" (change)="onChange($event)" size="small"
+            [(ngModel)]="example3.value3"></ant-number>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example3 | json }}</p>
+        </div>
+
+        <style>
+          #components-input-number-demo-size .ant-input-number {
+            margin-right: 10px;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-input-number-demo-size">三种大小</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/input-number/demo/size.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            三种大小的数字输入框，当 size 分别为
+            <code>large</code>
+            和
+            <code>small</code>
+            时，输入框高度为
+            <code>32px</code>
+            和
+            <code>22px</code>
+            ，默认高度为
+            <code>28px</code></p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-input-number-demo-digit">
+      <section class="code-box-demo">
+
+        <ant-number [min]="1" [max]="10" (change)="onChange($event)" [step]="0.1"
+            [(ngModel)]="example4.value1"></ant-number>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example4 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-input-number-demo-digit">小数</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/input-number/demo/digit.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            和原生的数字输入框一样，value 的精度由 step 的小数位数决定。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+</ant-row>
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <p>
+    属性如下
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          成员
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          min
+        </td>
+        <td>
+          最小值
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          undefined
+        </td>
+      </tr>
+      <tr>
+        <td>
+          max
+        </td>
+        <td>
+          最大值
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          undefined
+        </td>
+      </tr>
+      <tr>
+        <td>
+          step
+        </td>
+        <td>
+          每次改变步数，可以为小数
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          1
+        </td>
+      </tr>
+      <tr>
+        <td>
+          precision
+        </td>
+        <td>
+          数值精度
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          undefined
+        </td>
+      </tr>
+      <tr>
+        <td>
+          change
+        </td>
+        <td>
+          值变化事件，参数: (value: number)
+        </td>
+        <td>
+          Event
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          disabled
+        </td>
+        <td>
+          禁用
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          readOnly
+        </td>
+        <td>
+          是否只读。若为只读，则不可直接手工输入，只能上下调整。
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          size
+        </td>
+        <td>
+          输入框大小。注：标准表单内的输入框大小限制为 `large`。可选 `large` `default` `small`。
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          formatter
+        </td>
+        <td>
+          指定输入框展示值的格式
+        </td>
+        <td>
+          function(value: number): string
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          parser
+        </td>
+        <td>
+          指定从 formatter 里转换回数字的方式，和 formatter 搭配使用
+        </td>
+        <td>
+          function( string): number
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,359 @@
+<section class="markdown">
+  <h1>
+    Checkbox
+    <span class="subtitle">多选框</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/checkbox/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section class="markdown">
+    <p>
+      多选框。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <ul>
+      <li>
+        <p>
+          在一组可选项中进行多项选择时；
+        </p>
+      </li>
+      <li>
+        <p>
+          单独使用可以表示两种状态之间的切换，和 <code>switch</code> 类似。区别在于切换 <code>switch</code> 会直接触发状态改变，而 <code>checkbox</code> 一般用于状态标记，需要和提交操作配合。
+        </p>
+      </li>
+    </ul>
+  </section>
+  <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+<ant-row [gutter]="16">
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-checkbox-demo-basic">
+      <section class="code-box-demo">
+
+        <ant-checkbox [(ngModel)]="example1.value1" value="open"
+            (change)="onChange($event)" (check)="onCheckChange($event)">Checkbox</ant-checkbox>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example1 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-checkbox-demo-basic">基本用法</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/checkbox/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            简单的 checkbox。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-checkbox-demo-controller">
+      <section class="code-box-demo">
+
+        <ant-checkbox #checkbox1 value="open"
+            [checked]="example3.checked"
+            [disabled]="example3.disabled"
+            (change)="onChange($event)"
+            (check)="onCheckChange($event)">
+            {{example3.checked ? 'Checked' : 'Unchecked'}} +
+            {{example3.disabled ? 'Disabled' : 'Enabled'}}
+        </ant-checkbox>
+        <br><br>
+        <ant-button type="primary" size="small" (click)="toggleChecked()">
+            {{example3.checked ? 'Uncheck' : 'Check'}}
+        </ant-button>
+        <ant-button type="primary" size="small" (click)="toggleDisable()" style="margin-left: 10px">
+            {{example3.disabled ? 'Enable' : 'Disable'}}
+        </ant-button>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example3 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-checkbox-demo-controller">受控的 Checkbox</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/checkbox/demo/controller.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            联动 checkbox。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-checkbox-demo-check-all">
+      <section class="code-box-demo">
+
+        <DIV style="border-bottom: 1px solid #E9E9E9">
+            <ant-checkbox value="all"
+                [indeterminate]="example5.indeterminate"
+                [checked]="example5.checkAll"
+                (check)="onCheckAll($event)">Check all</ant-checkbox>
+        </DIV>
+        <br>
+        <ant-checkbox-group [(ngModel)]="example5.group1" (change)="onGroupValueChange($event)">
+            <ant-checkbox value="Apple">Apple</ant-checkbox>
+            <ant-checkbox value="Pear">Pear</ant-checkbox>
+            <ant-checkbox value="Orange">Orange</ant-checkbox>
+        </ant-checkbox-group>
+        <br>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example5 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-checkbox-demo-check-all">全选</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/checkbox/demo/check-all.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            在实现全选效果时，你可能会用到 <code>indeterminate</code> 属性。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-checkbox-demo-disabled">
+      <section class="code-box-demo">
+
+        <ant-checkbox [(ngModel)]="example2.value1" value="1"
+            (change)="onChange($event)" (check)="onCheckChange($event)"></ant-checkbox>
+        <br>
+        <ant-checkbox [(ngModel)]="example2.value2" value="2" [checked]="true" [disabled]="true"
+            (change)="onChange($event)" (check)="onCheckChange($event)"></ant-checkbox>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example2 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-checkbox-demo-disabled">不可用</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/checkbox/demo/disabled.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            checkbox 不可用。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-checkbox-demo-group">
+      <section class="code-box-demo">
+
+        <ant-checkbox-group [(ngModel)]="example4.group1" (change)="onChange($event)">
+            <ant-checkbox value="Apple">Apple</ant-checkbox>
+            <ant-checkbox value="Pear">Pear</ant-checkbox>
+            <ant-checkbox value="Orange">Orange</ant-checkbox>
+        </ant-checkbox-group>
+        <br>
+        <ant-checkbox-group [(ngModel)]="example4.group2" (change)="onChange($event)" [disabled]="true">
+            <ant-checkbox value="Apple">Apple</ant-checkbox>
+            <ant-checkbox value="Pear">Pear</ant-checkbox>
+            <ant-checkbox value="Orange" [disabled]="false">Orange</ant-checkbox>
+        </ant-checkbox-group>
+        <br>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example4 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-checkbox-demo-group">Checkbox 组</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/checkbox/demo/group.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            方便的从数组生成 Checkbox 组。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-checkbox-demo-layout">
+      <section class="code-box-demo">
+
+        <ant-checkbox-group [(ngModel)]="example6.group1" (change)="onChange($event)">
+            <ant-row>
+                <ant-col [span]="8">
+                    <ant-checkbox value="A">A</ant-checkbox>
+                </ant-col>
+                <ant-col [span]="8">
+                    <ant-checkbox value="B">B</ant-checkbox>
+                </ant-col>
+                <ant-col [span]="8">
+                    <ant-checkbox value="C">C</ant-checkbox>
+                </ant-col>
+                <ant-col [span]="8">
+                    <ant-checkbox value="D">D</ant-checkbox>
+                </ant-col>
+                <ant-col [span]="8">
+                    <ant-checkbox value="E">E</ant-checkbox>
+                </ant-col>
+            </ant-row>
+        </ant-checkbox-group>
+        <br>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example6 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-checkbox-demo-layout">布局</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/checkbox/demo/layout.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            Checkbox.Group 内嵌 Checkbox 并与 Grid 组件一起使用，可以实现灵活的布局。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+</ant-row>
+
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <h3 id="Checkbox"><span>Checkbox</span><a href="#Checkbox" class="anchor">#</a></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          checked
+        </td>
+        <td>
+          指定当前是否选中
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          [(ngModel)]
+        </td>
+        <td>
+          传值
+        </td>
+        <td>
+          any
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          change
+        </td>
+        <td>
+          值变化时事件，参数(value: any)。如果checked为true时，value传入Checkbox的value，否则传入空字符串。
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          check
+        </td>
+        <td>
+          check变化时事件，参数(checked: boolean)。参数值说明：选中时返回true，否则返回false。
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          indeterminate
+        </td>
+        <td>
+          设置 indeterminate 状态，只负责样式控制
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Checkbox-Group"><span>Checkbox Group</span><a href="#Checkbox-Group" class="anchor">#</a></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          value
+        </td>
+        <td>
+          默认选中的选项
+        </td>
+        <td>
+          string[]
+        </td>
+        <td>
+          []
+        </td>
+      </tr>
+      <tr>
+        <td>
+          change
+        </td>
+        <td>
+          值变化事件，参数(value: any[])
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

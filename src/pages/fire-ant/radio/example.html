@@ -1,0 +1,372 @@
+<section class="markdown">
+  <h1>
+    Radio
+    <span class="subtitle">单选框</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/radio/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section class="markdown">
+    <p>
+      单选框。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <ul>
+      <li>
+        <p>
+          用于在多个备选项中选中单个状态。
+        </p>
+      </li>
+      <li>
+        <p>
+          和 <code>Select</code> 的区别是，<code>Radio</code> 所有选项默认可见，方便用户在比较中选择，因此选项不宜过多。
+        </p>
+      </li>
+    </ul>
+  </section>
+  <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+<ant-row [gutter]="16">
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-checkbox-demo-basic">
+      <section class="code-box-demo">
+
+        <ant-radio [(ngModel)]="example1.value1" value="open" (change)="onChange($event)" (check)="onCheckChange($event)">Radio</ant-radio>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example1 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-checkbox-demo-basic">基本用法</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/checkbox/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            简单的 checkbox。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-checkbox-demo-check-all">
+      <section class="code-box-demo">
+
+        <ant-radio-group [(ngModel)]="example3.group1" (change)="onGroupChange($event)">
+          <ant-radio value="1">A</ant-radio>
+          <ant-radio value="2">B</ant-radio>
+          <ant-radio value="3">C</ant-radio>
+          <ant-radio value="4">D</ant-radio>
+        </ant-radio-group>
+        <br>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example3 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-checkbox-demo-check-all">单选组合</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/radio/demo/radiogroup.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            一组互斥的 Radio 配合使用。
+          </p>
+        </div>
+      </section>
+    </section>
+
+
+    <section class="code-box" id="components-radio-demo-size">
+      <section class="code-box-demo">
+
+        <ant-radio-group mode="button" size="large" [(ngModel)]="example6.group1" (change)="onGroupChange($event)">
+          <ant-radio value="a">Hangzhou</ant-radio>
+          <ant-radio value="b">Shanghai</ant-radio>
+          <ant-radio value="c">Beijing</ant-radio>
+          <ant-radio value="d">Chengdu</ant-radio>
+        </ant-radio-group>
+        <br>
+
+        <ant-radio-group mode="button" [(ngModel)]="example6.group2" (change)="onGroupChange($event)">
+          <ant-radio value="a">Hangzhou</ant-radio>
+          <ant-radio value="b" [disabled]="true">Shanghai</ant-radio>
+          <ant-radio value="c">Beijing</ant-radio>
+          <ant-radio value="d">Chengdu</ant-radio>
+        </ant-radio-group>
+        <br>
+
+        <ant-radio-group mode="button" size="small" [disabled]="true" [(ngModel)]="example6.group3" (change)="onGroupChange($event)">
+          <ant-radio value="a">Hangzhou</ant-radio>
+          <ant-radio value="b">Shanghai</ant-radio>
+          <ant-radio value="c">Beijing</ant-radio>
+          <ant-radio value="d">Chengdu</ant-radio>
+        </ant-radio-group>
+        <br>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example6 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-radio-demo-size">大小</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/radio/demo/size.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>大中小三种组合，可以和表单输入框进行对应配合。</p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-checkbox-demo-disabled">
+      <section class="code-box-demo">
+
+        <ant-radio [disabled]="example2.disabled" (change)="onChange($event)" (check)="onCheckChange($event)">
+          Disabled
+        </ant-radio>
+        <br>
+        <ant-radio [checked]="true" [disabled]="example2.disabled" (change)="onChange($event)" (check)="onCheckChange($event)">
+          Disabled
+        </ant-radio>
+
+        <br>
+        <ant-button type="primary" (click)="toggleDisabled()" style="margin-top: 20px">
+          Toggle disabled
+        </ant-button>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example2 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-checkbox-demo-disabled">不可用</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/checkbox/demo/disabled.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            Radio 不可用。
+          </p>
+        </div>
+      </section>
+    </section>
+
+
+    <section class="code-box" id="components-radio-demo-radiogroup-more">
+      <section class="code-box-demo">
+
+        <ant-radio-group #myGroup [(ngModel)]="example4.group1" (change)="onGroupChange($event)" class="vertical">
+          <ant-radio value="1">Option A</ant-radio>
+          <ant-radio value="2">Option B</ant-radio>
+          <ant-radio value="3">Option C</ant-radio>
+          <ant-radio value="4">
+            More ...
+            <ant-input style="width:100px; margin-left: 10px" *ngIf="myGroup.value=='4'"></ant-input>
+          </ant-radio>
+        </ant-radio-group>
+        <br>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example4 | json }}</p>
+        </div>
+        <style>
+          ant-radio-group.vertical ant-radio {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-radio-demo-radiogroup-more">RadioGroup 垂直</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/radio/demo/radiogroup-more.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            垂直的 RadioGroup，配合更多输入框选项。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-radio-demo-radiobutton">
+      <section class="code-box-demo">
+
+        <ant-radio-group mode="button" [(ngModel)]="example5.group1" (change)="onGroupChange($event)">
+          <ant-radio value="a">Hangzhou</ant-radio>
+          <ant-radio value="b">Shanghai</ant-radio>
+          <ant-radio value="c">Beijing</ant-radio>
+          <ant-radio value="d">Chengdu</ant-radio>
+        </ant-radio-group>
+        <br>
+
+        <ant-radio-group mode="button" [(ngModel)]="example5.group2" (change)="onGroupChange($event)">
+          <ant-radio value="a">Hangzhou</ant-radio>
+          <ant-radio value="b" [disabled]="true">Shanghai</ant-radio>
+          <ant-radio value="c">Beijing</ant-radio>
+          <ant-radio value="d">Chengdu</ant-radio>
+        </ant-radio-group>
+        <br>
+
+        <ant-radio-group mode="button" [disabled]="true" [(ngModel)]="example5.group3" (change)="onGroupChange($event)">
+          <ant-radio value="a">Hangzhou</ant-radio>
+          <ant-radio value="b">Shanghai</ant-radio>
+          <ant-radio value="c">Beijing</ant-radio>
+          <ant-radio value="d">Chengdu</ant-radio>
+        </ant-radio-group>
+        <br>
+
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：{{ example5 | json }}</p>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-radio-demo-radiobutton">按钮样式</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/radio/demo/radiobutton.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>按钮样式的单选组合。</p>
+        </div>
+      </section>
+    </section>
+  </ant-col>
+</ant-row>
+
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <h3 id="Checkbox"><span>Checkbox</span><a href="#Checkbox" class="anchor">#</a></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          checked
+        </td>
+        <td>
+          指定当前是否选中
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          [(ngModel)]
+        </td>
+        <td>
+          传值
+        </td>
+        <td>
+          any
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          change
+        </td>
+        <td>
+          值变化时事件，参数(value: any)。如果checked为true时，value传入Checkbox的value，否则传入空字符串。
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          check
+        </td>
+        <td>
+          check变化时事件，参数(checked: boolean)。参数值说明：选中时返回true，否则返回false。
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          indeterminate
+        </td>
+        <td>
+          设置 indeterminate 状态，只负责样式控制
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Checkbox-Group"><span>Checkbox Group</span><a href="#Checkbox-Group" class="anchor">#</a></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          value
+        </td>
+        <td>
+          默认选中的选项
+        </td>
+        <td>
+          string[]
+        </td>
+        <td>
+          []
+        </td>
+      </tr>
+      <tr>
+        <td>
+          change
+        </td>
+        <td>
+          值变化事件，参数(value: any[])
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

@@ -1,0 +1,642 @@
+<section class="markdown">
+  <h1>
+    Menu
+    <span class="subtitle">导航菜单</span>
+    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/menu/index.zh-CN.md"><i class="anticon anticon-edit"></i></a>
+  </h1>
+  <section class="markdown">
+    <p>
+      为页面和功能提供导航的菜单列表。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <p>
+      导航菜单是一个网站的灵魂，用户依赖导航在各个页面中进行跳转。一般分为顶部导航和侧边导航，顶部导航提供全局性的类目和功能，侧边导航提供多级结构来收纳和排列网站架构。
+    </p>
+    <p>
+      更多布局和导航的范例可以参考：
+      <a href="/docs/spec/layout-cn">常用布局</a> 。
+    </p>
+    <pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Menu</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Menu.Item</span><span class="token punctuation">&gt;</span></span>菜单项<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Menu.Item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>SubMenu</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>子菜单<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Menu.Item</span><span class="token punctuation">&gt;</span></span>子菜单项<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Menu.Item</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>SubMenu</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>Menu</span><span class="token punctuation">&gt;</span></span></code></pre>
+  </section>
+  <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+<section class="code-box" id="components-menu-demo-horizontal">
+  <section class="code-box-demo">
+    <ant-menu mode="horizontal" [selectedKeys]="['mail']" (menuClick)="onMenuClick($event)" (select)="onSelect($event)" (deselect)="onDeselect($event)">
+      <ant-menu-item key="mail">
+        <ant-icon type="mail"></ant-icon> Menu One
+      </ant-menu-item>
+      <ant-menu-item key="app" [disabled]="true">
+        <ant-icon type="appstore"></ant-icon> Menu Two
+      </ant-menu-item>
+      <ant-submenu>
+        <div ant-submenu-title>
+          <ant-icon type="setting"></ant-icon> Menu Three - Submenu
+        </div>
+        <ant-menu-item-group>
+          <div ant-menu-group-title>Item 1</div>
+          <ant-menu-item key="setting:1">Option 1</ant-menu-item>
+          <ant-menu-item key="setting:2">Option 2</ant-menu-item>
+        </ant-menu-item-group>
+        <ant-menu-item-group>
+          <div ant-menu-group-title>Item 2</div>
+          <ant-menu-item key="setting:3">Option 3</ant-menu-item>
+          <ant-menu-item key="setting:4">Option 4</ant-menu-item>
+        </ant-menu-item-group>
+      </ant-submenu>
+      <ant-menu-item key="alipay">
+        <a href="https://ant.design" target="_blank" rel="noopener noreferrer">Menu Four - Link</a>
+      </ant-menu-item>
+    </ant-menu>
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-menu-demo-horizontal">顶部导航</a>
+      <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/menu/demo/horizontal.md"><i class="anticon anticon-edit"></i></a>
+    </div>
+    <div>
+      <p>
+        水平的顶部导航菜单。
+      </p>
+    </div>
+  </section>
+</section>
+
+<section class="code-box" id="components-menu-demo-sider">
+  <section class="code-box-demo">
+    <ant-menu mode="inline" style="width: 240px" [selectedKeys]="['1']" [openKeys]="['sub1']" (menuClick)="onMenuClick($event)"
+      (select)="onSelect($event)" (deselect)="onDeselect($event)">
+      <ant-submenu key="sub1">
+        <div ant-submenu-title>
+          <ant-icon type="mail"></ant-icon> Menu One
+        </div>
+        <ant-menu-item-group key="g1">
+          <div ant-menu-group-title>Item 1</div>
+          <ant-menu-item key="1">Option 1</ant-menu-item>
+          <ant-menu-item key="2">Option 2</ant-menu-item>
+        </ant-menu-item-group>
+        <ant-menu-item-group key="g2">
+          <div ant-menu-group-title>Item 2</div>
+          <ant-menu-item key="3">Option 3</ant-menu-item>
+          <ant-menu-item key="4">Option 4</ant-menu-item>
+        </ant-menu-item-group>
+      </ant-submenu>
+      <ant-submenu key="sub2">
+        <div ant-submenu-title>
+          <ant-icon type="appstore"></ant-icon> Menu Two
+        </div>
+        <ant-menu-item key="5">Option 5</ant-menu-item>
+        <ant-menu-item key="6">Option 6</ant-menu-item>
+        <ant-submenu key="sub3">
+          <div ant-submenu-title>Submenu</div>
+          <ant-menu-item key="7">Option 7</ant-menu-item>
+          <ant-menu-item key="8">Option 8</ant-menu-item>
+        </ant-submenu>
+      </ant-submenu>
+      <ant-submenu key="sub4">
+        <div ant-submenu-title>
+          <ant-icon type="setting"></ant-icon> Menu Three
+        </div>
+        <ant-menu-item key="9">Option 9</ant-menu-item>
+        <ant-menu-item key="10">Option 10</ant-menu-item>
+        <ant-menu-item key="11">Option 11</ant-menu-item>
+        <ant-menu-item key="12">Option 12</ant-menu-item>
+      </ant-submenu>
+    </ant-menu>
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-menu-demo-sider">内嵌菜单</a>
+      <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/menu/demo/sider.md"><i class="anticon anticon-edit"></i></a>
+    </div>
+    <div>
+      <p>
+        垂直菜单，子菜单内嵌在菜单区域。
+      </p>
+    </div>
+  </section>
+</section>
+
+<section class="code-box" id="components-menu-demo-sider-current">
+  <section class="code-box-demo">
+    <ant-menu mode="inline" style="width: 240px" [selectedKeys]="['1']" (menuClick)="onMenuClick($event)" (select)="onSelect($event)"
+      (deselect)="onDeselect($event)" (openChange)="onOpenChange($event)">
+      <ant-submenu key="sub1">
+        <div ant-submenu-title>
+          <ant-icon type="mail"></ant-icon> Menu One
+        </div>
+        <ant-menu-item key="1">Option 1</ant-menu-item>
+        <ant-menu-item key="2">Option 2</ant-menu-item>
+        <ant-menu-item key="3">Option 3</ant-menu-item>
+        <ant-menu-item key="4">Option 4</ant-menu-item>
+      </ant-submenu>
+      <ant-submenu key="sub2">
+        <div ant-submenu-title>
+          <ant-icon type="appstore"></ant-icon> Menu Two
+        </div>
+        <ant-menu-item key="5">Option 5</ant-menu-item>
+        <ant-menu-item key="6">Option 6</ant-menu-item>
+        <ant-submenu key="sub3">
+          <div ant-submenu-title>Submenu</div>
+          <ant-menu-item key="7">Option 7</ant-menu-item>
+          <ant-menu-item key="8">Option 8</ant-menu-item>
+        </ant-submenu>
+      </ant-submenu>
+      <ant-submenu key="sub4">
+        <div ant-submenu-title>
+          <ant-icon type="setting"></ant-icon> Menu Three
+        </div>
+        <ant-menu-item key="9">Option 9</ant-menu-item>
+        <ant-menu-item key="10">Option 10</ant-menu-item>
+        <ant-menu-item key="11">Option 11</ant-menu-item>
+        <ant-menu-item key="12">Option 12</ant-menu-item>
+      </ant-submenu>
+    </ant-menu>
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-menu-demo-sider-current">只展开当前父级菜单</a>
+      <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/menu/demo/sider-current.md"><i class="anticon anticon-edit"></i></a>
+    </div>
+    <div>
+      <p>
+        点击菜单，收起其他展开的所有菜单，保持菜单聚焦简洁。
+      </p>
+    </div>
+  </section>
+</section>
+
+<section class="code-box" id="components-menu-demo-vertical">
+  <section class="code-box-demo">
+    <ant-menu mode="vertical" style="width: 240px" (menuClick)="onMenuClick($event)">
+      <ant-submenu key="sub1">
+        <span ant-submenu-title>
+          <ant-icon type="mail"></ant-icon> Menu One
+        </span>
+        <ant-menu-item-group key="g1">
+          <div ant-menu-group-title>Item 1</div>
+          <ant-menu-item key="1">Option 1</ant-menu-item>
+          <ant-menu-item key="2">Option 2</ant-menu-item>
+        </ant-menu-item-group>
+        <ant-menu-item-group key="g2">
+          <div ant-menu-group-title>Item 2</div>
+          <ant-menu-item key="3">Option 3</ant-menu-item>
+          <ant-menu-item key="4">Option 4</ant-menu-item>
+        </ant-menu-item-group>
+      </ant-submenu>
+      <ant-submenu key="sub2">
+        <span ant-submenu-title>
+          <ant-icon type="appstore"></ant-icon> Menu Two
+        </span>
+        <ant-menu-item key="5">Option 5</ant-menu-item>
+        <ant-divider></ant-divider>
+        <ant-menu-item key="6">Option 6</ant-menu-item>
+        <ant-divider></ant-divider>
+        <ant-submenu key="sub3">
+          <div ant-submenu-title>Submenu</div>
+          <ant-menu-item key="7">Option 7</ant-menu-item>
+          <ant-divider></ant-divider>
+          <ant-menu-item key="8">Option 8</ant-menu-item>
+        </ant-submenu>
+      </ant-submenu>
+      <ant-submenu key="sub4">
+        <span ant-submenu-title>
+          <ant-icon type="setting"></ant-icon> Menu Three
+        </span>
+        <ant-menu-item key="9">Option 9</ant-menu-item>
+        <ant-divider></ant-divider>
+        <ant-menu-item key="10">Option 10</ant-menu-item>
+        <ant-divider></ant-divider>
+        <ant-menu-item key="11">Option 11</ant-menu-item>
+        <ant-divider></ant-divider>
+        <ant-menu-item key="12">Option 12</ant-menu-item>
+      </ant-submenu>
+    </ant-menu>
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-menu-demo-vertical">垂直菜单</a>
+      <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/menu/demo/vertical.md"><i class="anticon anticon-edit"></i></a>
+    </div>
+    <div>
+      <p>
+        子菜单是弹出的形式。
+      </p>
+    </div>
+  </section>
+</section>
+
+<section class="code-box" id="components-menu-demo-theme">
+  <section class="code-box-demo">
+
+    <div style="margin-bottom: 16px">
+      <ant-switch (change)="theme= theme == 'light' ? 'dark' : 'light'" checkedText="Dark" uncheckedText="Light" [checked]="true"></ant-switch>
+    </div>
+
+    <ant-menu mode="inline" style="width: 240px" [theme]="theme" [selectedKeys]="['1']" [openKeys]="['sub1']">
+      <ant-submenu key="sub1">
+        <div ant-submenu-title>
+          <ant-icon type="mail"></ant-icon> Menu One
+        </div>
+        <ant-menu-item key="1">Option 1</ant-menu-item>
+        <ant-menu-item key="2">Option 2</ant-menu-item>
+        <ant-menu-item key="3">Option 3</ant-menu-item>
+        <ant-menu-item key="4">Option 4</ant-menu-item>
+      </ant-submenu>
+      <ant-submenu key="sub2">
+        <div ant-submenu-title>
+          <ant-icon type="appstore"></ant-icon> Menu Two
+        </div>
+        <ant-menu-item key="5">Option 5</ant-menu-item>
+        <ant-menu-item key="6">Option 6</ant-menu-item>
+        <ant-submenu key="sub3">
+          <div ant-submenu-title>Submenu</div>
+          <ant-menu-item key="7">Option 7</ant-menu-item>
+          <ant-menu-item key="8">Option 8</ant-menu-item>
+        </ant-submenu>
+      </ant-submenu>
+      <ant-submenu key="sub4">
+        <div ant-submenu-title>
+          <ant-icon type="setting"></ant-icon> Menu Three
+        </div>
+        <ant-menu-item key="9">Option 9</ant-menu-item>
+        <ant-menu-item key="10">Option 10</ant-menu-item>
+        <ant-menu-item key="11">Option 11</ant-menu-item>
+        <ant-menu-item key="12">Option 12</ant-menu-item>
+      </ant-submenu>
+    </ant-menu>
+
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-menu-demo-theme">主题</a>
+      <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/menu/demo/theme.md"><i class="anticon anticon-edit"></i></a>
+    </div>
+    <div>
+      <p>
+        内建了两套主题 <code>light|dark</code> ，默认<code>light</code> 。
+      </p>
+    </div>
+  </section>
+</section>
+
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <h3 id="Menu-props"><span>Menu props</span><a href="#Menu-props" class="anchor">#</a></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          theme
+        </td>
+        <td>
+          主题颜色
+        </td>
+        <td>
+          string:
+          <code>light</code>
+          <code>dark</code></td>
+        <td><code>light</code></td>
+      </tr>
+      <tr>
+        <td>
+          mode
+        </td>
+        <td>
+          菜单类型，现在支持垂直、水平、和内嵌模式三种
+        </td>
+        <td>
+          string:
+          <code>vertical</code>
+          <code>horizontal</code>
+          <code>inline</code></td>
+        <td><code>vertical</code></td>
+      </tr>
+      <tr>
+        <td>
+          selectedKeys
+        </td>
+        <td>
+          当前选中的菜单项 key 数组
+        </td>
+        <td>
+          string[]
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          openKeys
+        </td>
+        <td>
+          当前展开的 SubMenu 菜单项 key 数组
+        </td>
+        <td>
+          string[]
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          openChange
+        </td>
+        <td>
+          事件：SubMenu 展开/关闭时触发，参数为 ({{'{'}}openKeys: string[], menu: Menu{{'}'}})
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          select
+        </td>
+        <td>
+          事件：被选中时触发，参数为 (item: MenuItem, key: string, keyPath: atring[], domEvent: Event)
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          deselect
+        </td>
+        <td>
+          事件：取消选中时触发，仅在 multiple 生效，参数为 (item: MenuItem, key: string, keyPath: atring[], domEvent: Event)
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          menuClick
+        </td>
+        <td>
+          事件：点击 menuitem 时触发，参数为 (item: MenuItem, key: string, keyPath: atring[], domEvent: Event)
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          style
+        </td>
+        <td>
+          根节点样式
+        </td>
+        <td>
+          object
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          inlineIndent
+        </td>
+        <td>
+          inline 模式的菜单缩进宽度
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          24
+        </td>
+      </tr>
+      <tr>
+        <td>
+          multiple
+        </td>
+        <td>
+          是否允许多选
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <blockquote>
+    <p>
+      More options in
+      <a href="https://github.com/react-component/menu#api">
+        rc-menu
+      </a>
+    </p>
+  </blockquote>
+  <h3 id="Menu.Item-props"><span>Menu.Item props</span><a href="#Menu.Item-props" class="anchor">#</a></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          disabled
+        </td>
+        <td>
+          是否禁用
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          key
+        </td>
+        <td>
+          item 的唯一标志
+        </td>
+        <td>
+          string
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Menu.SubMenu-props"><span>Menu.SubMenu props</span><a href="#Menu.SubMenu-props" class="anchor">#</a></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          disabled
+        </td>
+        <td>
+          是否禁用
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          key
+        </td>
+        <td>
+          唯一标志
+        </td>
+        <td>
+          string
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          title
+        </td>
+        <td>
+          子菜单项值
+        </td>
+        <td>
+          string | ReactNode
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          children
+        </td>
+        <td>
+          子菜单的菜单项
+        </td>
+        <td>
+          Array&lt;MenuItem | SubMenu&gt;
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          onTitleClick
+        </td>
+        <td>
+          点击子菜单标题
+        </td>
+        <td>
+          Function({{'{'}} key, domEvent {{'}'}})
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Menu.ItemGroup-props"><span>Menu.ItemGroup props</span><a href="#Menu.ItemGroup-props" class="anchor">#</a></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          title
+        </td>
+        <td>
+          分组标题
+        </td>
+        <td>
+          string
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          children
+        </td>
+        <td>
+          分组的菜单项
+        </td>
+        <td>
+          MenuItem[]
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="Menu.Divider"><span>Menu.Divider</span><a href="#Menu.Divider" class="anchor">#</a></h3>
+  <p>
+    菜单项分割线，只用在弹出菜单内。
+  </p>
+</section>

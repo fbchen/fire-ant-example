@@ -453,8 +453,8 @@ tags模式：
     <tbody>
         <tr>
             <td>Avatar 头像</td>
-            <td> </td>
-            <td>待开发 (Pending)</td>
+            <td>&lt;ant-avatar&gt;</td>
+            <td>已完成(Done)</td>
         </tr>
         <tr>
             <td>Badge 徽标数</td>
@@ -518,6 +518,13 @@ tags模式：
         </tr>
     </tbody>
 </table>
+
+> Avatar 头像：
+```html
+<ant-avatar icon="user"></ant-avatar>
+<ant-avatar><ant-avatar-text>U</ant-avatar-text></ant-avatar>
+<ant-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></ant-avatar>
+```
 
 > Tooltip 文字提示器：
 ```html

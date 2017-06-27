@@ -165,11 +165,6 @@ FireAnt的中文名为“火蚁”，火蚁是蚂蚁团体的巧手匠，它们�
             <td> </td>
             <td>待开发 (Pending)</td>
         </tr>
-        <tr>
-            <td>Tabs 标签页</td>
-            <td> </td>
-            <td>待开发 (Pending)</td>
-        </tr>
     </tbody>
 </table>
 
@@ -457,6 +452,11 @@ tags模式：
     </thead>
     <tbody>
         <tr>
+            <td>Avatar 头像</td>
+            <td> </td>
+            <td>待开发 (Pending)</td>
+        </tr>
+        <tr>
             <td>Badge 徽标数</td>
             <td> </td>
             <td>待开发 (Pending)</td>
@@ -505,6 +505,11 @@ tags模式：
             <td>Tag 标签</td>
             <td>&lt;ant-tag&gt;</td>
             <td>已完成(Done)</td>
+        </tr>
+        <tr>
+            <td>Tabs 标签页</td>
+            <td> </td>
+            <td>待开发 (Pending)</td>
         </tr>
         <tr>
             <td>Table 表格</td>

@@ -458,8 +458,8 @@ tags模式：
         </tr>
         <tr>
             <td>Badge 徽标数</td>
-            <td> </td>
-            <td>待开发 (Pending)</td>
+            <td>&lt;ant-badge&gt;</td>
+            <td>已完成(Done)</td>
         </tr>
         <tr>
             <td>Collapse 折叠面板</td>
@@ -524,6 +524,23 @@ tags模式：
 <ant-avatar icon="user"></ant-avatar>
 <ant-avatar><ant-avatar-text>U</ant-avatar-text></ant-avatar>
 <ant-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></ant-avatar>
+```
+
+> Badge 徽标数：
+```html
+<ant-badge [count]="5" [showZero]="true">
+    <a href="#" class="head-example"></a>
+</ant-badge>
+
+<ant-badge [dot]="true">
+    <ant-icon type="notification"></ant-icon>
+</ant-badge>
+
+<ant-badge status="success"></ant-badge>
+<ant-badge status="error"></ant-badge>
+<ant-badge status="default"></ant-badge>
+<ant-badge status="processing"></ant-badge>
+<ant-badge status="warning"></ant-badge>
 ```
 
 > Tooltip 文字提示器：

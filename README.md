@@ -1,13 +1,14 @@
 # Fire-Ant
 Fire-Ant 是Ant-Design框架的Angular(4.*)实现的，可用作PC Web应用开发的UI框架。
 
-[Ant-Design](https://ant.design/index-cn) 由阿里巴巴的蚂蚁金服体验技术部出品，提供了丰富、灵活、实用的基础组件，但是其实现是基于React技术，对于喜欢Angular的童鞋来说，Fire-Ant是一个值得选择的开发框架。
-
-[Angular](https://github.com/angular/angular) is a development platform for building mobile and desktop web applications using Typescript/JavaScript (JS) and other languages.
-
 Fire-Ant 是在参考Ant-Design的源码基础上，采用了更加简洁的实现，此外，在css格式上采用Sass代替了Less。封装后的组件更加灵活方便，使开发人员可以更加专注于业务的实现，可以极大减少前端开发时间。
 
 FireAnt的中文名为“火蚁”，火蚁是蚂蚁团体的巧手匠，它们以在水中筑筏而著称，在影片《蚁人》中蚁人利用一个蚁筏通过了下水道。希望FireAnt能为前端开发人员和创业者们逢山开路、遇水搭桥，勇往直前。
+
+- [Ant-Design](https://ant.design/index-cn) 由阿里巴巴的蚂蚁金服体验技术部出品，提供了丰富、灵活、实用的基础组件，基于React技术实现，对于喜欢Angular的童鞋来说，Fire-Ant无疑是一个值得选择的开发框架。
+
+- [Angular](https://github.com/angular/angular) is a development platform for building mobile and desktop web applications using Typescript/JavaScript (JS) and other languages.
+
 
 ## Components
 

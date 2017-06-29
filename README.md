@@ -513,8 +513,8 @@ tags模式：
         </tr>
         <tr>
             <td>Table 表格</td>
-            <td> </td>
-            <td>待开发 (Pending)</td>
+            <td>&lt;ant-table&gt;</td>
+            <td>已完成(Done)</td>
         </tr>
     </tbody>
 </table>
@@ -551,6 +551,40 @@ tags模式：
 > Tag 标签：
 ```html
 <ant-tag [closable]="true" (beforeClose)="beforeClose($event)" (close)="afterClose($event)">Tag 1</ant-tag>
+```
+
+> Table 表格：
+```html
+<ant-table>
+    <table-header>这是表格标题</table-header>
+    <table-content>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>地址</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of getExample1Data()">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.address}}</td>
+                <td>
+                    <a href="#">编辑</a>
+                    <span class="ant-divider"></span>
+                    <a href="#">删除</a>
+                    <span class="ant-divider"></span>
+                    <a href="#" class="ant-dropdown-link">
+                        更多 <ant-icon type="down"></ant-icon>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table-content>
+    <table-footer>这是表格注脚</table-footer>
+</ant-table>
 ```
 
 * Feedback

@@ -346,6 +346,11 @@ FireAnt的中文名为“火蚁”，火蚁是蚂蚁团体的巧手匠，它们�
 
 > Checkbox 多选框：
 ```html
+<!-- normal -->
+<ant-checkbox value="open" [checked]="true">Checkbox</ant-checkbox>
+<!-- the checked state is controlled by ngModel -->
+<ant-checkbox value="open" uncheckedValue="off" [(ngModel)]="example1.value">Checkbox</ant-checkbox>
+<!-- group -->
 <ant-checkbox-group [(ngModel)]="example4.group1" (change)="onChange($event)">
     <ant-checkbox value="Apple">Apple</ant-checkbox>
     <ant-checkbox value="Pear">Pear</ant-checkbox>
@@ -383,6 +388,11 @@ FireAnt的中文名为“火蚁”，火蚁是蚂蚁团体的巧手匠，它们�
 
 > Radio 单选框：
 ```html
+<!-- normal -->
+<ant-radio value="open" [checked]="true">Radio</ant-radio>
+<!-- the checked state is controlled by ngModel -->
+<ant-radio value="open" uncheckedValue="off" [(ngModel)]="example1.value">Radio</ant-radio>
+<!-- group -->
 <ant-radio-group [(ngModel)]="example3.group1" (change)="onGroupChange($event)">
     <ant-radio value="1">A</ant-radio>
     <ant-radio value="2">B</ant-radio>
@@ -400,9 +410,12 @@ FireAnt的中文名为“火蚁”，火蚁是蚂蚁团体的巧手匠，它们�
 
 > Switch 开关：
 ```html
+<!-- normal -->
 <ant-switch (change)="onChange($event)"></ant-switch>
-
 <ant-switch (change)="onChange($event)" checkedText="开" uncheckedText="关"></ant-switch>
+
+<!-- the checked state is controlled by ngModel -->
+<ant-switch value="open" uncheckedValue="off" [(ngModel)]="example1.value"></ant-switch>
 ```
 
 > Select 选择器：
@@ -655,6 +668,21 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 然后通过cnpm命令来安装：
 ```bash
 cnpm install fire-ant --save
+```
+
+- 目前打成发布包的脚本还有问题，安装包还不可用，深感抱歉！主要问题如下：
+1. ERROR in AntModule is not an NgModule
+2. 没有把templateUrl中的html文件装入ts、js文件内
+3. 没有把styleUrls中的scss文件装入ts、js文件内
+- 例如
+```ts
+@Component({
+    selector: 'ant-input',
+    templateUrl: './input.html',  <-- did not package inside
+    styleUrls: ['./style/index.scss'],  <-- did not package inside
+    encapsulation: ViewEncapsulation.None,
+    providers: [INPUT_CONTROL_VALUE_ACCESSOR]
+})
 ```
 
 ## Quickstart

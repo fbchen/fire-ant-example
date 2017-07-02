@@ -1,0 +1,714 @@
+<section class="markdown">
+  <h1>
+    Form
+    <span class="subtitle">表单</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/form/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section class="markdown">
+    <p>
+      具有数据收集、校验和提交功能的表单，包含复选框、单选框、输入框、下拉选择框等元素。
+    </p>
+    <h2 id="表单"><span>表单</span><a href="#表单" class="anchor">#</a></h2>
+    <p>
+      我们为
+      <code>form</code> 提供了以下三种排列方式：
+    </p>
+    <ul>
+      <li>
+        <p>
+          水平排列：标签和表单控件水平排列；（默认）
+        </p>
+      </li>
+      <li>
+        <p>
+          垂直排列：标签和表单控件上下垂直排列；
+        </p>
+      </li>
+      <li>
+        <p>
+          行内排列：表单项水平行内排列。
+        </p>
+      </li>
+    </ul>
+    <h2 id="表单域"><span>表单域</span><a href="#表单域" class="anchor">#</a></h2>
+    <p>
+      表单一定会包含表单域，表单域可以是输入控件，标准表单域，标签，下拉菜单，文本域等。
+    </p>
+    <p>
+      这里我们封装了表单域
+      <code>&lt;form-item&gt;</code> 。
+    </p>
+    <blockquote>
+      <p>
+        注：标准表单中一律使用大号控件。
+      </p>
+    </blockquote>
+  </section>
+  <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+<section class="code-box" id="components-form-demo-horizontal-login">
+  <section class="code-box-demo">
+
+    <form #form1="ngForm" #fireForm1="faForm" layout="inline" (ngSubmit)="handleSubmit(fireForm1)" novalidate="">
+        <form-item>
+            <ant-input placeholder="Username" name="username"
+                [(ngModel)]="example1.username" [required]="true">
+                <input-prefix style="font-size: 13px">
+                    <ant-icon type="user"></ant-icon>
+                </input-prefix>
+            </ant-input>
+        </form-item>
+        <form-item>
+            <ant-input placeholder="Password" name="password" type="password"
+                [(ngModel)]="example1.password" [required]="true">
+                <input-prefix style="font-size: 13px">
+                    <ant-icon type="lock"></ant-icon>
+                </input-prefix>
+            </ant-input>
+        </form-item>
+        <form-item>
+            <ant-button type="primary" htmlType="submit" [disabled]="form1.invalid">
+                Login
+            </ant-button>
+        </form-item>
+    </form>
+
+    <form-help>{{fireForm1.firstError()}}</form-help>
+    <div class="mute-text" style="margin-top: 20px">
+        <p>结果值：</p>
+        <pre>{{ example1 | json }}</pre>
+    </div>
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-form-demo-horizontal-login">水平登录栏</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/form/demo/horizontal-login.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        水平登录栏，常用在顶部导航栏中。
+      </p>
+    </div>
+  </section>
+</section>
+
+
+<section class="code-box" id="components-form-demo-normal-login">
+  <section class="code-box-demo">
+
+    <form #form2="ngForm" #fireForm2="faForm" class="login-form" (ngSubmit)="handleSubmit(fireForm2)" novalidate="">
+        <form-item>
+            <ant-input placeholder="Username" name="username"
+                [(ngModel)]="example2.username" [required]="true">
+                <input-prefix style="font-size: 13px">
+                    <ant-icon type="user"></ant-icon>
+                </input-prefix>
+            </ant-input>
+        </form-item>
+        <form-item>
+            <ant-input placeholder="Password" name="password" type="password"
+                [(ngModel)]="example2.password" [required]="true">
+                <input-prefix style="font-size: 13px">
+                    <ant-icon type="lock"></ant-icon>
+                </input-prefix>
+            </ant-input>
+        </form-item>
+        <form-item>
+            <ant-checkbox name="remember" [(ngModel)]="example2.remember" value="true">
+                Remember me
+            </ant-checkbox>
+            <a class="login-form-forgot" href="">Forgot password</a>
+            <ant-button type="primary" htmlType="submit" class="login-form-button" [disabled]="form2.invalid">
+                Login
+            </ant-button>
+            Or <a href="">register now!</a>
+            <form-help>{{fireForm2.firstError()}}</form-help>
+        </form-item>
+    </form>
+
+    <div class="mute-text" style="margin-top: 20px">
+        <p>结果值：</p>
+        <pre>{{ example2 | json }}</pre>
+    </div>
+
+    <style>
+      #components-form-demo-normal-login .login-form {
+        max-width: 300px;
+      }
+
+      #components-form-demo-normal-login .login-form-forgot {
+        float: right;
+      }
+
+      #components-form-demo-normal-login .login-form-button {
+        width: 100%;
+      }
+
+    </style>
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-form-demo-normal-login">登录框</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/form/demo/normal-login.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        普通的登录框，可以容纳更多的元素。
+      </p>
+    </div>
+  </section>
+</section>
+
+<section class="code-box" id="components-form-demo-register">
+  <section class="code-box-demo">
+    <form #form3="ngForm" #fireForm3="faForm" (ngSubmit)="handleSubmit2(fireForm3)" novalidate="">
+        <form-item label="E-mail" [hasFeedback]="true" [labelCol]="formItemLayout.labelCol" [wrapperCol]="formItemLayout.wrapperCol">
+            <ant-input name="email" type="email"
+                [(ngModel)]="example3.email" [required]="true">
+            </ant-input>
+            <form-help>{{fireForm3.getError('email')}}</form-help>
+        </form-item>
+        <form-item label="Password" [hasFeedback]="true" [labelCol]="formItemLayout.labelCol" [wrapperCol]="formItemLayout.wrapperCol">
+            <ant-input name="password" type="password"
+                [(ngModel)]="example3.password" [required]="true">
+            </ant-input>
+            <form-help>{{fireForm3.getError('password')}}</form-help>
+        </form-item>
+        <form-item label="Confirm Password" [hasFeedback]="true" [labelCol]="formItemLayout.labelCol" [wrapperCol]="formItemLayout.wrapperCol">
+            <ant-input name="password2" type="password"
+                [(ngModel)]="example3.password2" [required]="true">
+            </ant-input>
+            <form-help>{{fireForm3.getError('password2')}}</form-help>
+        </form-item>
+        <form-item [hasFeedback]="true" [labelCol]="formItemLayout.labelCol" [wrapperCol]="formItemLayout.wrapperCol">
+            <form-label>
+                Nickname
+                <ant-icon antTooltip title="What do you want other to call you?" type="question-circle-o" ></ant-icon>
+            </form-label>
+            <ant-input name="nickname" [(ngModel)]="example3.nickname"></ant-input>
+            <form-help>{{fireForm3.getError('nickname')}}</form-help>
+        </form-item>
+        <form-item label="Habitual Residence" [labelCol]="formItemLayout.labelCol" [wrapperCol]="formItemLayout.wrapperCol">
+            <ant-select name="residence" [(ngModel)]="example3.residence" [required]="true">
+                <ant-option value="hangzhou">hangzhou</ant-option>
+                <ant-option value="nanjing">nanjing</ant-option>
+            </ant-select>
+            <form-help>{{fireForm3.getError('residence')}}</form-help>
+        </form-item>
+        <form-item label="Phone Number" [labelCol]="formItemLayout.labelCol" [wrapperCol]="formItemLayout.wrapperCol">
+            <ant-addon>
+                <ant-input name="phone" [(ngModel)]="example3.phone" style="width: 100%"></ant-input>
+                <addon-before>
+                    <ant-select name="prefix" [(ngModel)]="example3.prefix" style="width: 60px">
+                        <ant-option value="86">+86</ant-option>
+                        <ant-option value="87">+87</ant-option>
+                    </ant-select>
+                </addon-before>
+            </ant-addon>
+            <form-help>{{fireForm3.getError('phone')}}</form-help>
+        </form-item>
+        <form-item label="website" [labelCol]="formItemLayout.labelCol" [wrapperCol]="formItemLayout.wrapperCol">
+            <ant-input name="website" placeholder="website" [(ngModel)]="example3.website"></ant-input>
+            <form-help>{{fireForm3.getError('website')}}</form-help>
+        </form-item>
+        <form-item label="Captcha" [labelCol]="formItemLayout.labelCol" [wrapperCol]="formItemLayout.wrapperCol"
+            extra="We must make sure that your are a human.">
+            <ant-row [gutter]="8">
+                <ant-col [span]="12">
+                    <ant-input name="captcha" [(ngModel)]="example3.captcha" size="large"></ant-input>
+                </ant-col>
+                <ant-col [span]="12">
+                    <ant-button size="large">Get captcha</ant-button>
+                </ant-col>
+            </ant-row>
+            <form-help>{{fireForm3.getError('captcha')}}</form-help>
+        </form-item>
+
+        <form-item [wrapperCol]="tailFormItemLayout.wrapperCol" style="margin-bottom: 8px">
+            <ant-checkbox name="agreement" [(ngModel)]="example3.agreement" value="yes">
+                I have read the <a href="">agreement</a>
+            </ant-checkbox>
+        </form-item>
+        <form-item [wrapperCol]="tailFormItemLayout.wrapperCol">
+            <ant-button type="primary" htmlType="submit" size="large">
+                Register
+            </ant-button>
+        </form-item>
+    </form>
+
+    <div class="mute-text" style="margin-top: 20px">
+        <p>结果值：</p>
+        <pre>{{ example3 | json }}</pre>
+    </div>
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-form-demo-register">注册新用户</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/form/demo/register.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        用户填写必须的信息以注册新用户。
+      </p>
+    </div>
+  </section>
+</section>
+
+
+<section class="code-box" id="components-form-demo-advanced-search">
+  <section class="code-box-demo">
+
+
+    <style>
+      #components-form-demo-advanced-search .ant-advanced-search-form {
+        padding: 24px;
+        background: #fbfbfb;
+        border: 1px solid #d9d9d9;
+        border-radius: 6px;
+      }
+
+      #components-form-demo-advanced-search .ant-form {
+        max-width: none;
+      }
+
+      #components-form-demo-advanced-search .search-result-list {
+        margin-top: 16px;
+        border: 1px dashed #e9e9e9;
+        border-radius: 6px;
+        background-color: #fafafa;
+        min-height: 200px;
+        text-align: center;
+        padding-top: 80px;
+      }
+
+    </style>
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-form-demo-advanced-search">高级搜索</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/form/demo/advanced-search.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        三列栅格式的表单排列方式，常用于数据表格的高级搜索。
+      </p>
+      <p>
+        有部分定制的样式代码，由于输入标签长度不确定，需要根据具体情况自行调整。
+      </p>
+    </div>
+  </section>
+</section>
+
+<section class="code-box" id="components-form-demo-validate-static">
+  <section class="code-box-demo">
+
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-form-demo-validate-static">自定义校验</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/form/demo/validate-static.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        我们提供了
+        <code>validateStatus</code>
+        <code>help</code>
+        <code>hasFeedback</code> 等属性，你可以不需要使用
+        <code>Form.create</code> 和
+        <code>getFieldDecorator</code> ，自己定义校验的时机和内容。
+      </p>
+      <ol>
+        <li>
+          <p><code>validateStatus</code> : 校验状态，可选 'success', 'warning', 'error', 'validating'。
+          </p>
+        </li>
+        <li>
+          <p><code>hasFeedback</code> ：用于给输入框添加反馈图标。
+          </p>
+        </li>
+        <li>
+          <p><code>help</code> ：设置校验文案。
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+</section>
+
+
+<section class="code-box" id="components-form-demo-layout">
+  <section class="code-box-demo">
+
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-form-demo-layout">表单布局</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/form/demo/layout.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        表单有三种布局。
+      </p>
+    </div>
+  </section>
+</section>
+
+
+
+<section class="code-box" id="components-form-demo-dynamic-rule">
+  <section class="code-box-demo">
+
+  </section>
+  <section class="code-box-meta markdown">
+    <div class="code-box-title"><a href="#components-form-demo-dynamic-rule">动态校验规则</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/form/demo/dynamic-rule.md"><i class="anticon anticon-edit"></i></a></div>
+    <div>
+      <p>
+        根据不同情况执行不同的校验规则。
+      </p>
+    </div>
+  </section>
+</section>
+
+
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <h3 id="Form"><span>Form</span><a href="#Form" class="anchor">#</a></h3>
+  <p><strong>更多示例参考 <a href="http://react-component.github.io/form/">rc-form</a></strong> 。
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          layout
+        </td>
+        <td>
+          表单布局
+        </td>
+        <td>
+          'horizontal' | 'vertical' | 'inline'
+        </td>
+        <td>
+          'horizontal'
+        </td>
+      </tr>
+      <tr>
+        <td>
+          hideRequiredMark
+        </td>
+        <td>
+          隐藏所有表单项的必选标记
+        </td>
+        <td>
+          Boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="Form.Item"><span>Form.Item</span><a href="#Form.Item" class="anchor">#</a></h3>
+  <p>
+    注意：
+  </p>
+  <p>
+    一个 Form.Item 建议只放一个被 getFieldDecorator 装饰过的 child，当有多个被装饰过的 child 时，
+    <code>help</code>
+    <code>required</code>
+    <code>validateStatus</code> 无法自动生成。
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          label
+        </td>
+        <td>
+          label 标签的文本
+        </td>
+        <td>
+          string
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          labelCol
+        </td>
+        <td>
+          label 标签布局，同
+          <code>&lt;Col&gt;</code> 组件，设置
+          <code>span</code>
+          <code>offset</code> 值，如
+          <code>{{'{'}}span: 3, offset: 12{{'}'}}</code> 或
+          <code>{{'{'}} sm: {{'{'}}span: 3, offset: 12{{'}'}} {{'}'}}</code></td>
+        <td>
+          <a href="https://ant.design/components/grid/#Col">
+            object
+          </a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          wrapperCol
+        </td>
+        <td>
+          需要为输入控件设置布局样式时，使用该属性，用法同 labelCol
+        </td>
+        <td>
+          <a href="https://ant.design/components/grid/#Col">
+            object
+          </a>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          help
+        </td>
+        <td>
+          提示信息，如不设置，则会根据校验规则自动生成
+        </td>
+        <td>
+          string
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          extra
+        </td>
+        <td>
+          额外的提示信息，和 help 类似，当需要错误信息和提示文案同时出现时，可以使用这个。
+        </td>
+        <td>
+          string
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          required
+        </td>
+        <td>
+          是否必填，如不设置，则会根据校验规则自动生成
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          validateStatus
+        </td>
+        <td>
+          校验状态，如不设置，则会根据校验规则自动生成，可选：'success' 'warning' 'error' 'validating'
+        </td>
+        <td>
+          string
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          hasFeedback
+        </td>
+        <td>
+          配合 validateStatus 属性使用，展示校验状态图标，建议只配合 Input 组件使用
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          colon
+        </td>
+        <td>
+          配合 label 属性使用，表示是否显示 label 后面的冒号
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          true
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="校验规则"><span>校验规则</span><a href="#校验规则" class="anchor">#</a></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          message
+        </td>
+        <td>
+          校验文案
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          type
+        </td>
+        <td>
+          内建校验类型，
+          <a href="https://github.com/yiminghe/async-validator#type">
+            可选项
+          </a>
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          'string'
+        </td>
+      </tr>
+      <tr>
+        <td>
+          required
+        </td>
+        <td>
+          是否必选
+        </td>
+        <td>
+          boolean
+        </td>
+        <td><code>false</code></td>
+      </tr>
+      <tr>
+        <td>
+          whitespace
+        </td>
+        <td>
+          必选时，空格是否会被视为错误
+        </td>
+        <td>
+          boolean
+        </td>
+        <td><code>false</code></td>
+      </tr>
+      <tr>
+        <td>
+          len
+        </td>
+        <td>
+          字段长度
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          min
+        </td>
+        <td>
+          最小长度
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          max
+        </td>
+        <td>
+          最大长度
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          enum
+        </td>
+        <td>
+          枚举类型
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          pattern
+        </td>
+        <td>
+          正则表达式校验
+        </td>
+        <td>
+          RegExp
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <style>
+    .code-box-demo .ant-form:not(.ant-form-inline):not(.ant-form-vertical) {
+      max-width: 540px;
+    }
+
+  </style>
+</section>

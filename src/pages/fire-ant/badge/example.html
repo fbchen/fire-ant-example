@@ -1,0 +1,325 @@
+<section class="markdown">
+  <h1>
+    Badge
+    <span class="subtitle">徽标数</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/badge/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section class="markdown">
+    <p>
+      图标右上角的圆形徽标数字。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <p>
+      一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。
+    </p>
+  </section>
+  <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+<ant-row [gutter]="16">
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-badge-demo-basic">
+      <section class="code-box-demo">
+
+        <ant-badge [count]="5">
+          <a href="#" class="head-example"></a>
+        </ant-badge>
+        <ant-badge [count]="0" [showZero]="true">
+          <a href="#" class="head-example"></a>
+        </ant-badge>
+
+        <style>
+          .ant-badge:not(.ant-badge-status) {
+            margin-right: 16px;
+          }
+
+          .head-example {
+            width: 42px;
+            height: 42px;
+            border-radius: 6px;
+            background: #eee;
+            display: inline-block;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-badge-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/badge/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            简单的徽章展示，当 <code>count</code> 为 <code>0</code> 时，默认不显示，但是可以使用 <code>showZero</code> 修改为显示。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-badge-demo-overflow">
+      <section class="code-box-demo">
+
+        <ant-badge [count]="99">
+          <a href="#" class="head-example"></a>
+        </ant-badge>
+        <ant-badge [count]="100">
+          <a href="#" class="head-example"></a>
+        </ant-badge>
+        <ant-badge [count]="99" [overflowCount]="10">
+          <a href="#" class="head-example"></a>
+        </ant-badge>
+        <ant-badge [count]="1000" [overflowCount]="999">
+          <a href="#" class="head-example"></a>
+        </ant-badge>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-badge-demo-overflow">封顶数字</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/badge/demo/overflow.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            超过<code>overflowCount</code>的会显示为 <code>overflowCount+</code>，默认的 <code>overflowCount</code> 为<code>99</code>。
+          </p>
+        </div>
+      </section>
+    </section>
+
+
+    <section class="code-box" id="components-badge-demo-status">
+      <section class="code-box-demo">
+
+        <ant-badge status="success"></ant-badge>
+        <ant-badge status="error"></ant-badge>
+        <ant-badge status="default"></ant-badge>
+        <ant-badge status="processing"></ant-badge>
+        <ant-badge status="warning"></ant-badge>
+        <br />
+        <ant-badge status="success" text="Success"></ant-badge>
+        <br />
+        <ant-badge status="error" text="Error"></ant-badge>
+        <br />
+        <ant-badge status="default" text="Default"></ant-badge>
+        <br />
+        <ant-badge status="processing" text="Processing"></ant-badge>
+        <br />
+        <ant-badge status="warning" text="Warning"></ant-badge>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-badge-demo-status">状态点</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/badge/demo/status.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            用于表示状态的小圆点。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-badge-demo-no-wrapper">
+      <section class="code-box-demo">
+
+        <ant-badge [count]="25"></ant-badge>
+        <ant-badge [count]="4" [badgeStyle]="{'background-color': '#fff', 'color': '#999', boxShadow: '0 0 0 1px #d9d9d9 inset'}"></ant-badge>
+        <ant-badge [count]="109" [badgeStyle]="{'background-color': '#87d068'}"></ant-badge>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-badge-demo-no-wrapper">独立使用</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/badge/demo/no-wrapper.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            不包裹任何元素即是独立使用，可自定样式展现。
+          </p>
+          <blockquote>
+            <p>
+              在右上角的 badge 则限定为红色。
+            </p>
+          </blockquote>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-badge-demo-dot">
+      <section class="code-box-demo">
+
+        <ant-badge [dot]="true">
+            <ant-icon type="notification"></ant-icon>
+        </ant-badge>
+        <ant-badge [dot]="true">
+            <a href="#">Link something</a>
+        </ant-badge>
+
+        <style>
+          .anticon-notification {
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            font-size: 16px;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-badge-demo-dot">讨嫌的小红点</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/badge/demo/dot.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            没有具体的数字。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-badge-demo-change">
+      <section class="code-box-demo">
+
+        <div>
+            <ant-badge [count]="example1.count">
+                <a href="#" class="head-example"></a>
+            </ant-badge>
+            <ant-button-group>
+                <ant-button (click)="decline()">
+                    <ant-icon type="minus"></ant-icon>
+                </ant-button><ant-button (click)="increase()">
+                    <ant-icon type="plus"></ant-icon>
+                </ant-button>
+            </ant-button-group>
+        </div>
+        <div style="margin-top: 10px">
+            <ant-badge [dot]="example1.show">
+                <a href="#" class="head-example"></a>
+            </ant-badge>
+            <ant-switch [checked]="true" (check)="onChange($event)"></ant-switch>
+        </div>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-badge-demo-change">动态</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/badge/demo/change.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            展示动态变化的效果。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+</ant-row>
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          count
+        </td>
+        <td>
+          展示的数字，大于 overflowCount 时显示为 <code>overflowCount+</code>，为 0 时隐藏
+        </td>
+        <td>
+          number
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          overflowCount
+        </td>
+        <td>
+          展示封顶的数字值
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          99
+        </td>
+      </tr>
+      <tr>
+        <td>
+          showZero
+        </td>
+        <td>
+          当数值为 0 时，是否展示 Badge
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          dot
+        </td>
+        <td>
+          不展示数字，只有一个小红点
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          status
+        </td>
+        <td>
+          设置 Badge 为状态点
+        </td>
+        <td>
+          'success', 'processing, 'default', 'error', 'warning'
+        </td>
+        <td>
+          ''
+        </td>
+      </tr>
+      <tr>
+        <td>
+          text
+        </td>
+        <td>
+          在设置了
+          <code>status</code> 的前提下有效，设置状态点的文本
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          ''
+        </td>
+      </tr>
+      <tr>
+        <td>
+          badgeStyle
+        </td>
+        <td>
+          内部徽标样式，可以设置字体颜色、背景颜色等
+        </td>
+        <td>
+          object
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

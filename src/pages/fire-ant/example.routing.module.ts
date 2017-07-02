@@ -25,6 +25,10 @@ import { PaginationExample } from './pagination/example';
 import { CheckboxExample } from './checkbox/example';
 import { RadioExample } from './radio/example';
 import { InputNumberExample } from './input-number/example';
+import { AvatarExample } from './avatar/example';
+import { BadgeExample } from './badge/example';
+import { FormExample } from './form/example';
+import { TableExample } from './table/example';
 
 @NgModule({
     imports: [
@@ -44,7 +48,11 @@ import { InputNumberExample } from './input-number/example';
             { path: 'pagination', component: PaginationExample},
             { path: 'checkbox', component: CheckboxExample},
             { path: 'radio', component: RadioExample},
-            { path: 'input-number', component: InputNumberExample}
+            { path: 'input-number', component: InputNumberExample},
+            { path: 'avatar', component: AvatarExample},
+            { path: 'badge', component: BadgeExample },
+            { path: 'form', component: FormExample},
+            { path: 'table', component: TableExample }
         ])
     ],
     exports: [

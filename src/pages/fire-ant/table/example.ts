@@ -15,9 +15,9 @@ import { AbstractPage } from '../abstract-page';
     templateUrl: 'example.html',
     encapsulation: ViewEncapsulation.None
 })
-export class SwitchExample extends AbstractPage {
+export class TableExample extends AbstractPage {
 
-    switchDisabled = true;
+
 
     constructor(
         public element: ElementRef,
@@ -26,12 +26,14 @@ export class SwitchExample extends AbstractPage {
         super(element, router, route);
     }
 
-    onChange(event): void {
-        console.log('change value to ', event);
-    }
-
-    onCheck(event): void {
-        console.log('checked=', event);
+    getExample1Data(): any[] {
+        return [{
+            name: '聂小倩', age: 20, address: 'New York No. 1 Lake Park'
+        }, {
+            name: '宁采臣', age: 40, address: 'New York No. 1 Lake Park'
+        }, {
+            name: '诸葛卧龙', age: 40, address: 'New York No. 1 Lake Park'
+        }];
     }
 
 }

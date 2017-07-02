@@ -35,6 +35,10 @@ import { PaginationExample } from './pagination/example';
 import { CheckboxExample } from './checkbox/example';
 import { RadioExample } from './radio/example';
 import { InputNumberExample } from './input-number/example';
+import { AvatarExample } from './avatar/example';
+import { BadgeExample } from './badge/example';
+import { FormExample } from './form/example';
+import { TableExample } from './table/example';
 
 @NgModule({
     imports: [
@@ -62,7 +66,11 @@ import { InputNumberExample } from './input-number/example';
         PaginationExample,
         CheckboxExample,
         RadioExample,
-        InputNumberExample
+        InputNumberExample,
+        AvatarExample,
+        BadgeExample,
+        FormExample,
+        TableExample
     ],
     entryComponents: [
         Example,
@@ -80,7 +88,11 @@ import { InputNumberExample } from './input-number/example';
         SelectExample,
         PaginationExample,
         CheckboxExample,
-        InputNumberExample
+        InputNumberExample,
+        AvatarExample,
+        BadgeExample,
+        FormExample,
+        TableExample
     ],
     providers: [
 

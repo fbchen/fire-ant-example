@@ -1,0 +1,203 @@
+<section class="markdown">
+  <h1>
+    Avatar
+    <span class="subtitle">头像</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/avatar/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section class="markdown">
+    <p>
+      用来代表用户或事物，支持图片、图标或字符展示。
+    </p>
+  </section>
+  <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+<ant-row [gutter]="16">
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-avatar-demo-basic">
+      <section class="code-box-demo">
+
+        <div>
+            <ant-avatar size="large" icon="user"></ant-avatar>
+            <ant-avatar icon="user"></ant-avatar>
+            <ant-avatar size="small" icon="user"></ant-avatar>
+        </div>
+        <div>
+            <ant-avatar shape="square" size="large" icon="user"></ant-avatar>
+            <ant-avatar shape="square" icon="user"></ant-avatar>
+            <ant-avatar shape="square" size="small" icon="user"></ant-avatar>
+        </div>
+
+        <style>
+          #components-avatar-demo-basic .ant-avatar {
+            margin-top: 16px;
+            margin-right: 16px;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-avatar-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/avatar/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            头像有三种尺寸，两种形状可选。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-avatar-demo-dynamic">
+      <section class="code-box-demo">
+
+        <ant-avatar size="large"
+            [ngStyle]="{backgroundColor: example1.color}">
+            <ant-avatar-text>{{example1.user}}</ant-avatar-text>
+        </ant-avatar>
+        <ant-button size="small" style="margin-left: 16px"
+            (click)="changeUser()">Change</ant-button>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-avatar-demo-dynamic">自动调整字符大小</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/avatar/demo/dynamic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            对于字符型的头像，当字符串较长时，字体大小可以根据头像宽度自动调整。
+          </p>
+        </div>
+      </section>
+    </section>
+  </ant-col>
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-avatar-demo-type">
+      <section class="code-box-demo">
+
+        <ant-avatar icon="user"></ant-avatar>
+        <ant-avatar><ant-avatar-text>U</ant-avatar-text></ant-avatar>
+        <ant-avatar><ant-avatar-text>USER</ant-avatar-text></ant-avatar>
+        <ant-avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></ant-avatar>
+        <ant-avatar style="color: #f56a00; background-color: #fde3cf"><ant-avatar-text>U</ant-avatar-text></ant-avatar>
+        <ant-avatar style="background-color: #87d068" icon="user"></ant-avatar>
+
+        <style>
+          #components-avatar-demo-type .ant-avatar {
+            margin-top: 16px;
+            margin-right: 16px;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-avatar-demo-type">类型</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/avatar/demo/type.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-avatar-demo-badge">
+      <section class="code-box-demo">
+
+        <span style="margin-right: 24px">
+            <ant-badge [count]="1">
+                <ant-avatar shape="square" icon="user"></ant-avatar>
+            </ant-badge>
+        </span>
+        <span>
+            <ant-badge [dot]="true">
+                <ant-avatar shape="square" icon="user"></ant-avatar>
+            </ant-badge>
+        </span>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-avatar-demo-badge">带徽标的头像</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/avatar/demo/badge.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            通常用于消息提示。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+</ant-row>
+
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          shape
+        </td>
+        <td>
+          指定头像的形状
+        </td>
+        <td>
+          'circle', 'square'
+        </td>
+        <td><code>circle</code></td>
+      </tr>
+      <tr>
+        <td>
+          size
+        </td>
+        <td>
+          设置头像的大小
+        </td>
+        <td>
+          'large', 'small', 'default'
+        </td>
+        <td><code>default</code></td>
+      </tr>
+      <tr>
+        <td>
+          src
+        </td>
+        <td>
+          图片类头像的资源地址
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          icon
+        </td>
+        <td>
+          设置头像的图标类型，参考
+          <code>Icon</code> 组件
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

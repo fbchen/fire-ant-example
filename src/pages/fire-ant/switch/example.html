@@ -29,7 +29,7 @@
   <ant-col [span]="12">
     <section class="code-box" id="components-switch-demo-basic">
       <section class="code-box-demo">
-          <ant-switch (change)="onChange($event)"></ant-switch>
+          <ant-switch (check)="onCheck($event)" (change)="onChange($event)"></ant-switch>
         <style>
           .ant-switch {
             margin-bottom: 8px;
@@ -52,11 +52,15 @@
   <ant-col [span]="12">
     <section class="code-box" id="components-switch-demo-text">
       <section class="code-box-demo">
-        <ant-switch (change)="onChange($event)" checkedText="开" uncheckedText="关"></ant-switch>
+        <ant-switch
+            (check)="onCheck($event)" (change)="onChange($event)"
+            checkedText="开" uncheckedText="关"></ant-switch>
         <br>
-        <ant-switch (change)="onChange($event)" checkedText="1" uncheckedText="0"></ant-switch>
+        <ant-switch
+            (check)="onCheck($event)" (change)="onChange($event)"
+            checkedText="1" uncheckedText="0"></ant-switch>
         <br>
-        <ant-switch (change)="onChange($event)">
+        <ant-switch (check)="onCheck($event)" (change)="onChange($event)">
             <div ant-switch-checked>
                 <ant-icon type="check"></ant-icon>
             </div>
@@ -83,7 +87,9 @@
   <ant-col [span]="12">
     <section class="code-box" id="components-switch-demo-disabled">
       <section class="code-box-demo">
-        <ant-switch (change)="onChange($event)" [disabled]="switchDisabled"></ant-switch>
+        <ant-switch
+            (check)="onCheck($event)" (change)="onChange($event)"
+            [disabled]="switchDisabled"></ant-switch>
         <br>
         <ant-button type="primary" (click)="switchDisabled = !switchDisabled;">Toggle disabled</ant-button>
       </section>
@@ -103,9 +109,9 @@
   <ant-col [span]="12">
     <section class="code-box" id="components-switch-demo-size">
       <section class="code-box-demo">
-        <ant-switch (change)="onChange($event)"></ant-switch>
+        <ant-switch (check)="onCheck($event)" (change)="onChange($event)"></ant-switch>
         <br>
-        <ant-switch (change)="onChange($event)" size="small"></ant-switch>
+        <ant-switch (check)="onCheck($event)" (change)="onChange($event)" size="small"></ant-switch>
       </section>
       <section class="code-box-meta markdown">
         <div class="code-box-title"><a href="#components-switch-demo-size">两种大小</a>

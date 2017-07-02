@@ -56,7 +56,7 @@ export class CheckboxExample extends AbstractPage {
     }
 
     onChange(event): void {
-        console.log('change ', event);
+        console.log('change value to', event);
     }
 
     onCheckChange(checked: boolean): void {

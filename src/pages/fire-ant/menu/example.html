@@ -232,7 +232,7 @@
   <section class="code-box-demo">
 
     <div style="margin-bottom: 16px">
-      <ant-switch (change)="theme= theme == 'light' ? 'dark' : 'light'" checkedText="Dark" uncheckedText="Light" [checked]="true"></ant-switch>
+      <ant-switch (check)="theme= theme == 'light' ? 'dark' : 'light'" checkedText="Dark" uncheckedText="Light" [checked]="true"></ant-switch>
     </div>
 
     <ant-menu mode="inline" style="width: 240px" [theme]="theme" [selectedKeys]="['1']" [openKeys]="['sub1']">

@@ -39,6 +39,10 @@ import { AvatarExample } from './avatar/example';
 import { BadgeExample } from './badge/example';
 import { FormExample } from './form/example';
 import { TableExample } from './table/example';
+import { AlertExample } from './alert/example';
+import { MessageExample } from './message/example';
+import { NotificationExample } from './notification/example';
+import { DialogExample } from './dialog/example';
 
 @NgModule({
     imports: [
@@ -70,7 +74,11 @@ import { TableExample } from './table/example';
         AvatarExample,
         BadgeExample,
         FormExample,
-        TableExample
+        TableExample,
+        AlertExample,
+        MessageExample,
+        NotificationExample,
+        DialogExample
     ],
     entryComponents: [
         Example,
@@ -92,7 +100,11 @@ import { TableExample } from './table/example';
         AvatarExample,
         BadgeExample,
         FormExample,
-        TableExample
+        TableExample,
+        AlertExample,
+        MessageExample,
+        NotificationExample,
+        DialogExample
     ],
     providers: [
 

@@ -1,0 +1,318 @@
+<section class="markdown">
+  <h1>
+    Alert
+    <span class="subtitle">警告提示</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/alert/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section class="markdown">
+    <p>
+      警告提示，展现需要关注的信息。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <ul>
+      <li>
+        <p>
+          当某个页面需要向用户显示警告的信息时。
+        </p>
+      </li>
+      <li>
+        <p>
+          非浮层的静态展现形式，始终展现，不会自动消失，用户可以点击关闭。
+        </p>
+      </li>
+    </ul>
+  </section>
+  <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+
+<ant-row [gutter]="16">
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-alert-demo-basic">
+      <section class="code-box-demo">
+        <ant-alert type="success" message="Success Text"></ant-alert>
+
+        <style>
+          .ant-alert {
+            margin-bottom: 16px;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-alert-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/alert/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            最简单的用法，适用于简短的警告提示。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-alert-demo-closable">
+      <section class="code-box-demo">
+
+        <ant-alert message="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text"
+            type="warning"
+            [closable]="true"
+            (close)="onClose($event)"
+        ></ant-alert>
+        <ant-alert message="Error Text"
+            type="error"
+            [closable]="true"
+            (close)="onClose($event)"
+        >
+            Error Description Error Description Error Description Error Description Error Description Error Description
+        </ant-alert>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-alert-demo-closable">可关闭的警告提示</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/alert/demo/closable.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            显示关闭按钮，点击可关闭警告提示。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-alert-demo-icon">
+      <section class="code-box-demo">
+
+        <ant-alert message="Success Tips" type="success" [showIcon]="true" ></ant-alert>
+        <ant-alert message="Informational Notes" type="info" [showIcon]="true" ></ant-alert>
+        <ant-alert message="Warning" type="warning" [showIcon]="true" ></ant-alert>
+        <ant-alert message="Error" type="error" [showIcon]="true" ></ant-alert>
+        <ant-alert
+            message="success tips"
+            type="success"
+            [showIcon]="true"
+        >Detailed description and advices about successful copywriting.</ant-alert>
+        <ant-alert
+            message="Informational Notes"
+            type="info"
+            [showIcon]="true"
+        >Additional description and informations about copywriting.</ant-alert>
+        <ant-alert
+            message="Warning"
+            type="warning"
+            [showIcon]="true"
+        >This is a warning notice about copywriting.</ant-alert>
+        <ant-alert
+            message="Error"
+            type="error"
+            [showIcon]="true"
+        >This is an error message about copywriting.</ant-alert>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-alert-demo-icon">图标</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/alert/demo/icon.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            可口的图标让信息类型更加醒目。
+          </p>
+        </div>
+      </section>
+    </section>
+
+
+
+  </ant-col>
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-alert-demo-style">
+      <section class="code-box-demo">
+
+        <ant-alert message="Success Text" type="success" ></ant-alert>
+        <ant-alert message="Info Text" type="info" ></ant-alert>
+        <ant-alert message="Warning Text" type="warning" ></ant-alert>
+        <ant-alert message="Error Text" type="error" ></ant-alert>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-alert-demo-style">四种样式</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/alert/demo/style.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            共有四种样式<code>success</code> 、<code>info</code> 、<code>warning</code> 、<code>error</code> 。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-alert-demo-description">
+      <section class="code-box-demo">
+
+        <ant-alert
+            message="Success Text"
+            type="success"
+        >
+            Success Description Success Description Success Description
+        </ant-alert>
+        <ant-alert
+            message="Info Text"
+            type="info"
+        >
+            Info Description Info Description Info Description Info Description
+        </ant-alert>
+        <ant-alert
+            message="Warning Text"
+            type="warning"
+        >
+            Warning Description Warning Description Warning Description Warning Description
+        </ant-alert>
+        <ant-alert
+            message="Error Text"
+            type="error"
+        >
+            Error Description Error Description Error Description Error Description
+        </ant-alert>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-alert-demo-description">含有辅助性文字介绍</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/alert/demo/description.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            含有辅助性文字介绍的警告提示。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-alert-demo-close-text">
+      <section class="code-box-demo">
+
+        <ant-alert message="Info Text" type="info" closeText="Close Now"></ant-alert>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-alert-demo-close-text">自定义关闭</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/alert/demo/close-text.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            可以自定义关闭，自定义的文字会替换原先的关闭 <code>Icon</code> 。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+</ant-row>
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          type
+        </td>
+        <td>
+          指定警告提示的样式，有四种选择 <code>success</code> 、<code>info</code> 、<code>warning</code> 、<code>error</code></td>
+        <td>
+          string
+        </td>
+        <td>
+            <code>info</code> ，<code>banner</code> 模式下默认值为 <code>warning</code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          closable
+        </td>
+        <td>
+          默认不显示关闭按钮
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          closeText
+        </td>
+        <td>
+          自定义关闭按钮
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          message
+        </td>
+        <td>
+          警告提示内容（标题）
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          close
+        </td>
+        <td>
+          关闭事件
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          showIcon
+        </td>
+        <td>
+          是否显示辅助图标
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false， <code>banner</code> 模式下默认值为 true
+        </td>
+      </tr>
+      <tr>
+        <td>
+          banner
+        </td>
+        <td>
+          是否用作顶部公告
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

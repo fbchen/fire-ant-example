@@ -1,0 +1,255 @@
+<section class="markdown">
+  <h1>
+    Message
+    <span class="subtitle">全局提示</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/message/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section
+    class="markdown">
+    <p>
+      全局展示操作反馈信息。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <ul>
+      <li>
+        <p>
+          可提供成功、警告和错误等反馈信息。
+        </p>
+      </li>
+      <li>
+        <p>
+          顶部居中显示并自动消失，是一种不打断用户操作的轻量级提示方式。
+        </p>
+      </li>
+    </ul>
+</section>
+<h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+
+<ant-row [gutter]="16">
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-message-demo-info">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="info()">Display normal message</ant-button>
+
+      </section>
+      <section
+        class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-message-demo-info">普通提示</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/message/demo/info.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            信息提醒反馈。
+          </p>
+        </div>
+        </section>
+    </section>
+
+    <section class="code-box" id="components-message-demo-duration">
+      <section class="code-box-demo">
+
+          <ant-button (click)="success()">Customized display duration</ant-button>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-message-demo-duration">修改延时</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/message/demo/duration.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            自定义时长<code>10s</code>，默认时长为<code>1.5s</code>。
+          </p>
+        </div>
+        </section>
+    </section>
+
+  </ant-col>
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-message-demo-other">
+      <section class="code-box-demo">
+
+        <ant-button (click)="show('success')">Success</ant-button>
+        <ant-button (click)="show('error')">Error</ant-button>
+        <ant-button (click)="show('warning')">Warning</ant-button>
+
+        <style>
+          #components-message-demo-other .ant-btn {
+            margin-right: 8px;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-message-demo-other">其他提示类型</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/message/demo/other.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            包括成功、失败、警告。
+          </p>
+        </div>
+        </section>
+    </section>
+
+    <section class="code-box" id="components-message-demo-loading">
+      <section class="code-box-demo">
+
+            <ant-button (click)=showLoading()>Display a loading indicator</ant-button>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-message-demo-loading">加载中</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/message/demo/loading.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            进行全局 loading，异步自行移除。
+          </p>
+        </div>
+        </section>
+    </section>
+
+  </ant-col>
+</ant-row>
+
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <p>
+    组件提供了一些静态方法，使用方式和参数如下：
+  </p>
+  <ul>
+    <li>
+      <p><code>message.success(content, duration)</code></p>
+    </li>
+    <li>
+      <p><code>message.error(content, duration)</code></p>
+    </li>
+    <li>
+      <p><code>message.info(content, duration)</code></p>
+    </li>
+    <li>
+      <p><code>message.warning(content, duration)</code></p>
+    </li>
+    <li>
+      <p><code>message.loading(content, duration)</code></p>
+    </li>
+  </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          content
+        </td>
+        <td>
+          提示内容
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          duration
+        </td>
+        <td>
+          自动关闭的延时，单位秒
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          1.5
+        </td>
+      </tr>
+      <tr>
+        <td>
+          closed
+        </td>
+        <td>
+          关闭后事件
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    还提供了全局配置和全局销毁方法：
+  </p>
+  <ul>
+    <li>
+      <p><code>message.config(options)</code></p>
+    </li>
+    <li>
+      <p><code>message.destroy()</code></p>
+    </li>
+  </ul>
+  <h3 id="message.config"><span>message.config</span><a href="#message.config" class="anchor">#</a></h3>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            参数
+          </th>
+          <th>
+            说明
+          </th>
+          <th>
+            类型
+          </th>
+          <th>
+            默认值
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            top
+          </td>
+          <td>
+            消息距离顶部的位置
+          </td>
+          <td>
+            number
+          </td>
+          <td>
+            24px
+          </td>
+        </tr>
+        <tr>
+          <td>
+            duration
+          </td>
+          <td>
+            默认自动关闭延时，单位秒
+          </td>
+          <td>
+            number
+          </td>
+          <td>
+            1.5
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</section>

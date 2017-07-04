@@ -1,0 +1,117 @@
+<section class="markdown">
+  <h1>
+    Dialog
+    <span class="subtitle">信息提示框</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section class="markdown">
+    <p>
+      全局展示提醒信息。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <p>
+      在系统中心显示操作提醒信息，或者确认提醒。经常用于以下情况：
+    </p>
+    <ul>
+      <li>
+        <p>
+          对用户操作进行提示、告警；
+        </p>
+      </li>
+      <li>
+        <p>
+          带有交互的确认通知，给出用户下一步的行动点。
+        </p>
+      </li>
+    </ul>
+  </section>
+  <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+
+<ant-row [gutter]="16">
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-notification-demo-basic">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="showAlert()">Alert</ant-button>
+        <ant-button type="primary" (click)="showAlert2()">Alert with Title</ant-button>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-notification-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            最简单的用法。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-notification-demo-with-icon">
+      <section class="code-box-demo">
+
+        <ant-button (click)="showAlert3('success')">Success</ant-button>
+        <ant-button (click)="showAlert3('info')">Info</ant-button>
+        <ant-button (click)="showAlert3('warning')">Warning</ant-button>
+        <ant-button (click)="showAlert3('error')">Error</ant-button>
+
+        <style>
+          .code-box-demo .ant-btn {
+            margin-right: 1em;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-notification-demo-with-icon">带有图标的信息提示框</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/demo/with-icon.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            信息提示框左侧有图标。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-notification-demo-custom-icon">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="showAlert4()">Open Dialog</ant-button>
+
+        <style>
+          .anticon.smileIcon {
+            color: #108ee9;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-notification-demo-custom-icon">自定义图标</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/demo/custom-icon.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            图标可以被自定义。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-notification-demo-basic">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="showConfirm()">Confirm</ant-button>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-notification-demo-basic">询问，确认</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            提供用户选择以确定下一步操作。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+</ant-row>

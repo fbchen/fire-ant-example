@@ -1,0 +1,430 @@
+<section class="markdown">
+  <h1>
+    Notification
+    <span class="subtitle">通知提醒框</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section class="markdown">
+    <p>
+      全局展示通知提醒信息。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <p>
+      在系统四个角显示通知提醒信息。经常用于以下情况：
+    </p>
+    <ul>
+      <li>
+        <p>
+          较为复杂的通知内容。
+        </p>
+      </li>
+      <li>
+        <p>
+          带有交互的通知，给出用户下一步的行动点。
+        </p>
+      </li>
+      <li>
+        <p>
+          系统主动推送。
+        </p>
+      </li>
+    </ul>
+  </section>
+  <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+
+<ant-row [gutter]="16">
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-notification-demo-basic">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="openNotification()">Open the notification box</ant-button>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-notification-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            最简单的用法，4.5 秒后自动关闭。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-notification-demo-with-icon">
+      <section class="code-box-demo">
+
+        <ant-button (click)="openNotificationWithIcon('success')">Success</ant-button>
+        <ant-button (click)="openNotificationWithIcon('info')">Info</ant-button>
+        <ant-button (click)="openNotificationWithIcon('warning')">Warning</ant-button>
+        <ant-button (click)="openNotificationWithIcon('error')">Error</ant-button>
+
+        <style>
+          .code-box-demo .ant-btn {
+            margin-right: 1em;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-notification-demo-with-icon">带有图标的通知提醒框</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/demo/with-icon.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            通知提醒框左侧有图标。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-notification-demo-custom-icon">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="openNotificationWithNewIcon()">Open the notification box</ant-button>
+        <style>
+          .anticon.smileIcon {
+            color: #108ee9;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-notification-demo-custom-icon">自定义图标</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/demo/custom-icon.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            图标可以被自定义。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-notification-demo-custom-style">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="openNotificationWithNewStyle()">Open the notification box</ant-button>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-notification-demo-custom-style">自定义样式</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/demo/custom-style.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            使用 style 和 class 来定义样式。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-notification-demo-duration">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="openNotificationNotClose()">Open the notification box</ant-button>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-notification-demo-duration">自动关闭的延时</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/demo/duration.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            自定义通知框自动关闭的延时，默认<code>4.5s</code>，取消自动关闭只要将该值设为 <code>0</code>即可。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-notification-demo-with-btn">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="openNotificationWithBtn()">Open the notification box</ant-button>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-notification-demo-with-btn">自定义按钮</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/demo/with-btn.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            自定义关闭按钮的样式和文字。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-notification-demo-placement">
+      <section class="code-box-demo">
+
+          <ant-select [(ngModel)]="placement" (change)="changePlacement()" style="width: 120px; margin-right: 10px">
+            <ant-option value="topLeft">topLeft</ant-option>
+            <ant-option value="topRight">topRight</ant-option>
+            <ant-option value="bottomLeft">bottomLeft</ant-option>
+            <ant-option value="bottomRight">bottomRight</ant-option>
+          </ant-select>
+          <ant-button type="primary" (click)="openNotification()">Open the notification box</ant-button>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-notification-demo-placement">位置</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/notification/demo/placement.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            可以设置通知从右上角、右下角、左下角、左上角弹出。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+</ant-row>
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <ul>
+    <li>
+      <p><code>notification.success(config)</code></p>
+    </li>
+    <li>
+      <p><code>notification.error(config)</code></p>
+    </li>
+    <li>
+      <p><code>notification.info(config)</code></p>
+    </li>
+    <li>
+      <p><code>notification.warning(config)</code></p>
+    </li>
+    <li>
+      <p><code>notification.warn(config)</code></p>
+    </li>
+    <li>
+      <p><code>notification.close(key: String)</code></p>
+    </li>
+    <li>
+      <p><code>notification.destroy()</code></p>
+    </li>
+  </ul>
+  <p>
+    config 参数如下：
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          message
+        </td>
+        <td>
+          通知提醒标题，必选
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          description
+        </td>
+        <td>
+          通知提醒内容，必选
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          class
+        </td>
+        <td>
+          自定义 CSS class
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          style
+        </td>
+        <td>
+          自定义内联样式
+        </td>
+        <td>
+          Object
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          btn
+        </td>
+        <td>
+          自定义关闭按钮
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          icon
+        </td>
+        <td>
+          自定义图标
+        </td>
+        <td>
+          icon type
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          duration
+        </td>
+        <td>
+          默认 4.5 秒后自动关闭，配置为 null 则不自动关闭
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          4.5
+        </td>
+      </tr>
+      <tr>
+        <td>
+          placement
+        </td>
+        <td>
+          弹出位置，可选
+          <code>topLeft</code>
+          <code>topRight</code>
+          <code>bottomLeft</code>
+          <code>bottomRight</code></td>
+        <td>
+          string
+        </td>
+        <td>
+          topRight
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <p>
+    还提供了一个全局配置方法，在调用前提前配置，全局一次生效。
+    <code>notification.config(options)</code>
+  </p>
+
+  <pre class="language-js"><code>notification<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">{{'{'}}</span>
+  placement<span class="token punctuation">:</span> <span class="token string">'bottomRight'</span><span class="token punctuation">,</span>
+  bottom<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+  duration<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+<span class="token punctuation">{{'}'}}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          placement
+        </td>
+        <td>
+          弹出位置，可选
+          <code>topLeft</code>
+          <code>topRight</code>
+          <code>bottomLeft</code>
+          <code>bottomRight</code></td>
+        <td>
+          string
+        </td>
+        <td>
+          topRight
+        </td>
+      </tr>
+      <tr>
+        <td>
+          top
+        </td>
+        <td>
+          消息从顶部弹出时，距离顶部的位置，单位像素。
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          24
+        </td>
+      </tr>
+      <tr>
+        <td>
+          bottom
+        </td>
+        <td>
+          消息从底部弹出时，距离底部的位置，单位像素。
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          24
+        </td>
+      </tr>
+      <tr>
+        <td>
+          duration
+        </td>
+        <td>
+          默认自动关闭延时，单位秒
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          4.5
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

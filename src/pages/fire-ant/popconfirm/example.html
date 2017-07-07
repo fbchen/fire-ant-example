@@ -1,0 +1,238 @@
+<section class="markdown">
+  <h1>
+    Popconfirm
+    <span class="subtitle">气泡确认框</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/popconfirm/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section
+    class="markdown">
+    <p>
+      点击元素，弹出气泡式的确认框。
+
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <p>
+      目标元素的操作需要用户进一步的确认时，在目标元素附近弹出浮层提示，询问用户。
+
+    </p>
+    <p>
+      和
+      <code>confirm</code>
+      弹出的全屏居中模态对话框相比，交互形式更轻量。
+
+    </p>
+</section>
+<h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+
+<ant-row [gutter]="16">
+  <ant-col [span]="12">
+
+    <section class="code-box expand" id="components-popover-demo-basic">
+      <section class="code-box-demo">
+
+        <a href="javascript:;" popconfirm title="Are you sure delete this task?" (confirm)="onConfirm()" (cancel)="onCancel()">Delete</a>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-popconfirm-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/popconfirm/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            最简单的用法。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-popconfirm-demo-placement">
+      <section class="code-box-demo">
+
+        <div class="demo">
+
+          <div [ngStyle]="{'margin-left': '70px', 'white-space': 'nowrap'}">
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="topLeft">TL</ant-button>
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="top">Top</ant-button>
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="topRight">TR</ant-button>
+
+          </div>
+          <div [ngStyle]="{width: '70px', float: 'left'}">
+
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="leftTop">LT</ant-button>
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="left">Left</ant-button>
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="leftBottom">LB</ant-button>
+
+          </div>
+          <div [ngStyle]="{width: '70px', 'margin-left': (70*4+24) + 'px'}">
+
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="rightTop">RT</ant-button>
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="right">Right</ant-button>
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="rightBottom">RB</ant-button>
+
+          </div>
+          <div [ngStyle]="{'margin-left': '70px', 'clear': 'both', 'white-space': 'nowrap'}">
+
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="bottomLeft">BL</ant-button>
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="bottom">Bottom</ant-button>
+            <ant-button title="Are you sure delete this task?" popconfirm (confirm)="onConfirm()" placement="bottomRight">BR</ant-button>
+
+          </div>
+        </div>
+        <style>
+          .code-box-demo .ant-btn {
+            margin-right: 8px;
+            margin-bottom: 8px;
+          }
+
+          #components-popconfirm-demo-placement .ant-btn {
+            width: 70px;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-popconfirm-demo-placement">位置</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/popconfirm/demo/placement.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            位置有十二个方向。如需箭头指向目标元素中心，可以设置 <code>arrowPointAtCenter</code>。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-popconfirm-demo-locale">
+      <section class="code-box-demo">
+
+          <a href="javascript:;" popconfirm
+              title="Are you sure delete this task?"
+              okText="Yes" cancelText="No"
+              (confirm)="onConfirm()" (cancel)="onCancel()">Delete</a>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-popconfirm-demo-locale">国际化</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/popconfirm/demo/locale.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            使用 <code>okText</code> 和 <code>cancelText</code> 自定义按钮文字。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+</ant-row>
+
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          title
+        </td>
+        <td>
+          确认框的描述
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          confirm
+        </td>
+        <td>
+          点击【确认】按钮的事件
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          cancel
+        </td>
+        <td>
+          点击【取消】按钮的事件
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          okText
+        </td>
+        <td>
+          确认按钮文字
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          确定
+        </td>
+      </tr>
+      <tr>
+        <td>
+          cancelText
+        </td>
+        <td>
+          取消按钮文字
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          取消
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    更多属性请参考
+    <a href="/components/tooltip-cn/#API">Tooltip</a>
+    。
+  </p>
+  <h2 id="注意"><span>注意</span><a href="#注意" class="anchor">#</a></h2>
+  <p>
+    请确保
+    <code>Popconfirm</code>
+    的子元素能接受
+    <code>onMouseEnter</code>
+    、
+    <code>onMouseLeave</code>
+    、
+    <code>onFocus</code>
+    、
+    <code>onClick</code>
+    事件。
+  </p>
+</section>

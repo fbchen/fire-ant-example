@@ -8,28 +8,32 @@
 
 import { Component, ElementRef, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
 import { AbstractPage } from '../abstract-page';
+
+import { Message } from 'fire-ant';
 
 @Component({
     templateUrl: 'example.html',
     encapsulation: ViewEncapsulation.None
 })
-export class PaginationExample extends AbstractPage {
+export class PopconfirmExample extends AbstractPage {
+
 
 
     constructor(
         public element: ElementRef,
         public router: Router,
-        public route: ActivatedRoute) {
-            super(element, router, route);
+        public route: ActivatedRoute,
+        private message: Message) {
+        super(element, router, route);
     }
 
-    onPageChange(page: number): void {
-        console.log('page change: new page=' + page);
+    onConfirm(): void {
+        this.message.success('Click on Yes');
     }
 
-    onShowSizeChange(size: number): void {
-        console.log('size change: new size=' + size);
+    onCancel(): void {
+        this.message.success('Click on No');
     }
+
 }

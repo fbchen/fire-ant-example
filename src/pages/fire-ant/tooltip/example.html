@@ -6,7 +6,7 @@
     <p>简单的文字提示气泡框。</p>
     <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
     <p>用法：
-        &lt;span <code>antTooltip</code> <code>title</code>="prompt text"&gt;内部内容&lt;/span&gt;
+        &lt;span <code>ant-tooltip</code> <code>title</code>="prompt text"&gt;内部内容&lt;/span&gt;
     </p>
     <p>鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作。</p>
     <p>可用来代替系统默认的 <code>title</code> 提示，提供一个<code>按钮/文字/操作</code>的文案解释。</p>
@@ -16,7 +16,7 @@
 
 <section class="code-box" id="components-tooltip-demo-basic">
   <section class="code-box-demo">
-      <span antTooltip title="prompt text">Tooltip will show when mouse enter.</span>
+      <span ant-tooltip title="prompt text">Tooltip will show when mouse enter.</span>
   </section>
   <section class="code-box-meta markdown">
     <div class="code-box-title"><a href="javascript:void(0)">基本</a>
@@ -31,11 +31,11 @@
 <section class="code-box" id="components-tooltip-demo-arrow-point-at-center">
   <section class="code-box-demo">
     <div>
-        <ant-button antTooltip placement="topLeft" title="Prompt Text">
+        <ant-button ant-tooltip placement="topLeft" title="Prompt Text">
             边缘对齐 (Align edge)
         </ant-button>
 
-        <ant-button antTooltip placement="topLeft" title="Prompt Text" [arrowPointAtCenter]="true">
+        <ant-button ant-tooltip placement="topLeft" title="Prompt Text" [arrowPointAtCenter]="true">
             箭头指向中心 (Arrow points to center)
         </ant-button>
     </div>
@@ -60,24 +60,24 @@
   <section class="code-box-demo">
     <div>
       <div style="margin-left: 60px;">
-          <a href="#" antTooltip placement="topLeft" [title]="title">TL</a>
-          <a href="#" antTooltip placement="top" [title]="title">Top</a>
-          <a href="#" antTooltip placement="topRight" [title]="title">TR</a>
+          <a href="#" ant-tooltip placement="topLeft" [title]="title">TL</a>
+          <a href="#" ant-tooltip placement="top" [title]="title">Top</a>
+          <a href="#" ant-tooltip placement="topRight" [title]="title">TR</a>
       </div>
       <div style="width: 60px; float: left;">
-          <a href="#" antTooltip placement="leftTop" [title]="title">LT</a>
-          <a href="#" antTooltip placement="left" [title]="title">Left</a>
-          <a href="#" antTooltip placement="leftBottom" [title]="title">LB</a>
+          <a href="#" ant-tooltip placement="leftTop" [title]="title">LT</a>
+          <a href="#" ant-tooltip placement="left" [title]="title">Left</a>
+          <a href="#" ant-tooltip placement="leftBottom" [title]="title">LB</a>
       </div>
       <div style="width: 60px; margin-left: 270px;">
-          <a href="#" antTooltip placement="rightTop" [title]="title">RT</a>
-          <a href="#" antTooltip placement="right" [title]="title">Right</a>
-          <a href="#" antTooltip placement="rightBottom" [title]="title">RB</a>
+          <a href="#" ant-tooltip placement="rightTop" [title]="title">RT</a>
+          <a href="#" ant-tooltip placement="right" [title]="title">Right</a>
+          <a href="#" ant-tooltip placement="rightBottom" [title]="title">RB</a>
       </div>
       <div style="margin-left: 60px; clear: both;">
-          <a href="#" antTooltip placement="bottomLeft" [title]="title">BL</a>
-          <a href="#" antTooltip placement="bottom" [title]="title">Bottom</a>
-          <a href="#" antTooltip placement="bottomRight" [title]="title">BR</a>
+          <a href="#" ant-tooltip placement="bottomLeft" [title]="title">BL</a>
+          <a href="#" ant-tooltip placement="bottom" [title]="title">Bottom</a>
+          <a href="#" ant-tooltip placement="bottomRight" [title]="title">BR</a>
       </div>
     </div>
     <style>
@@ -202,5 +202,5 @@
     </tbody>
   </table>
   <h2 id="注意"><span>注意</span><a href="#注意" class="anchor">#</a></h2>
-  <p>请确保 <code>antTooltip</code> 的子元素能接受 <code>onMouseEnter</code>、<code>onMouseLeave</code>、<code>onFocus</code>、<code>onClick</code>    事件。</p>
+  <p>请确保 <code>ant-tooltip</code> 的子元素能接受 <code>onMouseEnter</code>、<code>onMouseLeave</code>、<code>onFocus</code>、<code>onClick</code>    事件。</p>
 </section>

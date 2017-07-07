@@ -23,6 +23,8 @@ import { ButtonExample } from './button/example';
 import { IconExample } from './icon/example';
 import { GridExample } from './grid/example';
 import { TooltipExample } from './tooltip/example';
+import { PopoverExample } from './popover/example';
+import { PopconfirmExample } from './popconfirm/example';
 import { MenuExample } from './menu/example';
 import { BreadcrumbExample } from './breadcrumb/example';
 import { SwitchExample } from './switch/example';
@@ -59,6 +61,8 @@ import { DialogExample } from './dialog/example';
         IconExample,
         GridExample,
         TooltipExample,
+        PopoverExample,
+        PopconfirmExample,
         MenuExample,
         BreadcrumbExample,
         SwitchExample,
@@ -86,6 +90,8 @@ import { DialogExample } from './dialog/example';
         IconExample,
         GridExample,
         TooltipExample,
+        PopoverExample,
+        PopconfirmExample,
         MenuExample,
         BreadcrumbExample,
         SwitchExample,

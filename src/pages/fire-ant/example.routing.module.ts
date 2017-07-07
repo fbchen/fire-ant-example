@@ -13,6 +13,8 @@ import { ButtonExample } from './button/example';
 import { IconExample } from './icon/example';
 import { GridExample } from './grid/example';
 import { TooltipExample } from './tooltip/example';
+import { PopoverExample } from './popover/example';
+import { PopconfirmExample } from './popconfirm/example';
 import { MenuExample } from './menu/example';
 import { BreadcrumbExample } from './breadcrumb/example';
 import { SwitchExample } from './switch/example';
@@ -29,6 +31,11 @@ import { AvatarExample } from './avatar/example';
 import { BadgeExample } from './badge/example';
 import { FormExample } from './form/example';
 import { TableExample } from './table/example';
+import { AlertExample } from './alert/example';
+import { MessageExample } from './message/example';
+import { NotificationExample } from './notification/example';
+import { DialogExample } from './dialog/example';
+
 
 @NgModule({
     imports: [
@@ -37,6 +44,8 @@ import { TableExample } from './table/example';
             { path: 'icon', component: IconExample },
             { path: 'grid', component: GridExample },
             { path: 'tooltip', component: TooltipExample},
+            { path: 'popover', component: PopoverExample },
+            { path: 'popconfirm', component: PopconfirmExample },
             { path: 'menu', component: MenuExample },
             { path: 'breadcrumb', component: BreadcrumbExample },
             { path: 'switch', component: SwitchExample},
@@ -52,7 +61,11 @@ import { TableExample } from './table/example';
             { path: 'avatar', component: AvatarExample},
             { path: 'badge', component: BadgeExample },
             { path: 'form', component: FormExample},
-            { path: 'table', component: TableExample }
+            { path: 'table', component: TableExample },
+            { path: 'alert', component: AlertExample },
+            { path: 'message', component: MessageExample },
+            { path: 'notification', component: NotificationExample },
+            { path: 'dialog', component: DialogExample }
         ])
     ],
     exports: [

@@ -35,6 +35,7 @@ import { AlertExample } from './alert/example';
 import { MessageExample } from './message/example';
 import { NotificationExample } from './notification/example';
 import { DialogExample } from './dialog/example';
+import { TabsExample } from './tabs/example';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { DialogExample } from './dialog/example';
             { path: 'alert', component: AlertExample },
             { path: 'message', component: MessageExample },
             { path: 'notification', component: NotificationExample },
-            { path: 'dialog', component: DialogExample }
+            { path: 'dialog', component: DialogExample },
+            { path: 'tabs', component: TabsExample }
         ])
     ],
     exports: [

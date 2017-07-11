@@ -1,0 +1,625 @@
+<section class="markdown">
+  <h1>
+    Tabs
+    <span class="subtitle">标签页</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section class="markdown">
+    <p>
+      选项卡切换组件。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <p>
+      提供平级的区域将大块内容进行收纳和展现，保持界面整洁。
+    </p>
+    <p>
+      Ant Design 依次提供了三级选项卡，分别用于不同的场景。
+    </p>
+    <ul>
+      <li>
+        <p>
+          卡片式的页签，提供可关闭的样式，常用于容器顶部。
+        </p>
+      </li>
+      <li>
+        <p>
+          标准线条式页签，用于容器内部的主功能切换，这是最常用的 Tabs。
+        </p>
+      </li>
+      <li>
+        <p><a href="/components/radio-cn/#components-radio-demo-radiobutton">RadioButton</a> 可作为更次级的页签来使用。
+        </p>
+      </li>
+    </ul>
+  </section>
+  <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+<ant-row [gutter]="16">
+  <ant-col [span]="24">
+
+    <section class="code-box" id="components-tabs-demo-basic">
+      <section class="code-box-demo">
+
+        <ant-tabs activeKey="1" (change)="onChange($event)">
+          <ant-tabpane title="Tab 1" key="1">Content of Tab Pane 1</ant-tabpane>
+          <ant-tabpane title="Tab 2" key="2">Content of Tab Pane 2</ant-tabpane>
+          <ant-tabpane title="Tab 3" key="3">Content of Tab Pane 3</ant-tabpane>
+        </ant-tabs>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-tabs-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            默认选中第一项。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-tabs-demo-disabled">
+      <section class="code-box-demo">
+
+        <ant-tabs activeKey="1" (change)="onChange($event)">
+          <ant-tabpane title="Tab 1" key="1">Content of Tab Pane 1</ant-tabpane>
+          <ant-tabpane title="Tab 2" key="2" [disabled]="true">Content of Tab Pane 2</ant-tabpane>
+          <ant-tabpane title="Tab 3" key="3">Content of Tab Pane 3</ant-tabpane>
+        </ant-tabs>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-tabs-demo-disabled">禁用</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/demo/disabled.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            禁用某一项。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-tabs-demo-icon">
+      <section class="code-box-demo">
+
+        <ant-tabs activeKey="1" (change)="onChange($event)">
+          <ant-tabpane key="1">
+            <tab-pane-title>
+              <ant-icon type="apple"></ant-icon> Tab 1
+            </tab-pane-title>
+            Content of Tab Pane 1
+          </ant-tabpane>
+          <ant-tabpane key="2">
+            <tab-pane-title>
+              <ant-icon type="android"></ant-icon> Tab 2
+            </tab-pane-title>
+            Content of Tab Pane 2
+          </ant-tabpane>
+          <ant-tabpane key="3">
+            <tab-pane-title>
+              <ant-icon type="setting"></ant-icon> Tab 3
+            </tab-pane-title>
+            Content of Tab Pane 3
+          </ant-tabpane>
+        </ant-tabs>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-tabs-demo-icon">图标</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/demo/icon.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            有图标的标签。
+          </p>
+        </div>
+      </section>
+    </section>
+
+
+    <section class="code-box" id="components-tabs-demo-slide">
+      <section class="code-box-demo">
+
+        <ant-radio-group mode="button" [(ngModel)]="tabPosition">
+          <ant-radio value="top">Horizontal</ant-radio>
+          <ant-radio value="left">Vertical</ant-radio>
+        </ant-radio-group>
+        <br>
+        <ant-tabs activeKey="1" (change)="onChange($event)" [tabPosition]="tabPosition" style="height: 220px">
+          <ant-tabpane title="Tab 1" key="1">Content of Tab Pane 1</ant-tabpane>
+          <ant-tabpane title="Tab 2" key="2">Content of Tab Pane 2</ant-tabpane>
+          <ant-tabpane title="Tab 3" key="3">Content of Tab Pane 3</ant-tabpane>
+          <ant-tabpane title="Tab 4" key="4">Content of Tab Pane 4</ant-tabpane>
+          <ant-tabpane title="Tab 5" key="5">Content of Tab Pane 5</ant-tabpane>
+          <ant-tabpane title="Tab 6" key="6">Content of Tab Pane 6</ant-tabpane>
+          <ant-tabpane title="Tab 7" key="7">Content of Tab Pane 7</ant-tabpane>
+          <ant-tabpane title="Tab 8" key="8">Content of Tab Pane 8</ant-tabpane>
+          <ant-tabpane title="Tab 9" key="9">Content of Tab Pane 9</ant-tabpane>
+          <ant-tabpane title="Tab 10" key="10">Content of Tab Pane 10</ant-tabpane>
+          <ant-tabpane title="Tab 11" key="11">Content of Tab Pane 11</ant-tabpane>
+          <ant-tabpane title="Tab 12" key="12">Content of Tab Pane 12</ant-tabpane>
+        </ant-tabs>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-tabs-demo-slide">滑动</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/demo/slide.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            可以左右、上下滑动，容纳更多标签。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-tabs-demo-extra">
+      <section class="code-box-demo">
+
+        <ant-tabs activeKey="1" (change)="onChange($event)">
+          <tab-bar-suffix>
+            <ant-button>Extra Action</ant-button>
+          </tab-bar-suffix>
+          <ant-tabpane title="Tab 1" key="1">Content of Tab Pane 1</ant-tabpane>
+          <ant-tabpane title="Tab 2" key="2">Content of Tab Pane 2</ant-tabpane>
+          <ant-tabpane title="Tab 3" key="3">Content of Tab Pane 3</ant-tabpane>
+        </ant-tabs>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-tabs-demo-extra">附加内容</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/demo/extra.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            可以在页签右边添加附加操作。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-tabs-demo-size">
+      <section class="code-box-demo">
+
+        <ant-tabs activeKey="2" size="small" (change)="onChange($event)">
+          <ant-tabpane title="Tab 1" key="1">Content of Tab Pane 1</ant-tabpane>
+          <ant-tabpane title="Tab 2" key="2">Content of Tab Pane 2</ant-tabpane>
+          <ant-tabpane title="Tab 3" key="3">Content of Tab Pane 3</ant-tabpane>
+        </ant-tabs>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-tabs-demo-size">迷你型</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/demo/size.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>用在弹出框等较狭窄的容器内。</p>
+        </div>
+      </section>
+    </section>
+
+
+    <section class="code-box" id="components-tabs-demo-position">
+      <section class="code-box-demo">
+
+        <ant-radio-group mode="button" [(ngModel)]="tabPosition2" style="margin-bottom: 24px;">
+          <ant-radio value="top">Top</ant-radio>
+          <ant-radio value="bottom">Bottom</ant-radio>
+          <ant-radio value="left">Left</ant-radio>
+          <ant-radio value="right">Right</ant-radio>
+        </ant-radio-group>
+        <br>
+        <ant-tabs activeKey="1" (change)="onChange($event)" [tabPosition]="tabPosition2">
+          <ant-tabpane title="Tab 1" key="1">Content of Tab Pane 1</ant-tabpane>
+          <ant-tabpane title="Tab 2" key="2">Content of Tab Pane 2</ant-tabpane>
+          <ant-tabpane title="Tab 3" key="3">Content of Tab Pane 3</ant-tabpane>
+          <ant-tabpane title="Tab 4" key="4">Content of Tab Pane 4</ant-tabpane>
+        </ant-tabs>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-tabs-demo-position">位置</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/demo/position.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            有四个位置，
+            <code>tabPosition="left|right|top|bottom"</code> 。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-tabs-demo-card">
+      <section class="code-box-demo">
+
+        <ant-tabs type="card" activeKey="1" (change)="onChange($event)">
+          <ant-tabpane title="Tab 1" key="1">Content of Tab Pane 1</ant-tabpane>
+          <ant-tabpane title="Tab 2" key="2">Content of Tab Pane 2</ant-tabpane>
+          <ant-tabpane title="Tab 3" key="3">Content of Tab Pane 3</ant-tabpane>
+        </ant-tabs>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-tabs-demo-card">卡片式页签</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/demo/card.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            另一种样式的页签，不提供对应的垂直样式。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-tabs-demo-card-top">
+      <section class="code-box-demo">
+
+        <div class="card-container">
+            <ant-tabs type="card" activeKey="1" (change)="onChange($event)">
+                <ant-tabpane title="Tab 1" key="1">
+                    <p>Content of Tab Pane 1</p>
+                    <p>Content of Tab Pane 1</p>
+                    <p>Content of Tab Pane 1</p>
+                </ant-tabpane>
+                <ant-tabpane title="Tab 2" key="2">
+                    <p>Content of Tab Pane 2</p>
+                    <p>Content of Tab Pane 2</p>
+                    <p>Content of Tab Pane 2</p>
+                </ant-tabpane>
+                <ant-tabpane title="Tab 3" key="3">
+                    <p>Content of Tab Pane 3</p>
+                    <p>Content of Tab Pane 3</p>
+                    <p>Content of Tab Pane 3</p>
+                </ant-tabpane>
+            </ant-tabs>
+        </div>
+        <style>
+          .card-container>.ant-tabs-card>.ant-tabs-content {
+            height: 120px;
+            margin-top: -16px;
+          }
+
+          .card-container>.ant-tabs-card>.ant-tabs-content>.ant-tabs-tabpane {
+            background: #fff;
+            padding: 16px;
+          }
+
+          .card-container>.ant-tabs-card>.ant-tabs-bar {
+            border-color: #fff;
+          }
+
+          .card-container>.ant-tabs-card>.ant-tabs-bar .ant-tabs-tab {
+            border-color: transparent;
+            background: transparent;
+          }
+
+          .card-container>.ant-tabs-card>.ant-tabs-bar .ant-tabs-tab-active {
+            border-color: #fff;
+            background: #fff;
+          }
+
+          #components-tabs-demo-card-top .code-box-demo {
+            background: #F5F5F5;
+            overflow: hidden;
+            padding: 24px;
+          }
+
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-tabs-demo-card-top">卡片式页签容器</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/demo/card-top.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            用于容器顶部，需要一点额外的样式覆盖。
+          </p>
+        </div>
+      </section>
+    </section>
+
+
+    <section class="code-box" id="components-tabs-demo-editable-card">
+      <section class="code-box-demo">
+
+        <ant-tabs type="card" activeKey="1" [showAddButton]="true"
+             (change)="onChange($event)"
+             (add)="addNewTabPane()"
+             (delete)="onDelete($event)">
+          <ant-tabpane
+            *ngFor="let pane of example2.panels"
+            [title]="pane.title"
+            [key]="pane.key" [closable]="pane.closable"
+          >
+            {{pane.content}}
+          </ant-tabpane>
+        </ant-tabs>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-tabs-demo-editable-card">新增和关闭页签</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/demo/editable-card.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            只有卡片样式的页签支持新增和关闭选项。使用
+            <code>[closable]="true"</code> 启用关闭，默认为false，即不可关闭。
+          </p>
+        </div>
+      </section>
+    </section>
+
+
+    <section class="code-box" id="components-tabs-demo-custom-add-trigger">
+      <section class="code-box-demo">
+
+        <div style="margin-bottom: 16px">
+          <ant-button (click)="addNewTabPane3()">ADD</ant-button>
+        </div>
+
+        <ant-tabs type="card" activeKey="1"
+             (change)="onChange($event)"
+             (delete)="onDelete3($event)">
+          <ant-tabpane
+            *ngFor="let pane of example3.panels"
+            [title]="pane.title"
+            [key]="pane.key" [closable]="pane.closable"
+          >
+            {{pane.content}}
+          </ant-tabpane>
+        </ant-tabs>
+
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-tabs-demo-custom-add-trigger">自定义新增页签触发器</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tabs/demo/custom-add-trigger.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            隐藏默认的页签增加图标，给自定义触发器绑定事件。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+</ant-row>
+
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <h3 id="Tabs"><span>Tabs</span><a href="#Tabs" class="anchor">#</a></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          activeKey
+        </td>
+        <td>
+          当前激活 tab 面板的 key
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          change
+        </td>
+        <td>
+          切换面板的事件，折射参数为: (activeKey: string)
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          tabClick
+        </td>
+        <td>
+          tab 被点击的事件，折射参数为: ({{'{'}}event: Event, tabPane: TabPane{{'}'}})
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          tabBarStyle
+        </td>
+        <td>
+          tar bar 的样式对象
+        </td>
+        <td>
+          object
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          type
+        </td>
+        <td>
+          页签的基本样式，可选
+          <code>line</code> 、
+          <code>card</code> 类型
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          'line'
+        </td>
+      </tr>
+      <tr>
+        <td>
+          size
+        </td>
+        <td>
+          大小，提供
+          <code>default</code> 和
+          <code>small</code> 两种大小，仅当
+          <code>type="line"</code> 时生效。
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          'default'
+        </td>
+      </tr>
+      <tr>
+        <td>
+          tabPosition
+        </td>
+        <td>
+          页签位置，可选值有
+          <code>top</code>
+          <code>right</code>
+          <code>bottom</code>
+          <code>left</code></td>
+        <td>
+          string
+        </td>
+        <td>
+          'top'
+        </td>
+      </tr>
+      <tr>
+        <td>
+          add
+        </td>
+        <td>
+          新增页签的事件，在<code>type="card"</code> 时有效，
+          折射参数为: (Event)
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          delete
+        </td>
+        <td>
+          删除页签的事件，在<code>type="card"</code> 时有效，
+          折射参数为: (TabPane)
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          beforeDelete
+        </td>
+        <td>
+          删除页签前的事件，在<code>type="card"</code> 时有效，
+          折射参数为: ({{'{'}}tab: TabPane, event: Event{{'}'}})
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          showAddButton
+        </td>
+        <td>
+          是否显示加号图标，在
+          <code>type="card"</code> 时有效
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          false
+        </td>
+      </tr>
+      <tr>
+        <td>
+          animated
+        </td>
+        <td>
+          是否使用动画切换 Tabs，在
+          <code>tabPosition=top|bottom</code> 时有效
+        </td>
+        <td>
+          boolean | {{'{'}} inkBar:boolean, tabPane:boolean {{'}'}}
+        </td>
+        <td>
+          true
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h3 id="Tabs.TabPane"><span>Tabs.TabPane</span><a href="#Tabs.TabPane" class="anchor">#</a></h3>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          key
+        </td>
+        <td>
+          对应 activeKey
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          title
+        </td>
+        <td>
+          选项卡头显示文字
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

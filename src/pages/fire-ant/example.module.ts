@@ -45,6 +45,7 @@ import { AlertExample } from './alert/example';
 import { MessageExample } from './message/example';
 import { NotificationExample } from './notification/example';
 import { DialogExample } from './dialog/example';
+import { TabsExample } from './tabs/example';
 
 @NgModule({
     imports: [
@@ -82,7 +83,8 @@ import { DialogExample } from './dialog/example';
         AlertExample,
         MessageExample,
         NotificationExample,
-        DialogExample
+        DialogExample,
+        TabsExample
     ],
     entryComponents: [
         Example,
@@ -110,7 +112,8 @@ import { DialogExample } from './dialog/example';
         AlertExample,
         MessageExample,
         NotificationExample,
-        DialogExample
+        DialogExample,
+        TabsExample
     ],
     providers: [
 

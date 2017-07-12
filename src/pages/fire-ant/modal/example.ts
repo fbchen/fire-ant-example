@@ -25,7 +25,7 @@ export class ModalExample extends AbstractPage {
     @ViewChild('example2Template', { read: TemplateRef })
     example2Template: TemplateRef<any>;
 
-    private data = {
+    public data = {
         email: '32674406@qq.com',
         password: '1234567890',
         password2: '1234567890',

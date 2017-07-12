@@ -1,0 +1,502 @@
+<section class="markdown">
+  <h1>
+    Modal
+    <span class="subtitle">对话框</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/modal/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+  <section
+    class="markdown">
+    <p>
+      模态对话框。
+    </p>
+    <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+    <p>
+      需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用
+      <code>Modal</code>
+      在当前页面正中打开一个浮层，承载相应的操作。
+    </p>
+    <p>
+      另外当需要一个简洁的确认框询问用户时，可以使用精心封装好的 <code>Modal.confirm()</code> 等方法。
+    </p>
+</section>
+<h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+
+<ant-row [gutter]="16">
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-modal-demo-basic">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="showExample1Modal($event)">Open</ant-button>
+        <ng-template #example1Template>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+        </ng-template>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-modal-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/modal/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            第一个对话框。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-modal-demo-footer">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="showExample2Modal($event)">Open</ant-button>
+        <ng-template #example2Template>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+            <p>Some contents...</p>
+        </ng-template>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-modal-demo-footer">自定义页脚</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/modal/demo/footer.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            更复杂的例子，自定义了页脚的按钮，点击提交后进入 loading 状态，完成后异步关闭。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-modal-demo-position">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="showExample3Modal_1($event)">Display a modal dialog at 20px to Top</ant-button>
+        <br><br>
+        <ant-button type="primary" (click)="showExample3Modal_2($event)">Vertically centered modal dialog</ant-button>
+
+
+        <style>
+          /* use css to set position of modal */
+
+          .vertical-center-modal {
+            text-align: center;
+            white-space: nowrap;
+          }
+
+          .vertical-center-modal:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            width: 0;
+          }
+
+          .vertical-center-modal .ant-modal {
+            display: inline-block;
+            vertical-align: middle;
+            top: 0;
+            text-align: left;
+          }
+          /*
+            // Use flex which not working in IE
+            .vertical-center-modal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+            .vertical-center-modal .ant-modal {
+            top: 0;
+            }
+        */
+        </style>
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-modal-demo-position">自定义位置</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/modal/demo/position.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            可以直接使用<code>top</code>、<code>left</code>、<code>right</code>、<code>bottom</code> 或配合其他样式来设置对话框位置。
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <section class="code-box" id="components-modal-demo-info">
+      <section class="code-box-demo">
+
+        <ant-button (click)="info()">Info</ant-button>
+        <ant-button (click)="success()">Success</ant-button>
+        <ant-button (click)="error()">Error</ant-button>
+        <ant-button (click)="warning()">Warning</ant-button>
+        <br><br>
+        <ant-button type="danger" (click)="confirm()">Confirm</ant-button>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-modal-demo-info">信息提示</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/modal/demo/info.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            各种类型的信息提示，只提供一个按钮用于关闭；以及用于确认的Confirm对话框。
+          </p>
+        </div>
+      </section>
+    </section>
+
+  </ant-col>
+  <ant-col [span]="12">
+
+    <section class="code-box" id="components-modal-demo-component">
+      <section class="code-box-demo">
+
+        <ant-button type="primary" (click)="showExample5Modal($event)">Open</ant-button>
+        <div class="mute-text" style="margin-top: 20px">
+          <p>结果值：</p>
+          <pre>{{ data | json }}</pre>
+        </div>
+
+        <style>
+        .ant-modal-content .field {
+            margin-bottom: 8px;
+        }
+        </style>
+
+      </section>
+      <section class="code-box-meta markdown">
+        <div class="code-box-title"><a href="#components-modal-demo-component">组件对话框</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/modal/demo/component.md"><i class="anticon anticon-edit"></i></a></div>
+        <div>
+          <p>
+            传入组件和创建组件的参数
+          </p>
+        </div>
+      </section>
+    </section>
+
+
+
+  </ant-col>
+</ant-row>
+
+
+<section class="markdown api-container">
+  <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          visible
+        </td>
+        <td>
+          对话框是否可见
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          title
+        </td>
+        <td>
+          标题
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          closable
+        </td>
+        <td>
+          是否显示右上角的关闭按钮
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          true
+        </td>
+      </tr>
+      <tr>
+        <td>
+          width
+        </td>
+        <td>
+          宽度
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          520
+        </td>
+      </tr>
+      <tr>
+        <td>
+          okText
+        </td>
+        <td>
+          确认按钮文字
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          确定
+        </td>
+      </tr>
+      <tr>
+        <td>
+          cancelText
+        </td>
+        <td>
+          取消按钮文字
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          取消
+        </td>
+      </tr>
+      <tr>
+        <td>
+          maskClosable
+        </td>
+        <td>
+          点击蒙层是否允许关闭
+        </td>
+        <td>
+          boolean
+        </td>
+        <td>
+          true
+        </td>
+      </tr>
+      <tr>
+        <td>
+          style
+        </td>
+        <td>
+          可用于设置浮层的样式，调整浮层位置等
+        </td>
+        <td>
+          object
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          wrapClassName
+        </td>
+        <td>
+          对话框外层容器的类名
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          -
+        </td>
+      </tr>
+      <tr>
+        <td>
+          afterClose
+        </td>
+        <td>
+          Modal 完全关闭后的事件
+        </td>
+        <td>
+          Event
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          getContainer
+        </td>
+        <td>
+          指定 Modal 挂载的 HTML 节点
+        </td>
+        <td>
+          (instance): HTMLElement
+        </td>
+        <td>
+          () =&gt; document.body
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h3 id="Modal.method()"><span>Modal.method()</span><a href="#Modal.method()" class="anchor">#</a></h3>
+  <p>
+    包括：
+
+  </p>
+  <ul>
+    <li>
+      <p><code>Modal.info</code></p>
+    </li>
+    <li>
+      <p><code>Modal.success</code></p>
+    </li>
+    <li>
+      <p><code>Modal.error</code></p>
+    </li>
+    <li>
+      <p><code>Modal.warning</code></p>
+    </li>
+    <li>
+      <p><code>Modal.confirm</code></p>
+    </li>
+  </ul>
+  <p>
+    以上均为一个函数，参数为 object，具体属性如下：
+
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          参数
+        </th>
+        <th>
+          说明
+        </th>
+        <th>
+          类型
+        </th>
+        <th>
+          默认值
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          title
+        </td>
+        <td>
+          标题
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          content
+        </td>
+        <td>
+          内容
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          无
+        </td>
+      </tr>
+      <tr>
+        <td>
+          width
+        </td>
+        <td>
+          宽度
+        </td>
+        <td>
+          number
+        </td>
+        <td>
+          416
+        </td>
+      </tr>
+      <tr>
+        <td>
+          iconType
+        </td>
+        <td>
+          图标 Icon 类型
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          question-circle
+        </td>
+      </tr>
+      <tr>
+        <td>
+          okText
+        </td>
+        <td>
+          确认按钮文字
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          确定
+        </td>
+      </tr>
+      <tr>
+        <td>
+          cancelText
+        </td>
+        <td>
+          取消按钮文字
+        </td>
+        <td>
+          string
+        </td>
+        <td>
+          取消
+        </td>
+      </tr>
+      <tr>
+        <td>
+          maskClosable
+        </td>
+        <td>
+          点击蒙层是否允许关闭
+        </td>
+        <td>
+          Boolean
+        </td>
+        <td><code>false</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    以上函数调用后，会返回一个引用，可以通过该引用关闭弹窗。
+  </p>
+</section>

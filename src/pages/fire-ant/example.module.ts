@@ -46,6 +46,7 @@ import { MessageExample } from './message/example';
 import { NotificationExample } from './notification/example';
 import { DialogExample } from './dialog/example';
 import { TabsExample } from './tabs/example';
+import { ModalExampleModule } from './modal/modal.module';
 
 @NgModule({
     imports: [
@@ -54,7 +55,8 @@ import { TabsExample } from './tabs/example';
         HttpModule,
         SharedModule,
         AntModule,
-        ExampleRoutingModule
+        ExampleRoutingModule,
+        ModalExampleModule
     ],
     declarations: [
         Example,

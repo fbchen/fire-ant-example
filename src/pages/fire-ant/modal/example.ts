@@ -46,10 +46,14 @@ export class ModalExample extends AbstractPage {
             title: 'Basic Modal',
             templateRef: this.example1Template,
             triggerEvent: event
-        }).then((result: { dialog: ModalDialog, event: Event }) => {
-            console.log('你点击了【确定】');
-        }, (result: { dialog: ModalDialog, event: Event }) => {
-            console.log('你点击了【取消】');
+        }).subscribe((result: { dialog: ModalDialog, event: Event, action: string }) => {
+            if (result.action === 'OK') {
+                console.log('你点击了【确定】');
+            } else {
+                console.log('你点击了【取消】');
+            }
+        }, (error) => {
+            console.error(error);
         });
     }
 
@@ -59,18 +63,17 @@ export class ModalExample extends AbstractPage {
             templateRef: this.example2Template,
             triggerEvent: event,
             buttons: [
-                {text: '全选', data: 'select-all'}
+                { text: '全选', data: 'select-all' }
             ]
-        }).then((result: { dialog: ModalDialog, event: Event, button: any }) => {
+        }).subscribe((result: { dialog: ModalDialog, event: Event, button: any, action: string }) => {
             console.log(`你点击了【${result.button.text || '确定'}】`, result.button);
-
             result.button.loading = true;
             setTimeout(() => {
                 result.button.loading = false;
                 result.dialog.close();
             }, 3000);
-        }, (result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log('你点击了【取消】');
+        }, (error) => {
+            console.error(error);
         });
     }
 
@@ -80,11 +83,15 @@ export class ModalExample extends AbstractPage {
             top: 20,
             templateRef: this.example2Template,
             triggerEvent: event
-        }).then((result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log(`你点击了【确定】`);
-            result.dialog.close();
-        }, (result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log('你点击了【取消】');
+        }).subscribe((result: { dialog: ModalDialog, event: Event, action: string }) => {
+            if (result.action === 'OK') {
+                console.log('你点击了【确定】');
+                result.dialog.close();
+            } else {
+                console.log('你点击了【取消】');
+            }
+        }, (error) => {
+            console.error(error);
         });
     }
 
@@ -94,11 +101,15 @@ export class ModalExample extends AbstractPage {
             wrapClassName: 'vertical-center-modal',
             templateRef: this.example2Template,
             triggerEvent: event
-        }).then((result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log(`你点击了【确定】`);
-            result.dialog.close();
-        }, (result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log('你点击了【取消】');
+        }).subscribe((result: { dialog: ModalDialog, event: Event, action: string }) => {
+            if (result.action === 'OK') {
+                console.log('你点击了【确定】');
+                result.dialog.close();
+            } else {
+                console.log('你点击了【取消】');
+            }
+        }, (error) => {
+            console.error(error);
         });
     }
 
@@ -106,58 +117,61 @@ export class ModalExample extends AbstractPage {
     info(): void {
         const title = 'This is a notification message';
         const content = 'some messages...some messages...';
-        this.modal.info(content, title).then((result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log(`你点击了【确定】`);
-            result.dialog.close();
-        }, (result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log('你点击了【取消】');
-        });
+        this.modal.info(content, title)
+            .then((result: { dialog: ModalDialog, event: Event, action: string }) => {
+                console.log('你点击了【确定】');
+                result.dialog.close();
+            }, (result: { dialog: ModalDialog, event: Event, action: string }) => {
+                console.log('你点击了【取消】');
+            });
     }
 
     success(): void {
         const title = 'This is a success message';
         const content = 'some messages...some messages...';
-        this.modal.success(content, title).then((result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log(`你点击了【确定】`);
-            result.dialog.close();
-        }, (result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log('你点击了【取消】');
-        });
+        this.modal.success(content, title)
+            .then((result: { dialog: ModalDialog, event: Event, action: string }) => {
+                console.log('你点击了【确定】');
+                result.dialog.close();
+            }, (result: { dialog: ModalDialog, event: Event, action: string }) => {
+                console.log('你点击了【取消】');
+            });
     }
 
     error(): void {
         const title = 'This is a error message';
         const content = 'some messages...some messages...';
-        this.modal.error(content, title).then((result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log(`你点击了【确定】`);
-            result.dialog.close();
-        }, (result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log('你点击了【取消】');
-        });
+        this.modal.error(content, title)
+            .then((result: { dialog: ModalDialog, event: Event, action: string }) => {
+                console.log('你点击了【确定】');
+                result.dialog.close();
+            }, (result: { dialog: ModalDialog, event: Event, action: string }) => {
+                console.log('你点击了【取消】');
+            });
     }
 
     warning(): void {
         const title = 'This is a warning message';
         const content = 'some messages...some messages...';
-        this.modal.warning(content, title).then((result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log(`你点击了【确定】`);
-            result.dialog.close();
-        }, (result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log('你点击了【取消】');
-        });
+        this.modal.warning(content, title)
+            .then((result: { dialog: ModalDialog, event: Event, action: string }) => {
+                console.log('你点击了【确定】');
+                result.dialog.close();
+            }, (result: { dialog: ModalDialog, event: Event, action: string }) => {
+                console.log('你点击了【取消】');
+            });
     }
 
     confirm(): void {
         const title = 'Do you Want to delete these items?';
         const content = 'some messages...some messages...';
-        this.modal.confirm(content, title).then((result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log(`你点击了【确定】`);
-            result.dialog.close();
-            this.message.success('These items are deleted!');
-        }, (result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log('你点击了【取消】');
-            this.message.success('These items are safe!');
-        });
+        this.modal.confirm(content, title)
+            .then((result: { dialog: ModalDialog, event: Event, action: string }) => {
+                console.log('你点击了【确定】');
+                result.dialog.close();
+            }, (result: { dialog: ModalDialog, event: Event, action: string }) => {
+                console.log('你点击了【取消】');
+            });
     }
 
 
@@ -169,16 +183,17 @@ export class ModalExample extends AbstractPage {
             title: '请输入账号',
             width: 320,
             triggerEvent: event
-        }).then((result: { dialog: ModalDialog, event: Event, button: any }) => {
+        }).subscribe((result: { dialog: ModalDialog, event: Event, button: any, action: string }) => {
             console.log(`你点击了【${result.button.text || '确定'}】`, result.button);
             console.log(this.data);
+
             result.button.loading = true;
             setTimeout(() => {
                 result.button.loading = false;
                 result.dialog.close();
             }, 3000);
-        }, (result: { dialog: ModalDialog, event: Event, button: any }) => {
-            console.log('你点击了【取消】');
+        }, (error) => {
+            console.error(error);
         });
     }
 

@@ -163,12 +163,12 @@ export class ModalExample extends AbstractPage {
 
 
     showExample5Modal(event: Event): void {
-        this.modal.create({
+        this.modal.create(ModalFormComponent, {
+            data: this.data
+        }, {
             title: '请输入账号',
             width: 320,
             triggerEvent: event
-        }, ModalFormComponent, {
-            data: this.data
         }).then((result: { dialog: ModalDialog, event: Event, button: any }) => {
             console.log(`你点击了【${result.button.text || '确定'}】`, result.button);
             console.log(this.data);

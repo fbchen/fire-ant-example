@@ -47,6 +47,7 @@ import { NotificationExample } from './notification/example';
 import { DialogExample } from './dialog/example';
 import { TabsExample } from './tabs/example';
 import { ModalExampleModule } from './modal/modal.module';
+import { CascaderExample } from './cascader/example';
 
 @NgModule({
     imports: [
@@ -86,7 +87,8 @@ import { ModalExampleModule } from './modal/modal.module';
         MessageExample,
         NotificationExample,
         DialogExample,
-        TabsExample
+        TabsExample,
+        CascaderExample
     ],
     entryComponents: [
         Example,
@@ -115,7 +117,8 @@ import { ModalExampleModule } from './modal/modal.module';
         MessageExample,
         NotificationExample,
         DialogExample,
-        TabsExample
+        TabsExample,
+        CascaderExample
     ],
     providers: [
 

@@ -37,6 +37,7 @@ import { NotificationExample } from './notification/example';
 import { DialogExample } from './dialog/example';
 import { TabsExample } from './tabs/example';
 import { ModalExample } from './modal/example';
+import { CascaderExample } from './cascader/example';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { ModalExample } from './modal/example';
             { path: 'notification', component: NotificationExample },
             { path: 'dialog', component: DialogExample },
             { path: 'tabs', component: TabsExample },
-            { path: 'modal', component: ModalExample }
+            { path: 'modal', component: ModalExample },
+            { path: 'cascader', component: CascaderExample }
         ])
     ],
     exports: [

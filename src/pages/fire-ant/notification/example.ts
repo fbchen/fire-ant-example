@@ -63,7 +63,8 @@ export class NotificationExample extends AbstractPage {
             message: 'Notification Title',
             // tslint:disable-next-line:max-line-length
             description: 'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
-            style: 'width: 600px; margin-left: -300px'
+            width: '600px',
+            right: '300px'
         });
     }
 

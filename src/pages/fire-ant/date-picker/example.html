@@ -1,0 +1,739 @@
+<section class="markdown">
+    <h1>
+        DatePicker
+        <span class="subtitle">日期选择框</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/date-picker/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
+    <section class="markdown">
+        <p>
+            输入或选择日期的控件。
+        </p>
+        <h2 id="何时使用"><span>何时使用</span><a href="#何时使用" class="anchor">#</a></h2>
+        <p>
+            当用户需要输入一个日期，可以点击标准输入框，弹出日期面板进行选择。
+        </p>
+    </section>
+    <h2><span>代码演示</span><i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i></h2>
+</section>
+
+
+<ant-row [gutter]="16">
+    <ant-col [span]="12">
+
+        <section class="code-box" id="components-date-picker-demo-basic">
+            <section class="code-box-demo">
+
+                <label style="display: inline-block; width: 65px">选择日期：</label>
+                <ant-datepicker [(ngModel)]="example1.value1" (change)="onChange($event)">
+                </ant-datepicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择月份：</label>
+                <ant-monthpicker [(ngModel)]="example1.value2" (change)="onChange($event)">
+                </ant-monthpicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择时间：</label>
+                <ant-datepicker [(ngModel)]="example1.value3" [showTimePicker]="true" format="YYYY-MM-DD HH:mm:ss" (change)="onChange($event)">
+                </ant-datepicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择范围：</label>
+                <ant-rangepicker [(ngModel)]="example1.value4" (change)="onRangeChange($event)">
+                </ant-rangepicker>
+                <br>
+
+                <div class="mute-text" style="margin-top: 20px">
+                    <p>结果值：</p>
+                    <pre>{{ example1 | json }}</pre>
+                </div>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-date-picker-demo-basic">基本</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/date-picker/demo/basic.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        最简单的用法，在浮层中可以选择或者输入日期。
+                    </p>
+                </div>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-date-picker-demo-size">
+            <section class="code-box-demo">
+                <div style="margin-bottom: 8px">Please select size:</div>
+                <ant-radio-group mode="button" [(ngModel)]="example2.size">
+                    <ant-radio value="large">Large</ant-radio>
+                    <ant-radio value="default">Default</ant-radio>
+                    <ant-radio value="small">Small</ant-radio>
+                </ant-radio-group>
+                <br /><br />
+
+
+                <label style="display: inline-block; width: 65px">选择日期：</label>
+                <ant-datepicker [(ngModel)]="example2.value1" [size]="example2.size" (change)="onChange($event)">
+                </ant-datepicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择月份：</label>
+                <ant-monthpicker [(ngModel)]="example2.value2" [size]="example2.size" (change)="onChange($event)">
+                </ant-monthpicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择时间：</label>
+                <ant-datepicker [(ngModel)]="example2.value3" [size]="example2.size" [showTimePicker]="true" format="YYYY-MM-DD HH:mm:ss" (change)="onChange($event)">
+                </ant-datepicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择范围：</label>
+                <ant-rangepicker [(ngModel)]="example2.value4" [size]="example2.size" (change)="onRangeChange($event)">
+                </ant-rangepicker>
+                <br>
+
+                <div class="mute-text" style="margin-top: 20px">
+                    <p>结果值：</p>
+                    <pre>{{ example2 | json }}</pre>
+                </div>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-date-picker-demo-size">三种大小</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/date-picker/demo/size.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        三种大小的输入框，若不设置，则为<code>default</code>。
+                    </p>
+                </div>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-date-picker-demo-disabled">
+            <section class="code-box-demo">
+
+                <label style="display: inline-block; width: 65px">选择日期：</label>
+                <ant-datepicker [(ngModel)]="example3.value1" [disabled]="example3.disabled" (change)="onChange($event)">
+                </ant-datepicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择月份：</label>
+                <ant-monthpicker [(ngModel)]="example3.value2" [disabled]="example3.disabled" (change)="onChange($event)">
+                </ant-monthpicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择时间：</label>
+                <ant-datepicker [(ngModel)]="example3.value3" [disabled]="example3.disabled" [showTimePicker]="true" format="YYYY-MM-DD HH:mm:ss" (change)="onChange($event)">
+                </ant-datepicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择范围：</label>
+                <ant-rangepicker [(ngModel)]="example3.value4" [disabled]="example3.disabled" (change)="onRangeChange($event)">
+                </ant-rangepicker>
+                <br><br>
+
+                <ant-button type="primary" size="small" (click)="toggleDisable()" style="margin-left: 10px">
+                    {{example3.disabled ? 'Enable' : 'Disable'}}
+                </ant-button>
+
+                <div class="mute-text" style="margin-top: 20px">
+                    <p>结果值：</p>
+                    <pre>{{ example3 | json }}</pre>
+                </div>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-date-picker-demo-disabled">禁用</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/date-picker/demo/disabled.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        选择框的不可用状态。
+                    </p>
+                </div>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-date-picker-demo-format">
+            <section class="code-box-demo">
+                <div style="margin-bottom: 8px">Please select format:</div>
+                <ant-radio-group mode="button" [(ngModel)]="example4.dateFormat" (change)="onFormatChange($event)">
+                    <ant-radio value="YYYY-MM-DD">样式1</ant-radio>
+                    <ant-radio value="YYYY/MM/DD">样式2</ant-radio>
+                    <ant-radio value="DD/MM/YYYY">样式3</ant-radio>
+                </ant-radio-group>
+                <br /><br />
+
+
+                <label style="display: inline-block; width: 65px">选择日期：</label>
+                <ant-datepicker [(ngModel)]="example4.value1" [format]="example4.dateFormat" (change)="onChange($event)">
+                </ant-datepicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择月份：</label>
+                <ant-monthpicker [(ngModel)]="example4.value2" [format]="example4.monthFormat" (change)="onChange($event)">
+                </ant-monthpicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择时间：</label>
+                <ant-datepicker [(ngModel)]="example4.value3" [dateFormat]="example4.dateFormat" [showTimePicker]="true" (change)="onChange($event)">
+                </ant-datepicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择范围：</label>
+                <ant-rangepicker [(ngModel)]="example4.value4" [format]="example4.dateFormat" (change)="onRangeChange($event)">
+                </ant-rangepicker>
+                <br><br>
+
+
+                <div class="mute-text" style="margin-top: 20px">
+                    <p>结果值：</p>
+                    <pre>{{ example4 | json }}</pre>
+                </div>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-date-picker-demo-format">日期格式</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/date-picker/demo/format.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        使用 <code>format</code> 属性定义输出值格式，使用 <code>displayFormat</code> 定义显示值；
+                        另外，日期选择控件可以用 <code>dateFormat</code> 和 <code>timeFormat</code> 来分开定义输出格式，使用 <code>dateDisplayFormat</code> 和 <code>timeDisplayFormat</code> 定义日期显示格式。
+                    </p>
+                </div>
+            </section>
+        </section>
+
+    </ant-col>
+    <ant-col [span]="12">
+
+        <section class="code-box" id="components-date-picker-demo-disabled-date">
+            <section class="code-box-demo">
+
+                <label style="display: inline-block; width: 65px">选择日期：</label>
+                <ant-datepicker
+                    [disabledDate]="bindThis(disabledDate)"
+                    [disabledTime]="bindThis(disabledDateTime)"
+                    [(ngModel)]="example5.value1"
+                    [showTimePicker]="true" (change)="onChange($event)">
+                </ant-datepicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择月份：</label>
+                <ant-monthpicker
+                    [disabledDate]="bindThis(disabledDate)"
+                    [(ngModel)]="example5.value2" (change)="onChange($event)">
+                </ant-monthpicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择范围：</label>
+                <ant-rangepicker
+                    [disabledDate]="bindThis(disabledDate)"
+                    [disabledTime]="bindThis(disabledRangeTime)"
+                    [(ngModel)]="example5.value3"
+                    [showTimePicker]="true" (change)="onRangeChange($event)">
+                </ant-rangepicker>
+                <br>
+
+                <div class="mute-text" style="margin-top: 20px">
+                    <p>结果值：</p>
+                    <pre>{{ example5 | json }}</pre>
+                </div>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-date-picker-demo-disabled-date">不可选择日期和时间</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/date-picker/demo/disabled-date.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        可用
+                        <code>disabledDate</code> 和
+                        <code>disabledTime</code> 分别禁止选择部分日期和时间，其中
+                        <code>disabledTime</code> 需要和
+                        <code>showTimePicker</code> 一起使用。
+                    </p>
+                </div>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-date-picker-demo-presetted-ranges">
+            <section class="code-box-demo">
+
+                <label style="display: inline-block; width: 65px">选择范围：</label>
+                <ant-rangepicker
+                    [buttons]="getRangeButtons()"
+                    [(ngModel)]="example6.value1"
+                    (change)="onRangeChange($event)">
+                </ant-rangepicker>
+                <br>
+
+                <label style="display: inline-block; width: 65px">选择范围：</label>
+                <ant-rangepicker
+                    [buttons]="getRangeButtons()"
+                    [(ngModel)]="example6.value2"
+                    [showTimePicker]="true" (change)="onRangeChange($event)">
+                </ant-rangepicker>
+                <br>
+
+                <div class="mute-text" style="margin-top: 20px">
+                    <p>结果值：</p>
+                    <pre>{{ example6 | json }}</pre>
+                </div>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title"><a href="#components-date-picker-demo-presetted-ranges">预设范围</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/date-picker/demo/presetted-ranges.md"><i class="anticon anticon-edit"></i></a></div>
+                <div>
+                    <p>
+                        RangePicker 可以设置常用的 预设范围 提高用户体验。
+                    </p>
+                </div>
+            </section>
+        </section>
+
+    </ant-col>
+</ant-row>
+
+<section class="markdown api-container">
+    <h2 id="API"><span>API</span><a href="#API" class="anchor">#</a></h2>
+    <p>
+        日期类组件包括以下三种形式。
+    </p>
+    <ul>
+        <li>
+            <p>
+                DatePicker
+            </p>
+        </li>
+        <li>
+            <p>
+                MonthPicker
+            </p>
+        </li>
+        <li>
+            <p>
+                RangePicker
+            </p>
+        </li>
+    </ul>
+    <p><strong>注意：</strong> DatePicker、MonthPicker、RangePicker 部分 locale 是从 value 中读取，所以请先正确设置 moment 的 locale。
+    </p>
+
+
+    <h3 id="共同的-API"><span>共同的 API</span><a href="#共同的-API" class="anchor">#</a></h3>
+    <p>
+        以下 API 为 DatePicker、MonthPicker、RangePicker 共享的 API。
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    参数
+                </th>
+                <th>
+                    说明
+                </th>
+                <th>
+                    类型
+                </th>
+                <th>
+                    默认值
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    allowClear
+                </td>
+                <td>
+                    是否显示清除按钮
+                </td>
+                <td>
+                    boolean
+                </td>
+                <td>
+                    true
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    disabled
+                </td>
+                <td>
+                    禁用
+                </td>
+                <td>
+                    boolean
+                </td>
+                <td>
+                    false
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    class
+                </td>
+                <td>
+                    选择器 className
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    ''
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    size
+                </td>
+                <td>
+                    输入框大小，
+                    <code>large</code> 高度为 32px，
+                    <code>small</code> 为 22px，默认是 28px
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    无
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    locale
+                </td>
+                <td>
+                    国际化配置
+                </td>
+                <td>
+                    object
+                </td>
+                <td>
+                    <a href="https://github.com/ant-design/ant-design/blob/master/components/date-picker/locale/example.json">
+            默认配置
+          </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    disabledDate
+                </td>
+                <td>
+                    不可选择的日期
+                </td>
+                <td>
+                    (currentDate: moment) =&gt; boolean
+                </td>
+                <td>
+                    无
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    openChange
+                </td>
+                <td>
+                    弹出日历和关闭日历的事件
+                </td>
+                <td>
+                   Event，参数值为 (boolean open)
+                </td>
+                <td>
+                    无
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    placeholder
+                </td>
+                <td>
+                    输入框提示文字
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="DatePicker"><span>DatePicker</span><a href="#DatePicker" class="anchor">#</a></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    参数
+                </th>
+                <th>
+                    说明
+                </th>
+                <th>
+                    类型
+                </th>
+                <th>
+                    默认值
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    value
+                </td>
+                <td>
+                    日期
+                </td>
+                <td>
+                    string, DatePicker，或者<a href="http://momentjs.com/">moment</a>
+                </td>
+                <td>
+                    无
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    format
+                </td>
+                <td>
+                    展示的日期格式，配置参考<a href="http://momentjs.com/">moment.js</a>
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    "YYYY-MM-DD"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    change
+                </td>
+                <td>
+                    时间发生变化的事件
+                </td>
+                <td>
+                    Event，参数值为(date: moment)
+                </td>
+                <td>
+                    无
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    showTimePicker
+                </td>
+                <td>
+                    增加时间选择功能
+                </td>
+                <td>
+                    boolean
+                </td>
+                <td>
+                    false
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    showToday
+                </td>
+                <td>
+                    是否展示“今天”按钮
+                </td>
+                <td>
+                    boolean
+                </td>
+                <td>
+                    true
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    disabledTime
+                </td>
+                <td>
+                    不可选择的时间
+                </td>
+                <td>
+                    function(date) =&gt; 对象，包含：
+                    /** 获取不可用的小时列表 */
+                    disabledHours: () =&gt; number[];
+
+                    /** 获取不可用的分钟列表 */
+                    disabledMinutes: (hour: number) =&gt; number[];
+
+                    /** 获取不可用的秒钟列表 */
+                    disabledSeconds: (hour: number, minute: number) =&gt; number[];
+                </td>
+                <td>
+                    无
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="MonthPicker"><span>MonthPicker</span><a href="#MonthPicker" class="anchor">#</a></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    参数
+                </th>
+                <th>
+                    说明
+                </th>
+                <th>
+                    类型
+                </th>
+                <th>
+                    默认值
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    format
+                </td>
+                <td>
+                    展示的日期格式，配置参考
+                    <a href="http://momentjs.com/">
+            moment.js
+          </a>
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    "YYYY-MM"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    change
+                </td>
+                <td>
+                    时间发生变化的事件，发生在用户选择时间时
+                </td>
+                <td>
+                    Event，参数值为(date: moment)
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="RangePicker"><span>RangePicker</span><a href="#RangePicker" class="anchor">#</a></h3>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    参数
+                </th>
+                <th>
+                    说明
+                </th>
+                <th>
+                    类型
+                </th>
+                <th>
+                    默认值
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    value
+                </td>
+                <td>
+                    日期
+                </td>
+                <td>
+                    <a href="http://momentjs.com/">moment</a> []
+                </td>
+                <td>
+                    无
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    format
+                </td>
+                <td>
+                    展示的日期格式
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    "YYYY-MM-DD HH:mm:ss"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    change
+                </td>
+                <td>
+                    时间发生变化的事件，发生在用户选择时间时
+                </td>
+                <td>
+                    Event，参数值为(dates: <span>moment, moment</span>[])
+                </td>
+                <td>
+                    无
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    showTimePicker
+                </td>
+                <td>
+                    增加时间选择功能
+                </td>
+                <td>
+                    boolean
+                </td>
+                <td>
+                    false
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    disabledTime
+                </td>
+                <td>
+                    不可选择的时间
+                </td>
+                <td>
+                    function(dates: <span>moment, moment</span> , partial: <code>'start'|'end'</code> )，返回值为对象，包含：
+                    /** 获取不可用的小时列表 */
+                    disabledHours: () =&gt; number[];
+
+                    /** 获取不可用的分钟列表 */
+                    disabledMinutes: (hour: number) =&gt; number[];
+
+                    /** 获取不可用的秒钟列表 */
+                    disabledSeconds: (hour: number, minute: number) =&gt; number[];
+                </td>
+                <td>
+                    无
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    buttons
+                </td>
+                <td>
+                    预设时间范围快捷按钮
+                </td>
+                <td>
+                    object[]，例如：{{'{'}} text: '本月', start: moment(), end: moment.endOf('month')   {{'}'}}
+                </td>
+                <td>
+                    无
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <style>
+        .code-box-demo .ant-calendar-picker,
+        .code-box-demo .ant-time-select {
+            margin: 0 8px 12px 0;
+        }
+
+    </style>
+</section>

@@ -312,7 +312,7 @@
              (delete)="onDelete($event)">
           <ant-tabpane
             *ngFor="let pane of example2.panels"
-            [title]="pane.title"
+            [tabTitle]="pane.title"
             [key]="pane.key" [closable]="pane.closable"
           >
             {{pane.content}}
@@ -344,7 +344,7 @@
              (delete)="onDelete3($event)">
           <ant-tabpane
             *ngFor="let pane of example3.panels"
-            [title]="pane.title"
+            [tabTitle]="pane.title"
             [key]="pane.key" [closable]="pane.closable"
           >
             {{pane.content}}

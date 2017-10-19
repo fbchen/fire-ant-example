@@ -46,9 +46,5 @@ export class RateExample extends AbstractPage {
         super(element, router, route);
     }
 
-    onChange(event): void {
-        console.log('change ', event);
-    }
-
 
 }

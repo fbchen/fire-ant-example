@@ -8,6 +8,12 @@
 
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
+
+
+// 推荐在入口文件全局设置 locale
+import 'moment/locale/zh-cn';
+moment.locale('zh-cn');
 
 @Component({
     selector: 'fire-ant-example',

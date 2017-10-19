@@ -1026,6 +1026,43 @@ code, kbd, pre, samp {
     border-bottom: 1px dashed #e9e9e9
 }
 
+.code-box .code-expand-icon {
+    position: absolute;
+    right: 16px;
+    bottom: 23px;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center
+}
+
+.code-box .code-expand-icon-hide, .code-box .code-expand-icon-show {
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.code-box .code-expand-icon-show {
+    opacity: .55;
+    pointer-events: auto
+}
+
+.code-box .code-expand-icon-show:hover, .code-box .code-expand-icon.ant-tooltip-open .code-expand-icon-show {
+    opacity: 1
+}
+
+.code-box .code-expand-icon-hide {
+    opacity: 0;
+    pointer-events: none
+}
+
 .code-box .collapse {
     position: absolute;
     right: 14px;

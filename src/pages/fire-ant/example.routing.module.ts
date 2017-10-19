@@ -38,7 +38,10 @@ import { DialogExample } from './dialog/example';
 import { TabsExample } from './tabs/example';
 import { ModalExample } from './modal/example';
 import { CascaderExample } from './cascader/example';
-
+import { DatePickerExample } from './date-picker/example';
+import { TimePickerExample } from './time-picker/example';
+import { RateExample } from './rate/example';
+import { StepsExample } from './steps/example';
 
 @NgModule({
     imports: [
@@ -71,7 +74,11 @@ import { CascaderExample } from './cascader/example';
             { path: 'dialog', component: DialogExample },
             { path: 'tabs', component: TabsExample },
             { path: 'modal', component: ModalExample },
-            { path: 'cascader', component: CascaderExample }
+            { path: 'cascader', component: CascaderExample },
+            { path: 'date-picker', component: DatePickerExample },
+            { path: 'time-picker', component: TimePickerExample },
+            { path: 'rate', component: RateExample },
+            { path: 'steps', component: StepsExample },
         ])
     ],
     exports: [

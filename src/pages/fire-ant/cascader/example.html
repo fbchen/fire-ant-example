@@ -36,7 +36,7 @@
 
         <ant-cascader
             [(ngModel)]="example1.value"
-            [firstOptions]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -61,7 +61,7 @@
 
         <ant-cascader
             [(ngModel)]="example2.value"
-            [firstOptions]="options2" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options2" (change)="onChange($event)" (select)="onSelect($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -87,18 +87,18 @@
         <ant-cascader
             size="large"
             [(ngModel)]="example3.value1"
-            [firstOptions]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
             placeholder="Please select"></ant-cascader>
         <br><br>
         <ant-cascader
             [(ngModel)]="example3.value2"
-            [firstOptions]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
             placeholder="Please select"></ant-cascader>
         <br><br>
         <ant-cascader
             size="small"
             [(ngModel)]="example3.value3"
-            [firstOptions]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
             placeholder="Please select"></ant-cascader>
 
       </section>
@@ -118,7 +118,7 @@
         <ant-cascader
             [showSearch]="true" (search)="onSearch($event)"
             [(ngModel)]="example4.value"
-            [firstOptions]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -145,7 +145,7 @@
 
         <ant-cascader
             [(ngModel)]="example5.value"
-            [firstOptions]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -169,7 +169,7 @@
 
         <ant-cascader
             [(ngModel)]="example6.value" expandTrigger="hover"
-            [firstOptions]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -193,7 +193,7 @@
 
         <ant-cascader
             [(ngModel)]="example7.value" [changeOnSelect]="true"
-            [firstOptions]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -218,7 +218,7 @@
 
         <ant-cascader
             [(ngModel)]="example8.value"
-            [firstOptions]="options" (change)="onChange($event)" (select)="onSelect2($event)"
+            [options]="options" (change)="onChange($event)" (select)="onSelect2($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -264,7 +264,7 @@
     <tbody>
       <tr>
         <td>
-          firstOptions
+          options
         </td>
         <td>
           第一列选项列表
@@ -283,7 +283,7 @@
           optionGroup
         </td>
         <td>
-          所有列的选项列表。如果为空，且第一列选项列表<code>firstOptions</code>不为空，则将<code>firstOptions</code>填入为第一列数据。
+          所有列的选项列表。如果为空，且第一列选项列表<code>options</code>不为空，则将<code>options</code>填入为第一列数据。
         </td>
         <td>
           <a href="https://git.io/vMMoK">
@@ -500,7 +500,7 @@
           init
         </td>
         <td>
-          初始数据事件。当既没有<code>firstOptions</code>，也没有<code>optionGroup</code>时会触发。
+          初始数据事件。当既没有<code>options</code>，也没有<code>optionGroup</code>时会触发。
         </td>
         <td>
             Event，折射参数为：

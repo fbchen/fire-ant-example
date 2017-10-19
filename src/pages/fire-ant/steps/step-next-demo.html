@@ -1,0 +1,20 @@
+<!--
+<ant-steps [current]="_current">
+    <ant-step *ngFor="let step of _steps" [nzTitle]="step.title"></ant-step>
+</ant-steps>
+-->
+<ant-steps [current]="_current">
+    <ant-step nzTitle="First"></ant-step>
+    <ant-step nzTitle="Second"></ant-step>
+    <ant-step nzTitle="Last"></ant-step>
+</ant-steps>
+
+<div class="steps-content">
+    {{_steps[_current].content}}
+</div>
+
+<div class="steps-action">
+    <ant-button *ngIf="_current < _steps.length - 1" type="primary" (click)="next()">Next</ant-button>
+    <ant-button *ngIf="_current == _steps.length - 1" type="primary" (click)="done()">Done</ant-button>
+    <ant-button *ngIf="_current > 0" style="margin-left: 8px" (click)="prev()">Previous</ant-button>
+</div>

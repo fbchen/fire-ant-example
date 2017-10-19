@@ -1,0 +1,519 @@
+<section class="markdown">
+    <h1>
+        Steps
+        <span class="subtitle">步骤条</span>
+        <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/steps/index.zh-CN.md">
+            <i class="anticon anticon-edit"></i>
+        </a>
+    </h1>
+    <section class="markdown">
+        <p>
+            引导用户按照流程完成任务的导航条。
+        </p>
+        <h2 id="何时使用">
+            <span>
+                何时使用
+            </span>
+            <a href="#何时使用" class="anchor">#</a>
+        </h2>
+        <p>
+            当任务复杂或者存在先后关系时，将其分解成一系列步骤，从而简化任务。
+        </p>
+    </section>
+    <h2>
+        <span>代码演示</span>
+        <i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i>
+    </h2>
+</section>
+<ant-row [gutter]="16">
+    <ant-col [span]="24">
+
+        <section class="code-box" id="components-steps-demo-simple">
+            <section class="code-box-demo">
+                <ant-steps [current]="1">
+                    <ant-step nzTitle="Finished" description="This is a description."></ant-step>
+                    <ant-step nzTitle="In Progress" description="This is a description."></ant-step>
+                    <ant-step nzTitle="Waiting" description="This is a description."></ant-step>
+                </ant-steps>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-steps-demo-simple">基本用法</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/steps/demo/simple.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        简单的步骤条。
+                    </p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-steps-demo-small-size">
+            <section class="code-box-demo">
+                <ant-steps [current]="1" size="small">
+                    <ant-step nzTitle="Finished" description="This is a description."></ant-step>
+                    <ant-step nzTitle="In Progress" description="This is a description."></ant-step>
+                    <ant-step nzTitle="Waiting" description="This is a description."></ant-step>
+                </ant-steps>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-steps-demo-small-size">迷你版</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/steps/demo/small-size.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        迷你版的步骤条，通过设置 <code>size="small"</code> 启用.
+                    </p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-steps-demo-icon">
+            <section class="code-box-demo">
+                <ant-steps>
+                    <ant-step status="finish" nzTitle="Login" icon="user"></ant-step>
+                    <ant-step status="finish" nzTitle="Verification" icon="solution"></ant-step>
+                    <ant-step status="process" nzTitle="Pay" icon="credit-card"></ant-step>
+                    <ant-step status="wait" nzTitle="Done" icon="smile-o"></ant-step>
+                </ant-steps>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-steps-demo-icon">带图标的步骤条</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/steps/demo/icon.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        通过设置 <code>Step</code> 的 <code>icon</code> 属性，可以启用自定义图标。
+                    </p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-steps-demo-step-next">
+            <section class="code-box-demo">
+                <step-next-demo></step-next-demo>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-steps-demo-step-next">步骤切换</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/steps/demo/step-next.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        通常配合内容及按钮使用，表示一个流程的处理进度。
+                    </p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-steps-demo-vertical">
+            <section class="code-box-demo">
+                <ant-steps [current]="1" direction="vertical">
+                    <ant-step nzTitle="Finished" description="This is a description."></ant-step>
+                    <ant-step nzTitle="In Progress" description="This is a description."></ant-step>
+                    <ant-step nzTitle="Waiting" description="This is a description."></ant-step>
+                </ant-steps>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-steps-demo-vertical">竖直方向的步骤条</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/steps/demo/vertical.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        简单的竖直方向的步骤条。
+                    </p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-steps-demo-vertical-small">
+            <section class="code-box-demo">
+                <ant-steps [current]="1" direction="vertical" size="small">
+                    <ant-step nzTitle="Finished" description="This is a description."></ant-step>
+                    <ant-step nzTitle="In Progress" description="This is a description."></ant-step>
+                    <ant-step nzTitle="Waiting" description="This is a description."></ant-step>
+                </ant-steps>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-steps-demo-vertical-small">竖直方向的小型步骤条</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/steps/demo/vertical-small.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        简单的竖直方向的小型步骤条。
+                    </p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-steps-demo-error">
+            <section class="code-box-demo">
+                <ant-steps [current]="1" status="error">
+                    <ant-step nzTitle="Finished" description="This is a description."></ant-step>
+                    <ant-step nzTitle="In Progress" description="This is a description."></ant-step>
+                    <ant-step nzTitle="Waiting" description="This is a description."></ant-step>
+                </ant-steps>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-steps-demo-error">步骤运行错误</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/steps/demo/error.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        使用 Steps 的
+                        <code>status</code>
+                        属性来指定当前步骤的状态。
+                    </p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-steps-demo-progress-dot">
+            <section class="code-box-demo">
+                <ant-steps [current]="1" [progressDot]="true">
+                    <ant-step nzTitle="Finished" description="This is a description."></ant-step>
+                    <ant-step nzTitle="In Progress" description="This is a description."></ant-step>
+                    <ant-step nzTitle="Waiting" description="This is a description."></ant-step>
+                </ant-steps>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-steps-demo-progress-dot">点状步骤条</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/steps/demo/progress-dot.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        包含步骤点的进度条。
+                    </p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-steps-demo-customized-progress-dot">
+            <section class="code-box-demo">
+                <ant-steps [current]="1" [progressDot]="true">
+                    <ant-step nzTitle="Finished" description="You can hover on the dot.">
+                        <ng-template #progressDot let-data>
+                            <span class="ant-steps-icon" ant-popover pop-content="step {{data.index}} status: {{data.status}}">
+                                <span class="ant-steps-icon-dot"></span>
+                            </span>
+                        </ng-template>
+                    </ant-step>
+                    <ant-step nzTitle="In Progress" description="You can hover on the dot.">
+                        <ng-template #progressDot let-data>
+                            <span class="ant-steps-icon" ant-popover pop-content="step {{data.index}} status: {{data.status}}">
+                                <span class="ant-steps-icon-dot"></span>
+                            </span>
+                        </ng-template>
+                    </ant-step>
+                    <ant-step nzTitle="Waiting" description="You can hover on the dot.">
+                        <ng-template #progressDot let-data>
+                            <span class="ant-steps-icon" ant-popover pop-content="step {{data.index}} status: {{data.status}}">
+                                <span class="ant-steps-icon-dot"></span>
+                            </span>
+                        </ng-template>
+                    </ant-step>
+                    <ant-step nzTitle="Waiting" description="You can hover on the dot.">
+                        <ng-template #progressDot let-data>
+                            <span class="ant-steps-icon" ant-popover pop-content="step {{data.index}} status: {{data.status}}">
+                                <span class="ant-steps-icon-dot"></span>
+                            </span>
+                        </ng-template>
+                    </ant-step>
+                </ant-steps>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-steps-demo-customized-progress-dot">自定义点状步骤条</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/steps/demo/customized-progress-dot.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        为点状步骤条增加自定义展示。
+                    </p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+
+    </ant-col>
+</ant-row>
+
+
+<section class="markdown api-container">
+    <h2 id="API">
+        <span>
+            API
+        </span>
+        <a href="#API" class="anchor">#</a>
+    </h2>
+    <pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ant-steps</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ant-step</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>第一步<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ant-step</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>第二步<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ant-step</span> <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>第三步<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ant-steps</span><span class="token punctuation">&gt;</span></span></code></pre>
+    <h3 id="Steps">
+        <span>
+            Steps
+        </span>
+        <a href="#Steps" class="anchor">#</a>
+    </h3>
+    <p>
+        整体步骤条。
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    参数
+                </th>
+                <th>
+                    说明
+                </th>
+                <th>
+                    类型
+                </th>
+                <th>
+                    默认值
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    current
+                </td>
+                <td>
+                    指定当前步骤，从 0 开始记数。在子 Step 元素中，可以通过
+                    <code>status</code>
+                    属性覆盖状态
+                </td>
+                <td>
+                    number
+                </td>
+                <td>
+                    0
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    status
+                </td>
+                <td>
+                    指定当前步骤的状态，可选
+                    <code>wait</code>
+                    <code>process</code>
+                    <code>finish</code>
+                    <code>error</code>
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    process
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    size
+                </td>
+                <td>
+                    指定大小，目前支持普通（
+                    <code>default</code>
+                    ）和迷你（
+                    <code>small</code>
+                    ）
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    default
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    direction
+                </td>
+                <td>
+                    指定步骤条方向。目前支持水平（
+                    <code>horizontal</code>
+                    ）和竖直（
+                    <code>vertical</code>
+                    ）两种方向
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    horizontal
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    progressDot
+                </td>
+                <td>
+                    点状步骤条
+                </td>
+                <td>
+                    Boolean
+                </td>
+                <td>
+                    false
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="Steps.Step">
+        <span>
+            Steps.Step
+        </span>
+        <a href="#Steps.Step" class="anchor">#</a>
+    </h3>
+    <p>
+        步骤条内的每一个步骤。
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    参数
+                </th>
+                <th>
+                    说明
+                </th>
+                <th>
+                    类型
+                </th>
+                <th>
+                    默认值
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    status
+                </td>
+                <td>
+                    指定状态。当不配置该属性时，会使用 Steps 的
+                    <code>current</code>
+                    来自动指定状态。可选：
+                    <code>wait</code>
+                    <code>process</code>
+                    <code>finish</code>
+                    <code>error</code>
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    wait
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    nzTitle
+                </td>
+                <td>
+                    标题
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    description
+                </td>
+                <td>
+                    步骤的详情描述，可选
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    icon
+                </td>
+                <td>
+                    步骤图标的类型，可选
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

@@ -48,6 +48,10 @@ import { DialogExample } from './dialog/example';
 import { TabsExample } from './tabs/example';
 import { ModalExampleModule } from './modal/modal.module';
 import { CascaderExample } from './cascader/example';
+import { DatePickerExample } from './date-picker/example';
+import { TimePickerExample } from './time-picker/example';
+import { RateExample } from './rate/example';
+import { StepsExampleModule } from './steps/steps.module';
 
 @NgModule({
     imports: [
@@ -57,7 +61,8 @@ import { CascaderExample } from './cascader/example';
         SharedModule,
         AntModule,
         ExampleRoutingModule,
-        ModalExampleModule
+        ModalExampleModule,
+        StepsExampleModule
     ],
     declarations: [
         Example,
@@ -88,7 +93,10 @@ import { CascaderExample } from './cascader/example';
         NotificationExample,
         DialogExample,
         TabsExample,
-        CascaderExample
+        CascaderExample,
+        DatePickerExample,
+        TimePickerExample,
+        RateExample,
     ],
     entryComponents: [
         Example,
@@ -118,7 +126,10 @@ import { CascaderExample } from './cascader/example';
         NotificationExample,
         DialogExample,
         TabsExample,
-        CascaderExample
+        CascaderExample,
+        DatePickerExample,
+        TimePickerExample,
+        RateExample,
     ],
     providers: [
 

@@ -349,7 +349,11 @@
     <section class="code-box" id="components-input-demo-tooltip">
       <section class="code-box-demo">
 
-        <ant-input [maxLength]="25" placeholder="Input a number" pattern="^-?(0|[1-9][0-9]*)(\.[0-9]*)?$" style="width: 120px;" [(ngModel)]="example8.num"
+        <ant-input
+          maxlength="25" placeholder="Input a number"
+          pattern="^-?(0|[1-9][0-9]*)(\.[0-9]*)?$"
+          style="width: 120px;"
+          [(ngModel)]="example8.num"
           (keydown)="onKeydownNum($event)" overlayClass="numeric-input" ant-tooltip placement="topLeft" trigger="focus"
           [title]="getNumberTitle()"></ant-input>
 

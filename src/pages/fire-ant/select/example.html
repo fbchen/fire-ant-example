@@ -188,12 +188,15 @@
     <section class="code-box" id="components-select-demo-search-box">
       <section class="code-box-demo">
 
-        <ant-select #select7 [(ngModel)]="example7.value1"
+        <ant-select [(ngModel)]="example7.value1"
             placeholder="input search text" notFoundContent=""
             [defaultActiveFirstOption]="false" [showArrow]="false" [filterOption]="false"
             mode="combobox" style="width: 200px;"
             (search)="fetchData($event)">
-
+            <ant-option *ngFor="let item of example7_data"
+                [value]="item.value">
+                {{item.text}}
+            </ant-option>
         </ant-select>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -271,12 +274,13 @@
     <section class="code-box" id="components-select-demo-combobox">
       <section class="code-box-demo">
 
-        <ant-select #select8 [(ngModel)]="example8.value1"
+        <ant-select [(ngModel)]="example8.value1"
             placeholder="Enter the account name"
             [filterOption]="false"
             mode="combobox" style="width: 200px;"
             (search)="rebuildAccountData($event)">
-
+            <ant-option *ngFor="let item of accounts"
+                [value]="item.value">{{item.text}}</ant-option>
         </ant-select>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -301,12 +305,12 @@
     <section class="code-box" id="components-select-demo-coordinate">
       <section class="code-box-demo">
 
-        <ant-select #select91 [(ngModel)]="example9.province"
+        <ant-select [(ngModel)]="example9.province"
             (select)="onChangeProvince($event)" style="width: 90px;">
-
+            <ant-option *ngFor="let item of provinceList" [value]="item">{{item}}</ant-option>
         </ant-select>
-        <ant-select #select92 [(ngModel)]="example9.city" style="width: 90px;">
-
+        <ant-select [(ngModel)]="example9.city" style="width: 90px;">
+            <ant-option *ngFor="let item of cityList" [value]="item">{{item}}</ant-option>
         </ant-select>
 
         <div class="mute-text" style="margin-top: 20px">

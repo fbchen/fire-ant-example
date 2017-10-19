@@ -6,24 +6,20 @@
  * found in the LICENSE file.
  */
 
-import { Component, ElementRef, ViewEncapsulation, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http/*, Response, Headers*/ } from '@angular/http';
 import { AbstractPage } from '../abstract-page';
 
-import { Select, Option } from 'fire-ant';
+import { Option } from 'fire-ant';
 
-const provinceList = ['Zhejiang', 'Jiangsu'];
-const cityList = {
-  Zhejiang: ['Hangzhou', 'Ningbo', 'Wenzhou'],
-  Jiangsu: ['Nanjing', 'Suzhou', 'Zhenjiang']
-};
+
 
 @Component({
     templateUrl: 'example.html',
     encapsulation: ViewEncapsulation.None
 })
-export class SelectExample extends AbstractPage implements AfterViewInit {
+export class SelectExample extends AbstractPage {
 
     public example1 = {
         value1: 'lucy',
@@ -63,16 +59,22 @@ export class SelectExample extends AbstractPage implements AfterViewInit {
         value1: ''
     };
 
+
+    public data = {
+        Zhejiang: ['杭州', '宁波', '温州'],
+        Jiangsu: ['南京', '苏州', '镇江']
+    };
+    public provinceList = ['Zhejiang', 'Jiangsu'];
+    public cityList = this.data['Zhejiang'];
+
     public example9 = {
-        province: provinceList[0],
-        city: cityList[provinceList[0]][0]
+        province: 'Zhejiang',
+        city: '杭州'
     };
 
-    @ViewChild('select7') public select7: Select;
-    @ViewChild('select8') public select8: Select;
 
-    @ViewChild('select91') public provSelector: Select;
-    @ViewChild('select92') public citySelector: Select;
+    public example7_data: any[] = [];
+    public accounts: any[] = [];
 
     constructor(
         public element: ElementRef,
@@ -82,27 +84,6 @@ export class SelectExample extends AbstractPage implements AfterViewInit {
         super(element, router, route);
     }
 
-    ngAfterViewInit(): void {
-        setTimeout(() => {
-            const provinceData = [];
-            provinceList.forEach(province => {
-                provinceData.push({
-                    value: province,
-                    text: province
-                });
-            });
-            this.provSelector.setData(provinceData);
-
-            const cityData = [];
-            cityList[provinceList[0]].forEach(city => {
-                cityData.push({
-                    value: city,
-                    text: city
-                });
-            });
-            this.citySelector.setData(cityData);
-        }, 1);
-    }
 
     onChange(event): void {
         console.log('change ', event);
@@ -146,7 +127,7 @@ export class SelectExample extends AbstractPage implements AfterViewInit {
                 for (let i = 0; i < count; i++) {
                     data.push( { text: term + (i + 1), value: term + (i + 1) });
                 }
-                this.select7.setData(data);
+                this.example7_data = data;
             }, 50);
         }
     }
@@ -159,19 +140,12 @@ export class SelectExample extends AbstractPage implements AfterViewInit {
                 data.push( { text: email, value: email });
             });
         }
-        this.select8.setData(data);
+        this.accounts = data;
     }
 
     onChangeProvince(option: Option): void {
-        const cityData = [];
-        cityList[option.value].forEach(city => {
-            cityData.push({
-                value: city,
-                text: city
-            });
-        });
-        this.example9.city = cityList[option.value][0];
-        this.citySelector.setData(cityData);
+        this.cityList = this.data[option.value];
+        this.example9.city = this.cityList[0];
     }
 
 }

@@ -8,7 +8,7 @@
 
 import { Component, ElementRef, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Http/*, Response, Headers*/ } from '@angular/http';
+/*import { Http, Response, Headers } from '@angular/http';*/
 import { AbstractPage } from '../abstract-page';
 
 import { Option } from 'fire-ant';
@@ -80,7 +80,7 @@ export class SelectExample extends AbstractPage {
         public element: ElementRef,
         public router: Router,
         public route: ActivatedRoute,
-        private http: Http) {
+        /*private http: Http*/) {
         super(element, router, route);
     }
 

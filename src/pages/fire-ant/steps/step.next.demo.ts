@@ -13,7 +13,7 @@ import { Message } from 'fire-ant';
 
 @Component({
     selector: 'step-next-demo',
-    templateUrl: 'step-next-demo.html',
+    templateUrl: 'step.next.demo.html',
     encapsulation: ViewEncapsulation.None,
     styles: [`
         .steps-content {

@@ -14,8 +14,11 @@ import { HttpModule } from '@angular/http';
 /* FireAnt Module */
 import { AntModule } from 'fire-ant';
 
-import { StepsExample } from './example';
-import { StepNextDemo } from './step.next.demo';
+import { FullCalendarExample } from './example';
+import { FullCalendarBasicExample } from './fullcalendar.basic.example';
+import { FullCalendarNoticeExample } from './fullcalendar.notice.example';
+import { FullCalendarCardExample } from './fullcalendar.card.example';
+import { FullCalendarSelectExample } from './fullcalendar.select.example';
 
 @NgModule({
     imports: [
@@ -25,17 +28,19 @@ import { StepNextDemo } from './step.next.demo';
         AntModule
     ],
     declarations: [
-        StepsExample,
-        StepNextDemo
+        FullCalendarExample,
+        FullCalendarBasicExample,
+        FullCalendarNoticeExample,
+        FullCalendarCardExample,
+        FullCalendarSelectExample
     ],
     entryComponents: [
-        StepsExample,
-        StepNextDemo
+        FullCalendarExample
     ],
     providers: [
 
     ]
 })
-export class StepsExampleModule {
+export class FullCalendarExampleModule {
 
 }

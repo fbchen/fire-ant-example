@@ -10,7 +10,7 @@ import { Component, ElementRef, ViewEncapsulation, ViewChild, TemplateRef } from
 import { Router, ActivatedRoute } from '@angular/router';
 import { AbstractPage } from '../abstract-page';
 
-import { ModalDialog, Modal, Message } from 'fire-ant';
+import { ModalDialog, Modal } from 'fire-ant';
 import { ModalFormComponent } from './modal.form';
 
 @Component({
@@ -35,7 +35,6 @@ export class ModalExample extends AbstractPage {
         public element: ElementRef,
         public router: Router,
         public route: ActivatedRoute,
-        private message: Message,
         private modal: Modal) {
         super(element, router, route);
     }

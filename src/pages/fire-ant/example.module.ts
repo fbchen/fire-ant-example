@@ -52,6 +52,9 @@ import { DatePickerExample } from './date-picker/example';
 import { TimePickerExample } from './time-picker/example';
 import { RateExample } from './rate/example';
 import { StepsExampleModule } from './steps/steps.module';
+import { FullCalendarExampleModule } from './fullcalendar/fullcalendar.example.module';
+import { SpinExample } from './spin/example';
+import { ProgressExampleModule } from './progress/progress.module';
 
 @NgModule({
     imports: [
@@ -62,7 +65,9 @@ import { StepsExampleModule } from './steps/steps.module';
         AntModule,
         ExampleRoutingModule,
         ModalExampleModule,
-        StepsExampleModule
+        StepsExampleModule,
+        FullCalendarExampleModule,
+        ProgressExampleModule
     ],
     declarations: [
         Example,
@@ -97,6 +102,7 @@ import { StepsExampleModule } from './steps/steps.module';
         DatePickerExample,
         TimePickerExample,
         RateExample,
+        SpinExample,
     ],
     entryComponents: [
         Example,
@@ -130,6 +136,7 @@ import { StepsExampleModule } from './steps/steps.module';
         DatePickerExample,
         TimePickerExample,
         RateExample,
+        SpinExample,
     ],
     providers: [
 

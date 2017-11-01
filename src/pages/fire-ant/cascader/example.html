@@ -36,7 +36,7 @@
 
         <ant-cascader
             [(ngModel)]="example1.value"
-            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -61,7 +61,7 @@
 
         <ant-cascader
             [(ngModel)]="example2.value"
-            [options]="options2" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options2" (change)="onChange($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -87,18 +87,18 @@
         <ant-cascader
             size="large"
             [(ngModel)]="example3.value1"
-            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)"
             placeholder="Please select"></ant-cascader>
         <br><br>
         <ant-cascader
             [(ngModel)]="example3.value2"
-            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)"
             placeholder="Please select"></ant-cascader>
         <br><br>
         <ant-cascader
             size="small"
             [(ngModel)]="example3.value3"
-            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)"
             placeholder="Please select"></ant-cascader>
 
       </section>
@@ -118,7 +118,7 @@
         <ant-cascader
             [showSearch]="true" (search)="onSearch($event)"
             [(ngModel)]="example4.value"
-            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -145,7 +145,7 @@
 
         <ant-cascader
             [(ngModel)]="example5.value"
-            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -169,7 +169,7 @@
 
         <ant-cascader
             [(ngModel)]="example6.value" expandTrigger="hover"
-            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -193,7 +193,7 @@
 
         <ant-cascader
             [(ngModel)]="example7.value" [changeOnSelect]="true"
-            [options]="options" (change)="onChange($event)" (select)="onSelect($event)"
+            [options]="options" (change)="onChange($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">
@@ -218,7 +218,7 @@
 
         <ant-cascader
             [(ngModel)]="example8.value"
-            [options]="options" (change)="onChange($event)" (select)="onSelect2($event)"
+            (change)="onChange($event)" (load)="onLoad($event)"
             placeholder="Please select"></ant-cascader>
 
         <div class="mute-text" style="margin-top: 20px">

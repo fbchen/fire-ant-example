@@ -94,6 +94,44 @@ export class CascaderExample extends AbstractPage {
         }],
     }];
 
+    public options3 = [{
+        value: 'zhejiang',
+        label: 'Zhejiang',
+        nodes: [{
+            value: 'hangzhou',
+            label: 'Hangzhou',
+            nodes: [{
+                value: 'xihu',
+                label: 'West Lake',
+                isLeaf: true
+            }],
+        }],
+    }, {
+        value: 'jiangsu',
+        label: 'Jiangsu',
+        nodes: [{
+            value: 'nanjing',
+            label: 'Nanjing',
+            nodes: [{
+                value: 'zhonghuamen',
+                label: 'Zhong Hua Men',
+                isLeaf: true
+            }],
+        }],
+    }, {
+        value: 'fujian',
+        label: 'Fujian',
+        nodes: [{
+            value: 'xiamen',
+            label: 'Xiamen',
+            nodes: [{
+                value: 'gulangyu',
+                label: 'Gu Lang Yu',
+                isLeaf: true
+            }],
+        }],
+    }];
+
     public example1 = {
         value: []
     };
@@ -142,17 +180,6 @@ export class CascaderExample extends AbstractPage {
         console.log('new value:', value);
     }
 
-    onSelect(result: {
-        option: any, index: number,
-        resolve: (children: any[]) => void,
-        reject: (value: any) => void
-    }): void {
-        const option = result.option;
-        if (option.children) {
-            result.resolve(option.children);
-        }
-    }
-
     onSearch(term: string): void {
         console.log('search:', term);
     }
@@ -160,16 +187,20 @@ export class CascaderExample extends AbstractPage {
     /**
      * 实现动态加载选项。(模拟异步)
      */
-    onSelect2(result: {
+    onLoad(result: {
         option: any, index: number,
         resolve: (children: any[]) => void,
         reject: (value: any) => void
     }): void {
-        const option = result.option;
-        option.loading = true;
-        setTimeout(() => {
-            option.loading = false;
-            result.resolve(option.children);
-        }, 1000);
+        if (result.index === -1) {
+            result.resolve(this.options3);
+        } else {
+            const option = result.option;
+            option.loading = true;
+            setTimeout(() => {
+                option.loading = false;
+                result.resolve(option.nodes);
+            }, 1000);
+        }
     }
 }

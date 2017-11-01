@@ -42,6 +42,10 @@ import { DatePickerExample } from './date-picker/example';
 import { TimePickerExample } from './time-picker/example';
 import { RateExample } from './rate/example';
 import { StepsExample } from './steps/example';
+import { FullCalendarExample } from './fullcalendar/example';
+import { SpinExample } from './spin/example';
+import { ProgressExample } from './progress/example';
+
 
 @NgModule({
     imports: [
@@ -79,6 +83,9 @@ import { StepsExample } from './steps/example';
             { path: 'time-picker', component: TimePickerExample },
             { path: 'rate', component: RateExample },
             { path: 'steps', component: StepsExample },
+            { path: 'calendar', component: FullCalendarExample },
+            { path: 'spin', component: SpinExample },
+            { path: 'progress', component: ProgressExample },
         ])
     ],
     exports: [

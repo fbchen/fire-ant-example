@@ -12,10 +12,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 /* FireAnt Module */
-import { AntModule } from 'fire-ant';
+import { AntModule } from '../../../app/fire-ant';
 
-import { StepsExample } from './example';
-import { StepNextDemo } from './step.next.demo';
+import { ProgressExample } from './example';
+import { ProgressDemoDynamic } from './progress.demo.dynamic';
+import { ProgressDemoCircleDynamic } from './progress.demo.circle.dynamic';
+import { ProgressDemoFormat } from './progress.demo.format';
 
 @NgModule({
     imports: [
@@ -25,17 +27,18 @@ import { StepNextDemo } from './step.next.demo';
         AntModule
     ],
     declarations: [
-        StepsExample,
-        StepNextDemo
+        ProgressExample,
+        ProgressDemoDynamic,
+        ProgressDemoCircleDynamic,
+        ProgressDemoFormat
     ],
     entryComponents: [
-        StepsExample,
-        StepNextDemo
+        ProgressExample
     ],
     providers: [
 
     ]
 })
-export class StepsExampleModule {
+export class ProgressExampleModule {
 
 }

@@ -1,0 +1,272 @@
+<section class="markdown">
+    <h1>
+        Spin
+        <span class="subtitle">加载中</span>
+        <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/spin/index.zh-CN.md">
+            <i class="anticon anticon-edit"></i>
+        </a>
+    </h1>
+    <section class="markdown">
+        <p>
+            用于页面和区块的加载中状态。
+        </p>
+        <h2 id="何时使用">
+            <span>
+                何时使用
+            </span>
+            <a href="#何时使用" class="anchor">#</a>
+        </h2>
+        <p>
+            页面局部处于等待异步数据或正在渲染过程时，合适的加载动效会有效缓解用户的焦虑。
+        </p>
+    </section>
+    <h2>
+        <span>代码演示</span>
+        <i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i>
+    </h2>
+</section>
+
+
+<ant-row [gutter]="16">
+    <ant-col [span]="12">
+
+        <section class="code-box" id="components-spin-demo-basic">
+            <section class="code-box-demo">
+
+                <ant-spin></ant-spin>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-spin-demo-basic">基本用法</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/spin/demo/basic.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        一个简单的 loading 状态。
+                    </p>
+                </div>
+                <span class="code-expand-icon" style="">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-spin-demo-inside">
+            <section class="code-box-demo">
+
+                <div class="example">
+                    <ant-spin></ant-spin>
+                </div>
+
+                <style>
+                    .example {
+                        text-align: center;
+                        background: rgba(0, 0, 0, 0.05);
+                        border-radius: 4px;
+                        margin-bottom: 20px;
+                        padding: 30px 50px;
+                        margin: 20px 0;
+                    }
+                </style>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-spin-demo-inside">容器</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/spin/demo/inside.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        放入一个容器中。
+                    </p>
+                </div>
+                <span class="code-expand-icon" style="">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-spin-demo-tip">
+            <section class="code-box-demo">
+
+                <ant-spin tip="Loading...">
+                    <ant-alert type="info" message="Alert message title">
+                        Further details about the context of this alert.
+                    </ant-alert>
+                </ant-spin>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-spin-demo-tip">自定义描述文案</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/spin/demo/tip.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        自定义描述文案。
+                    </p>
+                </div>
+                <span class="code-expand-icon" style="">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+    </ant-col>
+    <ant-col [span]="12">
+
+        <section class="code-box" id="components-spin-demo-size">
+            <section class="code-box-demo">
+                <div>
+                    <ant-spin size="small"></ant-spin>
+                    <ant-spin></ant-spin>
+                    <ant-spin size="large"></ant-spin>
+
+                </div>
+                <style>
+                    .ant-spin {
+                        margin-right: 16px;
+                    }
+                </style>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-spin-demo-size">各种大小</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/spin/demo/size.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        小的用于文本加载，默认用于卡片容器级加载，大的用于<strong>页面级</strong>加载。
+                    </p>
+                </div>
+                <span class="code-expand-icon" style="">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-spin-demo-nested">
+            <section class="code-box-demo">
+
+                <ant-spin [spinning]="_loading">
+                    <ant-alert type="info" message="Alert message title">
+                        Further details about the context of this alert.
+                    </ant-alert>
+                </ant-spin>
+
+                <div style="margin-top: 16px;">
+                    Loading state：
+                    <ant-switch (change)="_toggle()"></ant-switch>
+                </div>
+
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-spin-demo-nested">卡片加载中</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/spin/demo/nested.md">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>
+                        可以直接把内容内嵌到
+                        <code>Spin</code>
+                        中，将现有容器变为加载状态。
+                    </p>
+                </div>
+                <span class="code-expand-icon" style="">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+    </ant-col>
+</ant-row>
+
+
+<section class="markdown api-container">
+    <h2 id="API">
+        <span>
+            API
+        </span>
+        <a href="#API" class="anchor">#</a>
+    </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    参数
+                </th>
+                <th>
+                    说明
+                </th>
+                <th>
+                    类型
+                </th>
+                <th>
+                    默认值
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    size
+                </td>
+                <td>
+                    组件大小，可选值为
+                    <code>small</code>
+                    <code>default</code>
+                    <code>large</code>
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    'default'
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    spinning
+                </td>
+                <td>
+                    是否旋转
+                </td>
+                <td>
+                    boolean
+                </td>
+                <td>
+                    true
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    tip
+                </td>
+                <td>
+                    当作为包裹元素时，可以自定义描述文案
+                </td>
+                <td>
+                    string
+                </td>
+                <td>
+                    -
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

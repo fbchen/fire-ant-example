@@ -45,7 +45,7 @@ import { StepsExample } from './steps/example';
 import { FullCalendarExample } from './fullcalendar/example';
 import { SpinExample } from './spin/example';
 import { ProgressExample } from './progress/example';
-
+import { Popover2Example } from './popover2/example';
 
 @NgModule({
     imports: [
@@ -55,6 +55,7 @@ import { ProgressExample } from './progress/example';
             { path: 'grid', component: GridExample },
             { path: 'tooltip', component: TooltipExample},
             { path: 'popover', component: PopoverExample },
+            { path: 'popover2', component: Popover2Example },
             { path: 'popconfirm', component: PopconfirmExample },
             { path: 'menu', component: MenuExample },
             { path: 'breadcrumb', component: BreadcrumbExample },

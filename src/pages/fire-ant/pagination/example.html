@@ -107,7 +107,11 @@
         (pageChange)="onPageChange($event)"></ant-pagination>
     <br>
     <ant-pagination size="small" [total]="50" [showTotal]="true"
-        (pageChange)="onPageChange($event)"></ant-pagination>
+        (pageChange)="onPageChange($event)">
+        <ng-template #showTotal let-data>
+            Total {{data.total}} items
+        </ng-template>
+    </ant-pagination>
 
     <style>
       #components-pagination-demo-mini ant-pagination:not(:last-child) {
@@ -132,6 +136,10 @@
 
     <ant-pagination [current]="2" [total]="50" [simple]="true"
          (pageChange)="onPageChange($event)"></ant-pagination>
+    <br>
+    <br>
+    <ant-pagination [current]="2" [total]="50" [simple]="true" [showQuickJumper]="{goButton: true}"
+        (pageChange)="onPageChange($event)"></ant-pagination>
 
   </section>
   <section class="code-box-meta markdown">
@@ -316,20 +324,6 @@
         </td>
         <td>
           false
-        </td>
-      </tr>
-      <tr>
-        <td>
-          showTotalFunc
-        </td>
-        <td>
-          用于显示数据总量和当前数据顺序
-        </td>
-        <td>
-          Function(total, range)
-        </td>
-        <td>
-          -
         </td>
       </tr>
     </tbody>

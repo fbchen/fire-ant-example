@@ -8,29 +8,23 @@
 
 import { Component, ElementRef, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
 import { AbstractPage } from '../abstract-page';
+
 
 @Component({
     templateUrl: 'example.html',
     encapsulation: ViewEncapsulation.None
 })
-export class PaginationExample extends AbstractPage {
+export class Popover2Example extends AbstractPage {
 
 
     constructor(
         public element: ElementRef,
         public router: Router,
         public route: ActivatedRoute) {
-            super(element, router, route);
+        super(element, router, route);
     }
 
-    onPageChange(page: number): void {
-        console.log('page change: new page=' + page);
-    }
 
-    onShowSizeChange(size: number): void {
-        console.log('size change: new size=' + size);
-    }
 
 }

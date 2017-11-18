@@ -25,6 +25,7 @@ import { GridExample } from './grid/example';
 import { TooltipExample } from './tooltip/example';
 import { PopoverExample } from './popover/example';
 import { PopconfirmExample } from './popconfirm/example';
+import { Popover2ExampleModule } from './popover2/popover2.module';
 import { MenuExample } from './menu/example';
 import { BreadcrumbExample } from './breadcrumb/example';
 import { SwitchExample } from './switch/example';
@@ -67,7 +68,8 @@ import { ProgressExampleModule } from './progress/progress.module';
         ModalExampleModule,
         StepsExampleModule,
         FullCalendarExampleModule,
-        ProgressExampleModule
+        ProgressExampleModule,
+        Popover2ExampleModule
     ],
     declarations: [
         Example,

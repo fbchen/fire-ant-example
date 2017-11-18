@@ -50,13 +50,14 @@
     <section class="code-box" id="components-notification-demo-with-icon">
       <section class="code-box-demo">
 
-        <ant-button (click)="showAlert3('success')">Success</ant-button>
-        <ant-button (click)="showAlert3('info')">Info</ant-button>
-        <ant-button (click)="showAlert3('warning')">Warning</ant-button>
-        <ant-button (click)="showAlert3('error')">Error</ant-button>
-
+        <div class="notification-demo-with-icon">
+            <ant-button (click)="showAlert3('success')">Success</ant-button>
+            <ant-button (click)="showAlert3('info')">Info</ant-button>
+            <ant-button (click)="showAlert3('warning')">Warning</ant-button>
+            <ant-button (click)="showAlert3('error')">Error</ant-button>
+        </div>
         <style>
-          .code-box-demo .ant-btn {
+          .notification-demo-with-icon .ant-btn {
             margin-right: 1em;
           }
 

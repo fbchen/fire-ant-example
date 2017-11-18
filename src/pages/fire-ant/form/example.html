@@ -191,12 +191,12 @@
         <form-item label="Phone Number" [labelCol]="formItemLayout.labelCol" [wrapperCol]="formItemLayout.wrapperCol">
             <ant-addon>
                 <ant-input name="phone" [(ngModel)]="example3.phone" style="width: 100%"></ant-input>
-                <addon-before>
+                <ng-template #before>
                     <ant-select name="prefix" [(ngModel)]="example3.prefix" style="width: 60px">
                         <ant-option value="86">+86</ant-option>
                         <ant-option value="87">+87</ant-option>
                     </ant-select>
-                </addon-before>
+                </ng-template>
             </ant-addon>
             <form-help>{{fireForm3.getError('phone')}}</form-help>
         </form-item>

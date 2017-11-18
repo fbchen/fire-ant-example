@@ -50,35 +50,35 @@
       <section class="code-box-demo">
 
         <ant-addon style="margin-bottom: 16px">
-          <addon-before>http://</addon-before>
-          <addon-after>.com</addon-after>
+          <ng-template #before>http://</ng-template>
+          <ng-template #after>.com</ng-template>
           <ant-input [(ngModel)]="example2.value1"></ant-input>
         </ant-addon>
 
 
         <ant-addon style="margin-bottom: 16px">
           <ant-input [(ngModel)]="example2.value2"></ant-input>
-          <addon-before>
+          <ng-template #before>
             <ant-select [(ngModel)]="example2.schema" style="width: 80px">
                 <ant-option value="http://">http://</ant-option>
                 <ant-option value="https://">https://</ant-option>
             </ant-select>
-          </addon-before>
-          <addon-after>
+          </ng-template>
+          <ng-template #after>
             <ant-select [(ngModel)]="example2.subfix" style="width: 70px">
                 <ant-option value=".com">.com</ant-option>
                 <ant-option value=".jp">.jp</ant-option>
                 <ant-option value=".cn">.cn</ant-option>
                 <ant-option value=".org">.org</ant-option>
             </ant-select>
-          </addon-after>
+          </ng-template>
         </ant-addon>
 
 
         <ant-addon style="margin-bottom: 16px">
-          <addon-after>
+          <ng-template #after>
             <ant-icon type="setting"></ant-icon>
-          </addon-after>
+          </ng-template>
           <ant-input [(ngModel)]="example2.value3"></ant-input>
         </ant-addon>
 

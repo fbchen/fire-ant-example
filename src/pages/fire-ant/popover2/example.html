@@ -1,6 +1,6 @@
 <section class="markdown">
   <h1>
-    Popover
+    Popover2
     <span class="subtitle">气泡卡片</span><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/popover/index.zh-CN.md"><i class="anticon anticon-edit"></i></a></h1>
   <section class="markdown">
     <p>
@@ -25,7 +25,7 @@
     <section class="code-box" id="components-popover-demo-basic">
       <section class="code-box-demo">
 
-        <ant-button type="primary" ant-popover title="Title" pop-content="Content">Hover me</ant-button>
+        <popover2-demo-basic></popover2-demo-basic>
 
       </section>
       <section class="code-box-meta markdown">
@@ -41,47 +41,8 @@
     <section class="code-box" id="components-popover-demo-placement">
       <section class="code-box-demo">
 
-        <div class="demo popover-demo-placement">
+        <popover2-demo-placement></popover2-demo-placement>
 
-          <div [ngStyle]="{'margin-left': '70px', 'white-space': 'nowrap'}">
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="topLeft">TL</ant-button>
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="top">Top</ant-button>
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="topRight">TR</ant-button>
-
-          </div>
-          <div [ngStyle]="{width: '70px', float: 'left'}">
-
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="leftTop">LT</ant-button>
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="left">Left</ant-button>
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="leftBottom">LB</ant-button>
-
-          </div>
-          <div [ngStyle]="{width: '70px', 'margin-left': (70*4+24) + 'px'}">
-
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="rightTop">RT</ant-button>
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="right">Right</ant-button>
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="rightBottom">RB</ant-button>
-
-          </div>
-          <div [ngStyle]="{'margin-left': '70px', 'clear': 'both', 'white-space': 'nowrap'}">
-
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="bottomLeft">BL</ant-button>
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="bottom">Bottom</ant-button>
-            <ant-button [title]="text" [pop-content]="content" ant-popover trigger="click" placement="bottomRight">BR</ant-button>
-
-          </div>
-        </div>
-        <style>
-          .popover-demo-placement .ant-btn {
-            margin-right: 8px;
-            margin-bottom: 8px;
-          }
-
-          #components-popover-demo-placement .ant-btn {
-            width: 70px;
-          }
-
-        </style>
       </section>
       <section class="code-box-meta markdown">
         <div class="code-box-title"><a href="#components-popover-demo-placement">位置</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/popover/demo/placement.md"><i class="anticon anticon-edit"></i></a></div>
@@ -96,29 +57,8 @@
     <section class="code-box" id="components-popover-demo-arrow-point-at-center">
       <section class="code-box-demo">
 
-        <div class="popover-demo-arrow-point-at-center">
-            <ant-button ant-popover title="Title" placement="topLeft">
-                Align edge / 边缘对齐
-                <popover-content>
-                    <p>Content</p>
-                    <p>Content</p>
-                </popover-content>
-            </ant-button>
-            <ant-button ant-popover title="Title" placement="topLeft" [arrowPointAtCenter]="true">
-                Arrow points to center / 箭头指向中心
-                <popover-content>
-                    <p>Content</p>
-                    <p>Content</p>
-                </popover-content>
-            </ant-button>
-        </div>
+        <popover2-demo-arrow-point-at-center></popover2-demo-arrow-point-at-center>
 
-        <style>
-            .popover-demo-arrow-point-at-center .ant-btn {
-              margin-right: 8px;
-              margin-bottom: 12px;
-            }
-          </style>
       </section>
       <section class="code-box-meta markdown">
         <div class="code-box-title"><a href="#components-popover-demo-arrow-point-at-center">箭头指向</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/popover/demo/arrow-point-at-center.md"><i class="anticon anticon-edit"></i></a></div>
@@ -137,9 +77,7 @@
     <section class="code-box" id="components-popover-demo-triggerType">
       <section class="code-box-demo">
 
-        <ant-button ant-popover title="Title" pop-content="Content" trigger="hover">Hover me</ant-button>
-        <ant-input ant-popover title="Title" pop-content="Content" trigger="focus" placeholder="Focus me" style="width: 80px; margin-right: 8px;"></ant-input>
-        <ant-button ant-popover title="Title" pop-content="Content" trigger="click">Click me</ant-button>
+        <popover2-demo-trigger></popover2-demo-trigger>
 
       </section>
       <section class="code-box-meta markdown">
@@ -155,23 +93,49 @@
     <section class="code-box" id="components-popover-demo-control">
       <section class="code-box-demo">
 
-        <ant-button type="primary" ant-popover title="Title" trigger="click" #popover="popover">
-            Click me
-            <popover-content>
-                <a href="javascript:;" (click)="popover.hide()">close</a>
-            </popover-content>
-        </ant-button>
+        <popover2-demo-control></popover2-demo-control>
 
       </section>
       <section class="code-box-meta markdown">
         <div class="code-box-title"><a href="#components-popover-demo-control">从浮层内关闭</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/popover/demo/control.md"><i class="anticon anticon-edit"></i></a></div>
         <div>
           <p>
-            使用
-            <code>visible</code> 属性控制浮层显示。
+            使用<code>show(), hide()</code> 方法控制浮层显示、隐藏。
           </p>
         </div>
       </section>
+    </section>
+
+    <section class="code-box" id="components-popover-demo-template">
+        <section class="code-box-demo">
+
+          <popover2-demo-template></popover2-demo-template>
+
+        </section>
+        <section class="code-box-meta markdown">
+          <div class="code-box-title"><a href="#components-popover-demo-control">使用Template定义</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/popover/demo/control.md"><i class="anticon anticon-edit"></i></a></div>
+          <div>
+            <p>
+              使用 <code>&lt;ng-template&gt;</code> 定义内容。
+            </p>
+          </div>
+        </section>
+    </section>
+
+    <section class="code-box" id="components-popover-demo-component">
+        <section class="code-box-demo">
+
+          <popover2-demo-component></popover2-demo-component>
+
+        </section>
+        <section class="code-box-meta markdown">
+          <div class="code-box-title"><a href="#components-popover-demo-control">使用Component定义</a><a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/popover/demo/control.md"><i class="anticon anticon-edit"></i></a></div>
+          <div>
+            <p>
+              使用 自定义组件 定义内容。
+            </p>
+          </div>
+        </section>
     </section>
 
   </ant-col>

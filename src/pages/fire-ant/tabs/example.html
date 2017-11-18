@@ -81,21 +81,21 @@
 
         <ant-tabs activeKey="1" (change)="onChange($event)">
           <ant-tabpane key="1">
-            <tab-pane-title>
+            <ng-template #nzTabTitle>
               <ant-icon type="apple"></ant-icon> Tab 1
-            </tab-pane-title>
+            </ng-template>
             Content of Tab Pane 1
           </ant-tabpane>
           <ant-tabpane key="2">
-            <tab-pane-title>
+            <ng-template #nzTabTitle>
               <ant-icon type="android"></ant-icon> Tab 2
-            </tab-pane-title>
+            </ng-template>
             Content of Tab Pane 2
           </ant-tabpane>
           <ant-tabpane key="3">
-            <tab-pane-title>
+            <ng-template #nzTabTitle>
               <ant-icon type="setting"></ant-icon> Tab 3
-            </tab-pane-title>
+            </ng-template>
             Content of Tab Pane 3
           </ant-tabpane>
         </ant-tabs>
@@ -150,9 +150,9 @@
       <section class="code-box-demo">
 
         <ant-tabs activeKey="1" (change)="onChange($event)">
-          <tab-bar-suffix>
+          <ng-template #nzTabBarSuffix>
             <ant-button>Extra Action</ant-button>
-          </tab-bar-suffix>
+          </ng-template>
           <ant-tabpane tabTitle="Tab 1" key="1">Content of Tab Pane 1</ant-tabpane>
           <ant-tabpane tabTitle="Tab 2" key="2">Content of Tab Pane 2</ant-tabpane>
           <ant-tabpane tabTitle="Tab 3" key="3">Content of Tab Pane 3</ant-tabpane>

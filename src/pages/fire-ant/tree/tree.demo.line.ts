@@ -16,11 +16,14 @@ const nodes = [{
         title: 'parent 1-1',
         expanded: true,
         children: [{
-            title: 'leaf'
+            title: 'leaf',
+            nodeCls: 'good-look'
         }, {
-            title: 'leaf'
+            title: 'leaf',
+            nodeCls: 'good-look'
         }, {
-            title: 'leaf'
+            title: 'leaf',
+            nodeCls: 'good-look'
         }]
     }, {
         title: 'parent 1-2',
@@ -43,7 +46,12 @@ const nodes = [{
     template: `
         <ant-tree [showLine]="true" (select)="onSelect($event)" [roots]="children"></ant-tree>
     `,
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    styles: [`
+        .ant-tree .ant-tree-treenode .ant-tree-node-content-wrapper.good-look {
+            background: #FFC107;
+        }
+    `]
 })
 export class TreeDemoLine {
 

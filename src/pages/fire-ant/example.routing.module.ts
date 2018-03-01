@@ -46,6 +46,7 @@ import { FullCalendarExample } from './fullcalendar/example';
 import { SpinExample } from './spin/example';
 import { ProgressExample } from './progress/example';
 import { Popover2Example } from './popover2/example';
+import { TreeExample } from './tree/example';
 
 @NgModule({
     imports: [
@@ -87,6 +88,7 @@ import { Popover2Example } from './popover2/example';
             { path: 'calendar', component: FullCalendarExample },
             { path: 'spin', component: SpinExample },
             { path: 'progress', component: ProgressExample },
+            { path: 'tree', component: TreeExample },
         ])
     ],
     exports: [

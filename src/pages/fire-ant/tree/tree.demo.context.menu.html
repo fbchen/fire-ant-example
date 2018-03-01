@@ -1,0 +1,21 @@
+<ant-tree #tree
+    [roots]="children"
+    (nodeContextMenu)="onNodeContextMenu($event)">
+</ant-tree>
+
+<ng-template #menuExample>
+    <ant-menu class="tree-context-menu">
+        <ant-menu-item (click)="onMenuClick('Send')">
+            <ant-icon type="mail"></ant-icon> Send
+        </ant-menu-item>
+        <ant-menu-item (click)="onMenuClick('Rename')">
+            <ant-icon type="edit"></ant-icon> Rename
+        </ant-menu-item>
+        <ant-menu-item (click)="onMenuClick('Add Child')">
+            <ant-icon type="plus-circle-o"></ant-icon> Add Child
+        </ant-menu-item>
+        <ant-menu-item (click)="onMenuClick('Delete')">
+            <ant-icon type="minus-circle-o"></ant-icon> Delete
+        </ant-menu-item>
+    </ant-menu>
+</ng-template>

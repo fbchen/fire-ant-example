@@ -78,7 +78,7 @@ export class FormExample extends AbstractPage {
 
 
     public handleSubmit(form: FormDirective): void {
-        if (!form.validate(this.exampleMessages)) {
+        if (!form.validate()) {
 
         }
     }

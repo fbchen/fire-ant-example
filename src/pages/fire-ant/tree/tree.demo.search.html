@@ -1,0 +1,12 @@
+<ant-search style="margin-bottom: 8px"
+    placeholder="Search" (search)="onSearch($event)">
+</ant-search>
+<ant-tree #tree="tree"
+    [roots]="children" [autoExpandParent]="autoExpandParent">
+</ant-tree>
+
+
+
+<ng-template #title let-data>
+    {{data.titleData.beforeStr}}<span style="color: #f50">{{data.titleData.keyword}}</span>{{data.titleData.afterStr}}
+</ng-template>

@@ -1,0 +1,9 @@
+<ng-template #title let-node>
+    <span style="color: #1890ff">{{node.data.name}}</span>
+</ng-template>
+
+<ant-tree
+    [roots]="children"
+    [checkable]="true"
+    (check)="onCheck($event)" (select)="onSelect($event)">
+</ant-tree>

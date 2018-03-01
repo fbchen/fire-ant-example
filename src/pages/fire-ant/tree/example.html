@@ -1,0 +1,378 @@
+<section class="markdown">
+    <h1>Tree
+        <span class="subtitle">树形控件</span>
+        <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tree/index.zh-CN.md" target="_blank">
+            <i class="anticon anticon-edit"></i>
+        </a>
+    </h1>
+    <section class="markdown">
+        <h2 id="何时使用" data-scrollama-index="0">
+            <span>何时使用</span>
+            <a href="#何时使用" class="anchor">#</a>
+        </h2>
+        <p>文件夹、组织架构、生物分类、国家地区等等，世间万物的大多数结构都是树形结构。使用
+            <code>树控件</code>可以完整展现其中的层级关系，并具有展开收起选择等交互功能。</p>
+    </section>
+    <h2 data-scrollama-index="1">
+        <span>代码演示</span>
+        <i class="anticon anticon-appstore code-box-expand-trigger" title="展开全部代码"></i>
+    </h2>
+</section>
+
+
+<ant-row [gutter]="16">
+    <ant-col [span]="12">
+
+        <section class="code-box" id="components-tree-demo-basic" data-scrollama-index="2">
+            <section class="code-box-demo">
+                <tree-demo-basic></tree-demo-basic>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-tree-demo-basic">基本</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tree/demo/basic.md"
+                        target="_blank">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>最简单的用法，展示可勾选，可选中，禁用，默认展开等功能。</p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-tree-demo-draggable" data-scrollama-index="3">
+            <section class="code-box-demo">
+                <tree-demo-draggable></tree-demo-draggable>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-tree-demo-draggable">拖动示例</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tree/demo/draggable.md"
+                        target="_blank">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>将节点拖拽到其他节点内部或前后。</p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-tree-demo-search" data-scrollama-index="4">
+            <section class="code-box-demo">
+                <tree-demo-search></tree-demo-search>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-tree-demo-search">可搜索</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tree/demo/search.md"
+                        target="_blank">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>可搜索的树。</p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+    </ant-col>
+    <ant-col [span]="12">
+
+        <section class="code-box" id="components-tree-demo-context-menu" data-scrollama-index="5">
+            <section class="code-box-demo">
+                <tree-demo-context-menu></tree-demo-context-menu>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-tree-demo-basic-context-menu">快捷菜单示例</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tree/demo/basic-controlled.md"
+                        target="_blank">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>快捷菜单示例</p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-tree-demo-dynamic" data-scrollama-index="6">
+            <section class="code-box-demo">
+                <tree-demo-dynamic></tree-demo-dynamic>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-tree-demo-dynamic">异步数据加载</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tree/demo/dynamic.md"
+                        target="_blank">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>点击展开节点，动态加载数据。</p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+        <section class="code-box" id="components-tree-demo-line" data-scrollama-index="7">
+            <section class="code-box-demo">
+                <tree-demo-line></tree-demo-line>
+            </section>
+            <section class="code-box-meta markdown">
+                <div class="code-box-title">
+                    <a href="#components-tree-demo-line">连接线</a>
+                    <a class="edit-button" href="https://github.com/ant-design/ant-design/edit/master/components/tree/demo/line.md"
+                        target="_blank">
+                        <i class="anticon anticon-edit"></i>
+                    </a>
+                </div>
+                <div>
+                    <p>带连接线的树。</p>
+                </div>
+                <span class="code-expand-icon">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/wSAkBuJFbdxsosKKpqyq.svg" class="code-expand-icon-show">
+                    <img alt="expand code" src="https://gw.alipayobjects.com/zos/rmsportal/OpROPHYqWmrMDBFMZtKF.svg" class="code-expand-icon-hide">
+                </span>
+            </section>
+        </section>
+
+
+    </ant-col>
+</ant-row>
+
+<section class="markdown api-container">
+    <h2 id="API" data-scrollama-index="8">
+        <span>API</span>
+        <a href="#API" class="anchor">#</a>
+    </h2>
+    <h3 id="Tree-props">
+        <span>Tree props</span>
+        <a href="#Tree-props" class="anchor">#</a>
+    </h3>
+    <table>
+        <thead>
+            <tr>
+                <th>参数</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>默认值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>autoExpandParent</td>
+                <td>是否自动展开父节点</td>
+                <td>boolean</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>checkable</td>
+                <td>节点前添加 Checkbox 复选框</td>
+                <td>boolean</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>checkStrictly</td>
+                <td>checkable状态下节点选择完全受控（父子节点选中状态不再关联）</td>
+                <td>boolean</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>defaultExpandAll</td>
+                <td>默认展开所有树节点</td>
+                <td>boolean</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>draggable</td>
+                <td>设置节点可拖拽（IE&gt;8）</td>
+                <td>boolean</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>filterTreeNode</td>
+                <td>按需筛选树节点（高亮），返回true</td>
+                <td>function(node)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>loadData</td>
+                <td>异步加载数据</td>
+                <td>function(node)</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>multiple</td>
+                <td>支持点选多个节点（节点本身）</td>
+                <td>boolean</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>showIcon</td>
+                <td>是否展示 TreeNode title 前的图标，没有默认样式，如设置为 true，需要自行定义图标相关样式</td>
+                <td>boolean</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>showLine</td>
+                <td>是否展示连接线</td>
+                <td>boolean</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>check</td>
+                <td>Event - 点击复选框触发</td>
+                <td>参数: {{'{'}} node, event, checked: boolean {{'}'}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ddDragEnd</td>
+                <td>Event - dragend 触发时调用</td>
+                <td>参数: {{'{'}} node, event {{'}'}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ddDragEnter</td>
+                <td>Event - dragenter 触发时调用</td>
+                <td>参数: {{'{'}} node, event {{'}'}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ddDragLeave</td>
+                <td>Event - dragleave 触发时调用</td>
+                <td>参数: {{'{'}} node, event {{'}'}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ddDragOver</td>
+                <td>Event - dragover 触发时调用</td>
+                <td>参数: {{'{'}} node, event {{'}'}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ddDragStart</td>
+                <td>Event - 开始拖拽时调用</td>
+                <td>参数: {{'{'}} node, event {{'}'}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ddDrop</td>
+                <td>Event - drop 触发时调用</td>
+                <td>参数: {{'{'}} node, event, dropPosition: number, dropToGap: boolean {{'}'}}</td>
+                <td>dropPosition说明：0 = 内部，-1 = 上邻，1 = 下邻</td>
+            </tr>
+            <tr>
+                <td>expand</td>
+                <td>Event - 展开节点时触发</td>
+                <td>参数: node</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>collapse</td>
+                <td>Event - 折叠节点时触发</td>
+                <td>参数: node</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>nodeContextMenu</td>
+                <td>Event - 响应右键点击</td>
+                <td>参数: {{'{'}} node, event {{'}'}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>nodeMouseEnter</td>
+                <td>Event - 鼠标进入结点</td>
+                <td>参数: {{'{'}} node, event {{'}'}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>nodeMouseLeave</td>
+                <td>Event - 鼠标移出结点</td>
+                <td>参数: {{'{'}} node, event {{'}'}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>select</td>
+                <td>Event - 点击树节点触发</td>
+                <td>参数: {{'{'}} node, event: 'select', selected: boolean {{'}'}}</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="TreeNode-props">
+        <span>TreeNode props</span>
+        <a href="#TreeNode-props" class="anchor">#</a>
+    </h3>
+    <table>
+        <thead>
+            <tr>
+                <th>参数</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>默认值</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>disableCheckbox</td>
+                <td>禁掉 checkbox</td>
+                <td>boolean</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>disabled</td>
+                <td>禁掉响应</td>
+                <td>boolean</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>isLeaf</td>
+                <td>设置为叶子节点(设置了
+                    <code>loadData</code>时有效)</td>
+                <td>boolean</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>key</td>
+                <td>被树的 (default)ExpandedKeys / (default)CheckedKeys / (default)SelectedKeys 属性所用。注意：整个树范围内的所有节点的 key 值不能重复！</td>
+                <td>string</td>
+                <td>内部计算出的节点位置</td>
+            </tr>
+            <tr>
+                <td>selectable</td>
+                <td>设置节点是否可被选中</td>
+                <td>boolean</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td>标题</td>
+                <td>string|TemplateRef&lt;any&gt;</td>
+                <td>'---'</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

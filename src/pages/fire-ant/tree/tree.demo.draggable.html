@@ -1,0 +1,8 @@
+<ant-tree
+    class="draggable-tree"
+    [roots]="children"
+    [draggable]="true"
+    (ddDragStart)="onDragStart($event)"
+    (ddDragEnter)="onDragEnter($event)"
+    (ddDrop)="onDrop($event)">
+</ant-tree>

@@ -154,7 +154,7 @@
 
 <section class="code-box" id="components-form-demo-register">
   <section class="code-box-demo">
-    <form #form3="ngForm" #fireForm3="faForm" (ngSubmit)="handleSubmit2(fireForm3)" novalidate="">
+    <form #form3="ngForm" #fireForm3="faForm" (ngSubmit)="handleSubmit2(fireForm3)" novalidate="" [messages]="exampleMessages">
         <form-item label="E-mail" [hasFeedback]="true" [labelCol]="formItemLayout.labelCol" [wrapperCol]="formItemLayout.wrapperCol">
             <ant-input name="email" type="email"
                 [(ngModel)]="example3.email" [required]="true">

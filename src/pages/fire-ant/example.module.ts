@@ -56,6 +56,7 @@ import { StepsExampleModule } from './steps/steps.module';
 import { FullCalendarExampleModule } from './fullcalendar/fullcalendar.example.module';
 import { SpinExample } from './spin/example';
 import { ProgressExampleModule } from './progress/progress.module';
+import { TreeExampleModule } from './tree/tree.module';
 
 @NgModule({
     imports: [
@@ -69,7 +70,8 @@ import { ProgressExampleModule } from './progress/progress.module';
         StepsExampleModule,
         FullCalendarExampleModule,
         ProgressExampleModule,
-        Popover2ExampleModule
+        Popover2ExampleModule,
+        TreeExampleModule
     ],
     declarations: [
         Example,
